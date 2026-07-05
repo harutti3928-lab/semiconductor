@@ -1,0 +1,22 @@
+# 講義スライド等の原資料（著作物）は公開リポジトリに含めない
+*.pdf
+*.docx
+*.pptx
+*.key
+
+# 画像の原本を置く場合の任意ディレクトリ（必要に応じてコメントアウト）
+# docs/figures/*
+
+# OS / エディタ
+.DS_Store
+Thumbs.db
+desktop.ini
+*~
+.*.swp
+.vscode/
+.idea/
+
+# 一時ファイル
+*.tmp
+*.log
+*.bak
