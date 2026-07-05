@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>第8回　半導体光デバイス</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    body { margin: 0; padding: 0; background-color: #fcfbfa; color: #2c2a29; font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "YakuHanJPs", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif; line-height: 1.9; -webkit-font-smoothing: antialiased; }
+    .font-serif { font-family: "Times New Roman", "Georgia", "Noto Serif JP", serif; }
+    header { max-width: 740px; margin: 0 auto; padding: 64px 24px 36px; border-bottom: 1px solid #e6e4e0; }
+    .breadcrumb { font-size: 9pt; color: #96938f; letter-spacing: 0.5px; margin-bottom: 20px; }
+    .breadcrumb a { color: #96938f; text-decoration: none; }
+    .breadcrumb a:hover { color: #2e7d6e; }
+    header h1 { font-size: 20pt; font-weight: 600; letter-spacing: 1.2px; margin: 0 0 10px; color: #1a1919; }
+    header p { font-size: 10pt; color: #73706c; margin: 0; letter-spacing: 1px; }
+    main { max-width: 740px; margin: 0 auto; padding: 52px 24px 100px; }
+    h2 { font-size: 13pt; font-weight: 600; color: #2c2a29; margin: 48px 0 20px; letter-spacing: 0.8px; position: relative; display: inline-block; }
+    h2::after { content: ''; position: absolute; bottom: -5px; left: 0; width: 100%; height: 1px; background-color: #2c2a29; }
+    h3 { font-size: 11pt; font-weight: 600; color: #3a3836; margin: 28px 0 10px; }
+    p { font-size: 10.5pt; margin: 0 0 16px; }
+    main ul, main ol { font-size: 10.5pt; padding-left: 22px; line-height: 1.9; margin: 0 0 16px; }
+    main li { margin-bottom: 4px; }
+    table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 10pt; }
+    th { text-align: left; padding: 10px 14px; background: #f0ede8; border-bottom: 2px solid #dedad5; font-weight: 600; letter-spacing: 0.5px; }
+    td { padding: 10px 14px; border-bottom: 1px solid #ece9e4; vertical-align: top; }
+    tr:last-child td { border-bottom: none; }
+    .note { background: #f5f3ef; border-left: 3px solid #b0a898; padding: 14px 18px; margin: 24px 0; font-size: 10pt; color: #4a4845; border-radius: 0 4px 4px 0; }
+    code { font-family: "SFMono-Regular", "Consolas", "Menlo", monospace; font-size: 9.5pt; background: #f0ede8; padding: 1px 6px; border-radius: 3px; }
+    pre { background: #f5f3ef; padding: 18px 20px; border-radius: 4px; font-family: "SFMono-Regular", "Consolas", "Menlo", monospace; font-size: 9.5pt; overflow-x: auto; margin: 20px 0; line-height: 1.7; }
+    footer { max-width: 740px; margin: 0 auto; padding: 36px 24px; border-top: 1px solid #e6e4e0; text-align: center; font-size: 8.5pt; color: #96938f; letter-spacing: 1px; }
+  </style>
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['\\(', '\\)']],
+        displayMath: [['\\[', '\\]']],
+        tags: 'none'
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    };
+  </script>
+  <link rel="stylesheet" href="../site.css">
+  <script defer src="../site.js"></script>
+  <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+</head>
+<body>
+
+<header>
+  <div class="breadcrumb"><a href="../index.html">半導体物理学ノート</a> &rsaquo; <a href="../index.html#hetero">ヘテロ構造・光物性</a></div>
+  <h1 class="font-serif">第8回　半導体光デバイス</h1>
+  <p class="font-serif">— LED・レーザ・フォトダイオード・太陽電池・CCD —</p>
+</header>
+
+<main>
+
+  <h2 class="font-serif">この回の内容</h2>
+  <ul>
+    <li>発光素子（電気→光）：LED、半導体レーザ（LD）</li>
+    <li>受光素子（光→電気）：太陽電池、フォトダイオード、CCD/CMOS イメージセンサ</li>
+    <li>アインシュタインのモデル、反転分布、レーザ発振条件</li>
+  </ul>
+
+  <h2 class="font-serif">1. 光デバイスとバンド構造</h2>
+  <ul>
+    <li><strong>直接遷移型</strong>（GaAs など）：電子遷移で運動量が保存され、キャリア寿命が短い（〜ns）、発光効率が高い。→ 発光素子向き。</li>
+    <li><strong>間接遷移型</strong>（Si など）：フォノンを要し、キャリア寿命が長い（〜μs）、発光効率が低い。→ 受光素子・電子デバイス向き。</li>
+  </ul>
+  <p>バンドギャップと発光波長の関係：</p>
+  \[\lambda_G = \frac{hc}{E_G} = \frac{1.2398}{E_G[\mathrm{eV}]}\ \mu\mathrm m.\]
+
+  <h2 class="font-serif">2. 発光ダイオード（LED）</h2>
+  <p>pn 接合を順方向にバイアスし、注入された少数キャリアの再結合で発光する。放出光は<strong>自然放出（spontaneous emission）</strong>で、時間的相関がなく位相が揃わない<strong>インコヒーレント光</strong>。</p>
+  <ul>
+    <li><strong>緑ギャップ（green gap）</strong>：可視域中央（緑〜黄）に相当するバンドギャップを持つ高効率材料が乏しく、緑色 LED の効率が低い問題。</li>
+    <li>面発光型・端面発光型がある。</li>
+  </ul>
+
+  <h2 class="font-serif">3. 半導体レーザ（LASER）</h2>
+  <p>pn 接合を強く順方向バイアスしてキャリアを注入し、<strong>反転分布状態</strong>（誘導放出 ≫ 吸収）を作ってレーザ発振させる。<strong>誘導放出（stimulated emission）</strong>は外部光に刺激されて放出される<strong>コヒーレント光</strong>で、刺激光と同じ波長・位相を持つ。</p>
+
+  <h3>アインシュタインのモデル</h3>
+  <p>2準位（\(\varepsilon_2>\varepsilon_1\)、\(\hbar\omega=\varepsilon_2-\varepsilon_1\)）の原子系で、単位時間あたりの遷移割合を</p>
+  <ul>
+    <li>吸収：\(B_{12}f_1(1-f_2)N_p(\omega)\)</li>
+    <li>自然放出：\(A_{21}f_2(1-f_1)\)</li>
+    <li>誘導放出：\(B_{21}f_2(1-f_1)N_p(\omega)\)</li>
+  </ul>
+  <p>とする（\(N_p\)：フォトン数）。熱平衡で「自然放出＋誘導放出＝吸収」を課すと、</p>
+  \[N_p(\omega) = \frac{A_{21}}{B_{12}\exp[(\varepsilon_2-\varepsilon_1)/k_BT]-B_{21}}.\]
+  <p>これが<strong>プランクの公式</strong>と一致するには</p>
+  \[\boxed{\,B_{12} = B_{21},\qquad \frac{A_{21}}{B_{21}} = \frac{\hbar\omega^3}{\pi^2 c^3}\,}\]
+  <p>が必要（アインシュタインの A 係数・B 係数の関係）。吸収と自然放出だけでは熱平衡分布を再現できず、<strong>誘導放出が必然的に存在する</strong>ことがわかる。フォトン数の観点では、吸収 \(\propto N_p\)、放出 \(\propto(N_p+1)\)（\(+1\) が自然放出）。</p>
+
+  <h2 class="font-serif">4. レーザ発振条件</h2>
+
+  <h3>反転分布（利得）</h3>
+  <p>誘導放出 &gt; 吸収の条件は、\(B_{12}=B_{21}\) より</p>
+  \[\frac{f_2(1-f_1)}{f_1(1-f_2)} > 1\quad\Longleftrightarrow\quad f_2 > f_1\ (\text{反転分布}).\]
+  <p>熱平衡分布ではありえず、形式的に負温度（\(T<0\)）に相当する。半導体では余剰キャリアに対し<strong>擬フェルミ準位</strong> \(E_{Fn},E_{Fp}\) を導入し、</p>
+  \[n = N_C\exp\!\left[-\frac{E_C-E_{Fn}}{k_BT}\right],\qquad
+  p = N_V\exp\!\left[-\frac{E_{Fp}-E_V}{k_BT}\right].\]
+  <p>光子エネルギーに応じて媒質は次のように振る舞う（<strong>ベルナール–デュラフォールの条件</strong>）：</p>
+  \[\hbar\omega < \varepsilon_G:\ \text{透過},\qquad
+  \varepsilon_G < \hbar\omega < E_{Fn}-E_{Fp}:\ \text{増幅（利得）},\qquad
+  E_{Fn}-E_{Fp} < \hbar\omega:\ \text{吸収}.\]
+  <p>利得が生じるには擬フェルミ準位差がバンドギャップを超える（\(E_{Fn}-E_{Fp}>\varepsilon_G\)）ほどの強い注入が必要。</p>
+
+  <h3>共振器と発振しきい値</h3>
+  <p>反転分布は光を増幅するだけで、発振には<strong>共振器</strong>が要る。強度 \(I\) の光が利得 \(g\)・損失 \(\alpha\) で進むと \(I=I_0\exp[(g-\alpha)x]\)。反射率 \(R_1,R_2\) の端面を1往復して元に戻る条件 \(I_0=R_1R_2 I_0\exp[(g-\alpha)2L]\) から、<strong>しきい値利得</strong></p>
+  \[\boxed{\,g_{th} = \alpha + \frac{1}{2L}\ln\frac{1}{R_1R_2}\,}
+  \qquad(\text{利得 = 内部損失 + 反射損失}).\]
+  <p>しきい値電流密度 \(J_{th}\propto g_{th}\)。共振波長は \(\lambda = 2Ln_{eq}/m\)。</p>
+
+  <h3>縦モード</h3>
+  <p>共振器長 ≫ 波長なので、定在波条件 \(2L = m(\lambda/n)\) を満たす多数の<strong>縦モード</strong>が立つ。隣接モード間隔は</p>
+  \[\Delta\lambda = \frac{\lambda^2}{2nL}.\]
+  <p>利得スペクトルの範囲内で発振モードが選ばれる。</p>
+
+  <h2 class="font-serif">5. さまざまなレーザ構造</h2>
+  <ul>
+    <li><strong>ダブルヘテロ（DH）構造</strong>：活性層を両側からワイドギャップ層で挟み、キャリアと光の両方を閉じ込めてしきい値を下げる（ホモ接合 → シングルヘテロ → DH で改善）。</li>
+    <li><strong>量子井戸/量子細線/量子ドットレーザ</strong>：閉じ込め次元を上げると状態密度が鋭くなり、しきい値電流密度が下がる。</li>
+    <li><strong>面発光レーザ（VCSEL）</strong>：基板垂直方向に共振器を作り、分布ブラッグ反射鏡（DBR、多層膜反射鏡）で高反射率を得る。</li>
+    <li><strong>量子カスケードレーザ（QCL）</strong>：量子井戸の<strong>サブバンド間遷移</strong>を利用。発振波長を近赤外〜テラヘルツで広く選べ、カスケード構造で1つのキャリアから多数のフォトンを放出できる。</li>
+  </ul>
+
+  <h3>パーセル効果とナノレーザ</h3>
+  <p>微小共振器では自然放出レートが変化する（<strong>パーセル効果</strong>）。フェルミの黄金律</p>
+  \[W = \frac{2\pi}{\hbar}\bigl|\langle f|H_{\text{int}}|i\rangle\bigr|^2\rho(\omega)\]
+  <p>の光子状態密度 \(\rho(\omega)\) を共振器で増強し、自然放出を制御する。量子ドット・フォトニック結晶ナノレーザ、マイクロディスクレーザ、ナノワイヤレーザなど。共振器内で光と物質が強く結合すると<strong>エキシトンポラリトン</strong>（光と分極の混合準粒子）が現れる。</p>
+
+  <h2 class="font-serif">6. フォトダイオード</h2>
+  <p>pn 接合に \(E_g\) 以上のフォトンが入射すると電子–正孔対が生成され、空乏層内（または拡散距離内）で生じたキャリアがビルトインポテンシャルで分離されて<strong>光電流</strong>が流れる。</p>
+  <ul>
+    <li>ゼロバイアス使用：光起電力 → 太陽電池</li>
+    <li>逆バイアス使用：受光素子（フォトダイオード）</li>
+  </ul>
+  <p>種類：pn 接合型、<strong>pin 型</strong>（真性層で空乏層を広げ感度向上）、<strong>アバランシェ型</strong>（なだれ増倍で高感度）、ショットキー障壁型、ヘテロ接合型。</p>
+
+  <h2 class="font-serif">7. 太陽電池（Solar Cells）</h2>
+  <p>光起電力効果で光エネルギーを直接電力に変換する。pn 接合に \(E_g\) 以上のフォトンが入射し、生成した電子–正孔対がビルトインポテンシャルで分離されて起電力を生む。<strong>多接合型</strong>（異なる \(E_g\) のセルを積層）で広いスペクトルを利用し高効率化する。</p>
+
+  <h2 class="font-serif">8. イメージセンサ</h2>
+  <ul>
+    <li><strong>CMOS イメージセンサ</strong>：フォトダイオード＋セル毎の増幅器。ロジック LSI プロセスで大量生産でき安価。ノイズが抑えられる一方、セル毎のばらつきが出やすい。</li>
+    <li><strong>CCD（電荷結合素子）</strong>：ソース・ドレインのない MOS 構造の一種。各電極に電圧を与えてポテンシャルウェルを作り電荷を保持し、電圧制御でバケツリレー式に電荷を転送して外部に取り出す。</li>
+  </ul>
+
+  <h2 class="font-serif">9. 白色 LED と可視光通信</h2>
+  <ul>
+    <li><strong>白色 LED</strong>：LED は狭帯域発光なので本来の白色は出せない。<strong>青色 LED ＋ YAG:Ce 蛍光体</strong>（青で励起され黄色発光）で、補色関係の青＋黄を混ぜて疑似白色を得る。</li>
+    <li><strong>可視光通信（Li-Fi）</strong>：LED を高速に点滅させて情報を空間伝送。電波規制がなく広帯域で、屋内ネットワーク・水中・トンネル・イベント会場などに応用。</li>
+  </ul>
+
+  <h2 class="font-serif">キーポイント</h2>
+  <ul>
+    <li>発光波長 \(\lambda_G=1.2398/E_G[\mathrm{eV}]\ \mu\mathrm m\)。直接遷移型が発光向き。</li>
+    <li>LED は自然放出（インコヒーレント）、レーザは誘導放出（コヒーレント）。</li>
+    <li>アインシュタイン係数：\(B_{12}=B_{21}\)、\(A_{21}/B_{21}=\hbar\omega^3/\pi^2c^3\)。自然放出だけでなく誘導放出が必然。</li>
+    <li>反転分布 \(f_2>f_1\)（擬フェルミ準位差 \(>E_g\)）、利得条件 \(\varepsilon_G&lt;\hbar\omega&lt;E_{Fn}-E_{Fp}\)。</li>
+    <li>発振しきい値 \(g_{th}=\alpha+\frac{1}{2L}\ln(1/R_1R_2)\)、縦モード間隔 \(\Delta\lambda=\lambda^2/2nL\)。</li>
+    <li>DH・量子井戸・VCSEL・QCL でしきい値低減や波長制御。受光は pin/アバランシェ、撮像は CMOS/CCD。</li>
+  </ul>
+
+</main>
+
+<footer>
+  <p class="font-serif">&copy; 2026 半導体物理学ノート</p>
+</footer>
+
+</body>
+</html>

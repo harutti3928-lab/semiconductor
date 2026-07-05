@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>第5回　金属–半導体接合と MIS 構造</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    body { margin: 0; padding: 0; background-color: #fcfbfa; color: #2c2a29; font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "YakuHanJPs", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif; line-height: 1.9; -webkit-font-smoothing: antialiased; }
+    .font-serif { font-family: "Times New Roman", "Georgia", "Noto Serif JP", serif; }
+    header { max-width: 740px; margin: 0 auto; padding: 64px 24px 36px; border-bottom: 1px solid #e6e4e0; }
+    .breadcrumb { font-size: 9pt; color: #96938f; letter-spacing: 0.5px; margin-bottom: 20px; }
+    .breadcrumb a { color: #96938f; text-decoration: none; }
+    .breadcrumb a:hover { color: #2e7d6e; }
+    header h1 { font-size: 20pt; font-weight: 600; letter-spacing: 1.2px; margin: 0 0 10px; color: #1a1919; }
+    header p { font-size: 10pt; color: #73706c; margin: 0; letter-spacing: 1px; }
+    main { max-width: 740px; margin: 0 auto; padding: 52px 24px 100px; }
+    h2 { font-size: 13pt; font-weight: 600; color: #2c2a29; margin: 48px 0 20px; letter-spacing: 0.8px; position: relative; display: inline-block; }
+    h2::after { content: ''; position: absolute; bottom: -5px; left: 0; width: 100%; height: 1px; background-color: #2c2a29; }
+    h3 { font-size: 11pt; font-weight: 600; color: #3a3836; margin: 28px 0 10px; }
+    p { font-size: 10.5pt; margin: 0 0 16px; }
+    main ul, main ol { font-size: 10.5pt; padding-left: 22px; line-height: 1.9; margin: 0 0 16px; }
+    main li { margin-bottom: 4px; }
+    table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 10pt; }
+    th { text-align: left; padding: 10px 14px; background: #f0ede8; border-bottom: 2px solid #dedad5; font-weight: 600; letter-spacing: 0.5px; }
+    td { padding: 10px 14px; border-bottom: 1px solid #ece9e4; vertical-align: top; }
+    tr:last-child td { border-bottom: none; }
+    .note { background: #f5f3ef; border-left: 3px solid #b0a898; padding: 14px 18px; margin: 24px 0; font-size: 10pt; color: #4a4845; border-radius: 0 4px 4px 0; }
+    code { font-family: "SFMono-Regular", "Consolas", "Menlo", monospace; font-size: 9.5pt; background: #f0ede8; padding: 1px 6px; border-radius: 3px; }
+    pre { background: #f5f3ef; padding: 18px 20px; border-radius: 4px; font-family: "SFMono-Regular", "Consolas", "Menlo", monospace; font-size: 9.5pt; overflow-x: auto; margin: 20px 0; line-height: 1.7; }
+    footer { max-width: 740px; margin: 0 auto; padding: 36px 24px; border-top: 1px solid #e6e4e0; text-align: center; font-size: 8.5pt; color: #96938f; letter-spacing: 1px; }
+  </style>
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['\\(', '\\)']],
+        displayMath: [['\\[', '\\]']],
+        tags: 'none'
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    };
+  </script>
+  <link rel="stylesheet" href="../site.css">
+  <script defer src="../site.js"></script>
+  <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+</head>
+<body>
+
+<header>
+  <div class="breadcrumb"><a href="../index.html">半導体物理学ノート</a> &rsaquo; <a href="../index.html#junction">接合・MIS</a></div>
+  <h1 class="font-serif">第5回　金属–半導体接合と MIS 構造</h1>
+  <p class="font-serif">— ショットキー障壁・オーミック接触・MIS構造 —</p>
+</header>
+
+<main>
+
+  <h2 class="font-serif">この回の内容</h2>
+  <ul>
+    <li>仕事関数と電子親和力</li>
+    <li>理想的な金属–半導体接触：ショットキー障壁、I–V特性、オーミック接触</li>
+    <li>理想的な金属/絶縁体/半導体（MIS）構造：蓄積・空乏・反転、表面電荷、二次元電子ガス</li>
+    <li>金属/半導体界面のバンド配置：Schottky–Mott limit、フェルミ準位ピニング、Bardeen limit</li>
+    <li>絶縁体/半導体界面のバンド配置とピニング</li>
+  </ul>
+
+  <h2 class="font-serif">1. 仕事関数と電子親和力</h2>
+  <ul>
+    <li><strong>仕事関数 \(\phi\)</strong>：電子を物質表面から真空中に取り出すのに必要なエネルギー。</li>
+    <li><strong>電子親和力 \(\chi\)</strong>：真空の遠方から電子を物質に与えたときに得られる最大エネルギー（真空準位から \(E_C\) までの深さ）。</li>
+  </ul>
+  <p>金属では仕事関数と電子親和力が一致するが、半導体・絶縁体では一致しない（\(E_C\) と \(E_F\) の間にギャップがあるため）。</p>
+
+  <h2 class="font-serif">2. 理想的な金属–半導体接触</h2>
+  <p><strong>仮定</strong>：理想界面、表面準位（界面準位）なし。\(n\) 型半導体（\(\phi_n\equiv E_C-E_F\)）を考える。</p>
+
+  <h3>ショットキー障壁の形成（<i>φ</i><sub>M</sub> &gt; <i>χ</i><sub>S</sub> + <i>φ</i><sub>n</sub>）</h3>
+  <p>金属の仕事関数が大きいと、接触時に電子が半導体から金属へ移動し、半導体側にイオン化ドナーの空間電荷層ができる。金属側から見た障壁高さ（<strong>Schottky–Mott limit</strong>）は</p>
+  \[\phi_{Bn} = \phi_M - \chi_S \quad(\text{電子に対する障壁}),\qquad
+  \phi_{Bp} = \chi_S + E_g - \phi_M \quad(\text{正孔に対する障壁}).\]
+
+  <h3>空乏層とその容量</h3>
+  <p>半導体側の空間電荷層厚さ \(d\) は、ポアソン方程式 \(d^2V/dx^2 = -eN_D/\varepsilon_s\) を境界条件のもとで解いて</p>
+  \[d = \sqrt{\frac{2\varepsilon_s V_D}{eN_D}},\qquad eV_D = \phi_{Bn}-\phi_n\ (\text{半導体側の拡散電位}).\]
+  <p>電圧 \(V\) 印加時は \(V_D\to V_D-V\) となり、</p>
+  \[d = \sqrt{\frac{2\varepsilon_s(V_D-V)}{eN_D}},\qquad
+  C = \frac{dQ}{dV} = \frac{\varepsilon_s}{d} = \sqrt{\frac{e\varepsilon_s N_D}{2(V_D-V)}}.\]
+
+  <h3>I–V 特性：整流作用（定性）</h3>
+  <p>ショットキー接合は<strong>多数キャリア</strong>が主役。</p>
+  <ul>
+    <li>金属→半導体の電子流：障壁 \(\phi_{Bn}\) は印加電圧によらず一定。</li>
+    <li>半導体→金属の電子流：障壁 \(e(V_D-V)\) は電圧に依存。</li>
+  </ul>
+  <p>順バイアスで電流が流れ、逆バイアスでは小さな値に飽和する（<strong>整流作用</strong>）。</p>
+
+  <h3>熱電子放出理論（Bethe 理論）</h3>
+  <p>空乏層が薄い場合、電子が障壁を越える過程が支配的（Thermionic emission）。半導体→金属の電流密度を、障壁を越えられる最小速度 \(v_{0x}\)（\(\tfrac12 m^* v_{0x}^2 = e(V_D-V)\)）以上について積分すると、</p>
+  \[J_{S\to M} = A^*T^2\exp\!\left(-\frac{\phi_B-eV}{k_BT}\right),\qquad
+  A^* = \frac{4\pi e m^* k_B^2}{h^3}\ (\text{リチャードソン定数}).\]
+  <p>金属→半導体の電流は電圧によらず \(J_{M\to S}=A^*T^2\exp(-\phi_B/k_BT)\)。正味の電流は</p>
+  \[\boxed{\,J = J_{S\to M}-J_{M\to S} = A^*T^2\exp\!\left(-\frac{\phi_B}{k_BT}\right)\left[\exp\!\left(\frac{eV}{k_BT}\right)-1\right] = J_0\left[\exp\!\left(\frac{eV}{k_BT}\right)-1\right]\,}\]
+  <p>pn接合と同じ整流特性だが、係数がリチャードソン定数を含む点、少数キャリアではなく多数キャリアが担う点が異なる。空乏層が厚い場合は Schottky 理論（空乏層内散乱を考慮）が必要。</p>
+
+  <h3>オーミック接触（<i>φ</i><sub>M</sub> &lt; <i>χ</i><sub>S</sub> + <i>φ</i><sub>n</sub>）</h3>
+  <p>金属の仕事関数が小さいと、電子が金属から半導体へ移動して障壁ができず、両方向に電流が流れる<strong>オーミック接触</strong>になる。</p>
+  <table>
+    <thead>
+      <tr><th>接触</th><th>\(n\) 型</th><th>\(p\) 型</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>ショットキー</td><td>\(\phi_M > \chi_S+\phi_n\)</td><td>\(\phi_M < \chi_S+E_g+\phi_p\)</td></tr>
+      <tr><td>オーミック</td><td>\(\phi_M < \chi_S+\phi_n\)</td><td>\(\phi_M > \chi_S+E_g+\phi_p\)</td></tr>
+    </tbody>
+  </table>
+  <div class="note">
+    <strong>p型ワイドギャップ半導体ではオーミック接触が取りにくい</strong>（正孔に対する障壁 \(\phi_{Bp}=\chi_S+E_g-\phi_M\) が \(E_g\) の大きさゆえ高くなるため）。
+  </div>
+
+  <h2 class="font-serif">3. 理想 MIS 構造</h2>
+  <p><strong>金属/絶縁体/半導体（MIS）構造</strong>。仮定：理想界面、界面準位なし、絶縁体抵抗無限大（直流でキャリアは通れない）。</p>
+
+  <h3>フラットバンド条件</h3>
+  <p>熱平衡で半導体バンドが平坦になる条件（\(n\) 型）は</p>
+  \[\phi_M = \chi_S + \phi_n = \chi_S + \frac{E_g}{2} - e\phi_B,\qquad e\phi_B \equiv E_F - E_i.\]
+
+  <h3>蓄積・空乏・反転（<i>n</i> 型半導体の場合）</h3>
+  <p>金属に電圧 \(V\) を印加し、界面での表面電位 \(\psi_s = (E_{i}^{\text{bulk}}-E_i^{\text{surf}})/e\) で状態を分類する。界面での密度は</p>
+  \[n_s = n_{n0}\exp\!\left(\frac{e\psi_s}{k_BT}\right),\qquad
+  p_s = p_{n0}\exp\!\left(-\frac{e\psi_s}{k_BT}\right).\]
+  <table>
+    <thead>
+      <tr><th>状態</th><th>条件</th><th>バンドの曲がり</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>蓄積（accumulation）</td><td>\(\psi_s>0\) (\(V>0\))</td><td>下向き、多数電子が界面に集まる</td></tr>
+      <tr><td>フラットバンド</td><td>\(\psi_s=0\)</td><td>平坦</td></tr>
+      <tr><td>空乏（depletion）</td><td>\(\phi_B&lt;\psi_s&lt;0\)</td><td>上向き、電子が空乏化</td></tr>
+      <tr><td>真性</td><td>\(\psi_s=\phi_B\)</td><td>\(n_s=p_s=n_i\)</td></tr>
+      <tr><td>反転（inversion）</td><td>\(\psi_s&lt;\phi_B\) (\(V&lt;0\))</td><td>上向き、界面に正孔が溜まり表面が p 型化</td></tr>
+    </tbody>
+  </table>
+
+  <h3>表面電荷（ポアソン方程式）</h3>
+  <p>界面に垂直方向のポアソン方程式 \(d^2\psi/dx^2 = -\rho(x)/\varepsilon_s\) に \(d\psi/dx\) を掛けて積分すると、電場 \(\mathcal E=-d\psi/dx\) と表面電位の関係が得られる。\(x=0\) で \(\psi=\psi_s\)、\(\mathcal E=\mathcal E_s\) とすると、半導体内に誘起される単位面積あたりの総電荷は</p>
+  \[Q_S = \varepsilon_s\mathcal E_s
+  = \pm\sqrt{2\varepsilon_s k_BT N_D}\left[\frac{n_i^2}{N_D^2}\bigl(e^{-e\psi_s/k_BT}+\tfrac{e\psi_s}{k_BT}-1\bigr)+\bigl(e^{e\psi_s/k_BT}-\tfrac{e\psi_s}{k_BT}-1\bigr)\right]^{1/2}.\]
+  <p>\(|Q_S|\) を \(\psi_s\) に対して両対数プロットすると、蓄積・弱反転・強反転で \(\sim e^{|e\psi_s|/2k_BT}\)、空乏で \(\sim\sqrt{\psi_s}\) と傾きが変わる。</p>
+
+  <h3>強反転条件</h3>
+  <p>反転層の正孔密度が界面で \(N_D\) に達する条件から、<strong>強反転</strong>を与える表面電位は</p>
+  \[\boxed{\,-\psi_s(\text{inv}) = 2\phi_B = \frac{2k_BT}{e}\ln\frac{N_D}{n_i}\,}\]
+  <p>これが MOSFET のしきい値を決める基本条件になる。</p>
+
+  <h2 class="font-serif">4. MIS 反転層と二次元電子ガス</h2>
+  <p>反転層の界面垂直方向の幅が電子の平均自由行程より狭くなると<strong>量子効果</strong>が現れる。\(p\) 型半導体の反転層では、界面垂直方向に<strong>三角ポテンシャル</strong> \(eE_G z\)（\(E_G\)：ゲート電場）で電子が閉じ込められ、サブバンドが形成される。</p>
+  <p>簡単なド・ブロイ波長評価（\(z_n = n\lambda_z/2\)）から</p>
+  \[E_{z,n} = \frac{1}{(2m_\perp)^{1/3}}(e E_G)^{2/3}\,c_n^{2/3}\quad(n=1,2,\dots)\]
+  <p>厳密には三角ポテンシャルの解は<strong>エアリー関数</strong>で表され、</p>
+  \[E_{z,n} = \frac{1}{(2m_\perp)^{1/3}}(e E_G)^{2/3}\,\alpha_n,\qquad
+  \alpha_0=2.338,\ \alpha_1=4.087,\ \alpha_2=5.520,\dots\]
+  <p><strong>Si の例</strong>（\(m_\perp=0.25m\)、\(E_G=6.7\times10^5\ \mathrm{V/cm}\)）では \(E_{z,1}\approx186\ \mathrm{meV}\)、\(z_1\approx2.8\ \mathrm{nm}\)。室温でも量子化は無視できず、界面に<strong>二次元電子ガス（2DEG）</strong>が形成される。</p>
+
+  <h2 class="font-serif">5. 金属/半導体界面のバンド配置とピニング</h2>
+
+  <h3>Schottky–Mott モデルの破綻</h3>
+  <p>Schottky–Mott limit（\(\phi_{Bn}=\phi_M-\chi_S\)）は整流性は説明できるが、<strong>定量的に実験と全く合わない</strong>。多くの場合、障壁高さは金属の仕事関数にほとんど依存しない。</p>
+
+  <h3>フェルミ準位ピニング</h3>
+  <p>界面で半導体側のフェルミ準位が、バンドギャップ内の特徴的エネルギー \(E_0\) 近傍に固定される現象を<strong>フェルミ準位ピニング</strong>という。</p>
+  <ul>
+    <li><strong>Bardeen の考え</strong>：界面の真性局在準位がショットキー障壁をピン留めする。</li>
+    <li>Si には真性表面準位があるが、GaAs(110), InP(110) には真性表面準位がないのにピニングが起こり、しかも金属の種類によらず同じ準位にピン留めされる → 別の機構が必要。</li>
+  </ul>
+
+  <h3>S パラメータ</h3>
+  <p>障壁高さの金属仕事関数依存性を</p>
+  \[S = \frac{d\phi_{Bn}}{d\phi_M}\]
+  <p>で表す。\(S=1\) が Schottky–Mott limit、\(S=0\) が Bardeen limit（完全ピニング）。</p>
+
+  <h3>表面準位とギャップ内準位のモデル</h3>
+  <ul>
+    <li><strong>表面準位（surface states）</strong>：表面近傍に局在する電子状態。
+      <ul>
+        <li><strong>タム状態</strong>：表面近傍のポテンシャルの違いで生じる。</li>
+        <li><strong>ショックレー状態</strong>：バルクでギャップを作っていた要因（ブラッグ干渉、結合・反結合）が表面で失われて生じる。ダングリングボンドもこの一種。</li>
+      </ul>
+    </li>
+    <li>ギャップ内準位の帯電：acceptor-like（空で中性・占有で負、電子トラップ）、donor-like（空で正・占有で中性、正孔トラップ）。一般に acceptor-like が上にある。</li>
+    <li><strong>各種モデル</strong>：
+      <ul>
+        <li><strong>MIGS</strong>（metal induced gap state）：金属波動関数の裾がギャップ内にエバネセント波として侵入し界面準位となる。</li>
+        <li><strong>UDM</strong>（統一欠陥モデル）：金属付着時に表面に空孔・アンチサイトなどの欠陥ができ、離散準位がピニングを起こす。</li>
+        <li><strong>DIGS</strong>（disorder induced gap state）：界面形成でボンドが乱れ、ギャップ内に連続分布するドナー型・アクセプタ型状態ができる。</li>
+      </ul>
+    </li>
+  </ul>
+
+  <h2 class="font-serif">6. 絶縁体/半導体界面のバンド配置とピニング</h2>
+  <ul>
+    <li>ギャップ内に界面準位があると、絶縁体/半導体界面でもフェルミ準位ピニングが起こる。</li>
+    <li><strong>熱酸化 SiO₂/Si 界面</strong>は界面準位を十分低減でき、MOSFET の実用化に大きく貢献した。</li>
+    <li>化合物半導体は良質な絶縁体/半導体界面の制御が格段に難しく、いまだ MOSFET の実用化に至っていない（→ 第9回 III-V MOSFET の課題につながる）。</li>
+  </ul>
+
+  <h2 class="font-serif">キーポイント</h2>
+  <ul>
+    <li>ショットキー障壁 \(\phi_{Bn}=\phi_M-\chi_S\)（理想）、熱電子放出で \(J=A^*T^2 e^{-\phi_B/k_BT}(e^{eV/k_BT}-1)\)。多数キャリア支配。</li>
+    <li>オーミック接触は仕事関数条件で決まり、p型ワイドギャップで取りにくい。</li>
+    <li>MIS の強反転条件 \(-\psi_s=2\phi_B\) が MOSFET しきい値の基礎。</li>
+    <li>反転層は三角ポテンシャル閉じ込めで 2DEG（エアリー関数、サブバンド）。</li>
+    <li>実際の障壁高さは仕事関数に鈍感 → フェルミ準位ピニング（\(S\) パラメータ、MIGS/UDM/DIGS）。</li>
+    <li>SiO₂/Si は低界面準位で MOSFET を可能にした。</li>
+  </ul>
+
+</main>
+
+<footer>
+  <p class="font-serif">&copy; 2026 半導体物理学ノート</p>
+</footer>
+
+</body>
+</html>

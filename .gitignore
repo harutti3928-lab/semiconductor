@@ -3,6 +3,7 @@
 *.docx
 *.pptx
 *.key
+slides/
 
 # 画像の原本を置く場合の任意ディレクトリ（必要に応じてコメントアウト）
 # docs/figures/*

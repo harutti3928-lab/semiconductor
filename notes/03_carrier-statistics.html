@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>第3回 真性半導体と外因性半導体のキャリア統計</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    body { margin: 0; padding: 0; background-color: #fcfbfa; color: #2c2a29; font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "YakuHanJPs", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif; line-height: 1.9; -webkit-font-smoothing: antialiased; }
+    .font-serif { font-family: "Times New Roman", "Georgia", "Noto Serif JP", serif; }
+    header { max-width: 740px; margin: 0 auto; padding: 64px 24px 36px; border-bottom: 1px solid #e6e4e0; }
+    .breadcrumb { font-size: 9pt; color: #96938f; letter-spacing: 0.5px; margin-bottom: 20px; }
+    .breadcrumb a { color: #96938f; text-decoration: none; }
+    .breadcrumb a:hover { color: #2e7d6e; }
+    header h1 { font-size: 20pt; font-weight: 600; letter-spacing: 1.2px; margin: 0 0 10px; color: #1a1919; }
+    header p { font-size: 10pt; color: #73706c; margin: 0; letter-spacing: 1px; }
+    main { max-width: 740px; margin: 0 auto; padding: 52px 24px 100px; }
+    h2 { font-size: 13pt; font-weight: 600; color: #2c2a29; margin: 48px 0 20px; letter-spacing: 0.8px; position: relative; display: inline-block; }
+    h2::after { content: ''; position: absolute; bottom: -5px; left: 0; width: 100%; height: 1px; background-color: #2c2a29; }
+    h3 { font-size: 11pt; font-weight: 600; color: #3a3836; margin: 28px 0 10px; }
+    p { font-size: 10.5pt; margin: 0 0 16px; }
+    main ul, main ol { font-size: 10.5pt; padding-left: 22px; line-height: 1.9; margin: 0 0 16px; }
+    main li { margin-bottom: 4px; }
+    table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 10pt; }
+    th { text-align: left; padding: 10px 14px; background: #f0ede8; border-bottom: 2px solid #dedad5; font-weight: 600; letter-spacing: 0.5px; }
+    td { padding: 10px 14px; border-bottom: 1px solid #ece9e4; vertical-align: top; }
+    tr:last-child td { border-bottom: none; }
+    .note { background: #f5f3ef; border-left: 3px solid #b0a898; padding: 14px 18px; margin: 24px 0; font-size: 10pt; color: #4a4845; border-radius: 0 4px 4px 0; }
+    code { font-family: "SFMono-Regular", "Consolas", "Menlo", monospace; font-size: 9.5pt; background: #f0ede8; padding: 1px 6px; border-radius: 3px; }
+    pre { background: #f5f3ef; padding: 18px 20px; border-radius: 4px; font-family: "SFMono-Regular", "Consolas", "Menlo", monospace; font-size: 9.5pt; overflow-x: auto; margin: 20px 0; line-height: 1.7; }
+    footer { max-width: 740px; margin: 0 auto; padding: 36px 24px; border-top: 1px solid #e6e4e0; text-align: center; font-size: 8.5pt; color: #96938f; letter-spacing: 1px; }
+  </style>
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['\\(', '\\)']],
+        displayMath: [['\\[', '\\]']],
+        tags: 'none'
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    };
+  </script>
+  <link rel="stylesheet" href="../site.css">
+  <script defer src="../site.js"></script>
+  <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+</head>
+<body>
+
+<header>
+  <div class="breadcrumb"><a href="../index.html">半導体物理学ノート</a> &rsaquo; <a href="../index.html#carrier">キャリア統計</a></div>
+  <h1 class="font-serif">第3回　真性半導体と外因性半導体のキャリア統計</h1>
+  <p class="font-serif">— 状態密度・質量作用の法則・キャリア密度の温度依存性 —</p>
+</header>
+
+<main>
+
+  <h2 class="font-serif">この回の内容</h2>
+  <ul>
+    <li>真性半導体（固有半導体）
+      <ul>
+        <li>エネルギーバンド内でのキャリア（電子・正孔）分布</li>
+        <li>質量作用の法則、\(pn\) 積</li>
+      </ul>
+    </li>
+    <li>外因性半導体（不純物半導体）
+      <ul>
+        <li>ドナーとアクセプタ</li>
+        <li>\(n\) 型半導体のキャリア分布（ドナー準位が1つ／補償あり）</li>
+        <li>縮退半導体</li>
+      </ul>
+    </li>
+  </ul>
+
+  <h2 class="font-serif">1. 半導体とは</h2>
+  <p>電気伝導率 \(\sigma\) による分類の目安は</p>
+  \[10^{-10}\ \mathrm{S/m} < \sigma_{\text{半導体}} < 10^{5}\ \mathrm{S/m}\]
+  <p>であり、絶縁体と金属の中間に位置する。ただし \(\sigma\) の値だけで金属・半導体・絶縁体を区別するのは不正確で、本質的な違いは <strong>\(T=0\) でのバンド構造</strong> にある。</p>
+  <ul>
+    <li><strong>金属</strong>：フェルミ準位 \(E_F\) が許容帯の中にある（部分的に満たされたバンドがある）。</li>
+    <li><strong>半導体・絶縁体</strong>：\(T=0\) で価電子帯が完全に満たされ、伝導帯が空。両者の間に禁制帯（バンドギャップ \(E_g\)）がある。半導体はギャップが比較的小さく、絶縁体は大きい。</li>
+  </ul>
+  <p>半導体の特徴は次の2点に集約される。</p>
+  <ol>
+    <li>電気伝導率 \(\sigma\) を <strong>制御できる</strong>（ドーピング、熱、光、電場、磁場などでキャリア数を変える）。</li>
+    <li>禁制帯幅 \(E_g\) が材料によって異なる。</li>
+  </ol>
+  <p>本章の目標は、<strong>キャリア密度とフェルミ準位 \(E_F\) の温度依存性</strong>を求めることである。</p>
+
+  <h2 class="font-serif">2. 真性半導体のキャリア</h2>
+  <p>真性半導体（intrinsic semiconductor）は、伝導に関与するキャリアを放出する不純物原子を含まない半導体である。キャリアは<strong>熱的励起</strong>によって生じ、</p>
+  \[\text{伝導帯内の自由電子} \;+\; \text{価電子帯内の自由正孔}\]
+  <p>が必ず対で生成される。記号を次のように定める。</p>
+  <table>
+    <thead>
+      <tr><th>記号</th><th>意味</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>\(E_C\)</td><td>伝導帯の底（最低エネルギー）</td></tr>
+      <tr><td>\(E_V\)</td><td>価電子帯の頂上（最高エネルギー）</td></tr>
+      <tr><td>\(E_g = E_C - E_V\)</td><td>禁制帯幅（バンドギャップ）</td></tr>
+      <tr><td>\(E_i\)</td><td>真性半導体のフェルミ準位</td></tr>
+    </tbody>
+  </table>
+
+  <h2 class="font-serif">3. 伝導帯内の電子統計</h2>
+
+  <h3>モデル</h3>
+  <p>伝導帯の底と価電子帯の頂上がともに \(k=0\) にあり、\(E\)–\(k\) 関係が放物線的であると仮定する。</p>
+  \[E = E_C + \frac{\hbar^2 k^2}{2m_e}, \qquad E = E_V - \frac{\hbar^2 k^2}{2m_h}\]
+  <p>ここで \(m_e,\ m_h\) は伝導電子・正孔の有効質量である。</p>
+
+  <h3>電子密度の積分表式</h3>
+  <p>伝導帯内の電子密度 \(n\) は、状態密度 \(N_e(E)\) とフェルミ・ディラック分布 \(f_e(E)\) の積を伝導帯全体で積分して得られる。</p>
+  \[n = \int_{E_C}^{\infty} N_e(E)\, f_e(E)\, dE, \qquad
+  f_e(E) = \frac{1}{1+\exp\!\left[(E-E_F)/k_BT\right]}\]
+  <p>放物線バンドの状態密度は</p>
+  \[N_e(E) = \frac{1}{2\pi^2}\left(\frac{2m_e}{\hbar^2}\right)^{3/2}\sqrt{E-E_C}\;\propto\; m_e^{3/2}\sqrt{E-E_C}.\]
+
+  <h3>ボルツマン近似</h3>
+  <p>\(E-E_F \gg k_BT\)（非縮退）のとき、フェルミ・ディラック分布はボルツマン分布で近似できる。</p>
+  \[f_e(E) \simeq \exp\!\left[-\frac{E-E_F}{k_BT}\right]\]
+  <p>これを代入し、\(E'=E-E_C\) と置換すると</p>
+  \[n = \frac{1}{2\pi^2}\left(\frac{2m_e}{\hbar^2}\right)^{3/2}
+  \exp\!\left[-\frac{E_C-E_F}{k_BT}\right]\int_0^{\infty}\sqrt{E'}\,e^{-E'/k_BT}\,dE'.\]
+  <p>ガウス積分 \(\int_0^\infty \sqrt{E'}\,e^{-E'/k_BT}dE' = \tfrac{\sqrt\pi}{2}(k_BT)^{3/2}\) を用いると、</p>
+  \[\boxed{\,n(T) = N_C(T)\,\exp\!\left[-\frac{E_C-E_F}{k_BT}\right]\,}
+  \qquad
+  N_C(T) = 2\left(\frac{2\pi m_e k_BT}{h^2}\right)^{3/2}\]
+  <p>\(N_C\) を <strong>伝導帯の有効状態密度</strong>という。これは「伝導帯の底 \(E_C\) に状態密度 \(N_C\) が集中しているとみなし、そこにボルツマン因子を掛けると電子密度が得られる」と解釈できる。</p>
+
+  <h2 class="font-serif">4. 価電子帯内の正孔統計</h2>
+  <p>正孔密度 \(p\) は、価電子帯内で電子が占有されていない確率 \(1-f_e(E)\) を用いて</p>
+  \[p = \int_{-\infty}^{E_V} N_h(E)\bigl[1-f_e(E)\bigr]\,dE.\]
+  <p>同様のボルツマン近似で</p>
+  \[\boxed{\,p(T) = N_V(T)\,\exp\!\left[-\frac{E_F-E_V}{k_BT}\right]\,}
+  \qquad
+  N_V(T) = 2\left(\frac{2\pi m_h k_BT}{h^2}\right)^{3/2}\]
+  <p>\(N_V\) を <strong>価電子帯の有効状態密度</strong>という。</p>
+
+  <figure>
+    <svg viewBox="0 0 680 330" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="バンド分散・状態密度・フェルミ分布・キャリア密度の関係図">
+      <defs>
+        <marker id="ah03a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+          <path d="M 0 0 L 10 5 L 0 10 z" fill="#73706c"/>
+        </marker>
+      </defs>
+      <!-- common band edges -->
+      <line x1="40" y1="120" x2="648" y2="120" stroke="#d8d4ce" stroke-width="1" stroke-dasharray="5 4"/>
+      <line x1="40" y1="200" x2="648" y2="200" stroke="#d8d4ce" stroke-width="1" stroke-dasharray="5 4"/>
+      <text x="8" y="124" font-size="11" fill="#4a4845" font-style="italic">E</text><text x="17" y="127" font-size="8" fill="#4a4845">C</text>
+      <text x="8" y="204" font-size="11" fill="#4a4845" font-style="italic">E</text><text x="17" y="207" font-size="8" fill="#4a4845">V</text>
+
+      <!-- panel 1: E-k -->
+      <line x1="115" y1="275" x2="115" y2="45" stroke="#73706c" stroke-width="1.2" marker-end="url(#ah03a)"/>
+      <line x1="58" y1="160" x2="176" y2="160" stroke="#73706c" stroke-width="1.2" marker-end="url(#ah03a)"/>
+      <text x="100" y="42" font-size="11" fill="#73706c" font-style="italic">E</text>
+      <text x="170" y="152" font-size="11" fill="#73706c" font-style="italic">k</text>
+      <path d="M 70 55 Q 115 185 160 55" fill="none" stroke="#2c2a29" stroke-width="2"/>
+      <path d="M 70 265 Q 115 135 160 265" fill="none" stroke="#2c2a29" stroke-width="2"/>
+      <line x1="88" y1="124" x2="88" y2="196" stroke="#2e7d6e" stroke-width="1.2" marker-start="url(#ah03a)" marker-end="url(#ah03a)"/>
+      <text x="64" y="164" font-size="10.5" fill="#2e7d6e" font-style="italic">E</text><text x="72" y="167" font-size="8" fill="#2e7d6e">g</text>
+      <text x="115" y="312" font-size="10.5" fill="#4a4845" text-anchor="middle">E–k 曲線</text>
+
+      <!-- panel 2: DOS -->
+      <line x1="228" y1="275" x2="228" y2="45" stroke="#73706c" stroke-width="1.2" marker-end="url(#ah03a)"/>
+      <line x1="228" y1="120" x2="338" y2="120" stroke="#a8a49e" stroke-width="1" marker-end="url(#ah03a)"/>
+      <text x="318" y="112" font-size="9.5" fill="#a8a49e" font-style="italic">N(E)</text>
+      <path d="M 228 120 C 244 102, 270 78, 310 58" fill="none" stroke="#2c2a29" stroke-width="2"/>
+      <path d="M 228 200 C 244 218, 270 242, 310 262" fill="none" stroke="#2c2a29" stroke-width="2"/>
+      <text x="285" y="70" font-size="9.5" fill="#4a4845" font-style="italic">N</text><text x="293" y="73" font-size="7.5" fill="#4a4845">e</text><text x="298" y="70" font-size="9.5" fill="#4a4845" font-style="italic">(E)</text>
+      <text x="285" y="256" font-size="9.5" fill="#4a4845" font-style="italic">N</text><text x="293" y="259" font-size="7.5" fill="#4a4845">h</text><text x="298" y="256" font-size="9.5" fill="#4a4845" font-style="italic">(E)</text>
+      <text x="285" y="312" font-size="10.5" fill="#4a4845" text-anchor="middle">状態密度</text>
+
+      <!-- panel 3: Fermi-Dirac -->
+      <line x1="390" y1="275" x2="390" y2="45" stroke="#73706c" stroke-width="1.2" marker-end="url(#ah03a)"/>
+      <line x1="372" y1="160" x2="475" y2="160" stroke="#b06040" stroke-width="1" stroke-dasharray="5 3"/>
+      <text x="452" y="153" font-size="10" fill="#b06040" font-style="italic">E</text><text x="460" y="156" font-size="7.5" fill="#b06040">F</text>
+      <path d="M 452 272 L 452 196 C 452 176, 390 144, 390 124 L 390 50" fill="none" stroke="#2c2a29" stroke-width="2"/>
+      <path d="M 390 272 L 390 196 C 390 176, 452 144, 452 124 L 452 50" fill="none" stroke="#96938f" stroke-width="1.5" stroke-dasharray="2 3"/>
+      <text x="404" y="252" font-size="9.5" fill="#4a4845" font-style="italic">f</text><text x="409" y="255" font-size="7.5" fill="#4a4845">e</text><text x="414" y="252" font-size="9.5" fill="#4a4845" font-style="italic">(E)</text>
+      <text x="404" y="72" font-size="9.5" fill="#96938f" font-style="italic">f</text><text x="409" y="75" font-size="7.5" fill="#96938f">h</text><text x="414" y="72" font-size="9.5" fill="#96938f" font-style="italic">(E)</text>
+      <text x="425" y="312" font-size="10.5" fill="#4a4845" text-anchor="middle">フェルミ分布</text>
+
+      <!-- panel 4: carrier densities -->
+      <line x1="515" y1="275" x2="515" y2="45" stroke="#73706c" stroke-width="1.2" marker-end="url(#ah03a)"/>
+      <path d="M 515 118 C 570 114, 578 88, 515 84 Z" fill="rgba(46,125,110,0.22)" stroke="#2e7d6e" stroke-width="1.5"/>
+      <path d="M 515 202 C 570 206, 578 232, 515 236 Z" fill="rgba(176,96,64,0.18)" stroke="#b06040" stroke-width="1.5"/>
+      <text x="585" y="105" font-size="11" fill="#2e7d6e" font-style="italic">n</text>
+      <text x="585" y="224" font-size="11" fill="#b06040" font-style="italic">p</text>
+      <text x="572" y="312" font-size="10.5" fill="#4a4845" text-anchor="middle">キャリア密度</text>
+    </svg>
+    <figcaption>図1　放物線バンドにおける E–k 分散・状態密度 N(E)・フェルミ分布 f(E)・キャリア密度 n, p の関係。電子密度は N<sub>e</sub>(E)f<sub>e</sub>(E) の積を伝導帯で積分したもの。</figcaption>
+  </figure>
+
+  <h2 class="font-serif">5. 真性半導体のフェルミ準位 <i>E</i><sub>i</sub></h2>
+  <p>真性条件 \(n = p \equiv n_i\) を課すと、</p>
+  \[N_C\exp\!\left[-\frac{E_C-E_F}{k_BT}\right] = N_V\exp\!\left[-\frac{E_F-E_V}{k_BT}\right].\]
+  <p>両辺の対数をとって \(E_F\) について解くと、</p>
+  \[E_F = E_i = \frac{E_C+E_V}{2} + \frac{k_BT}{2}\ln\frac{N_V}{N_C}
+  = \frac{E_C+E_V}{2} + \frac{3k_BT}{4}\ln\frac{m_h}{m_e}.\]
+  <p>第2の等号では \(N_V/N_C = (m_h/m_e)^{3/2}\) を用いた。<strong>真性フェルミ準位はほぼバンドギャップの中央</strong>にあり、\(m_h \ne m_e\) による温度依存のずれは小さい。</p>
+
+  <h2 class="font-serif">6. 質量作用の法則と <i>pn</i> 積</h2>
+  <p>\(n\) と \(p\) の積をとると \(E_F\) が消え、</p>
+  \[p\,n = N_V N_C\exp\!\left[-\frac{E_C-E_V}{k_BT}\right] = N_V N_C\exp\!\left[-\frac{E_g}{k_BT}\right].\]
+  <p>真性半導体では \(n=p=n_i\) だから、</p>
+  \[\boxed{\,n_i(T) = (N_V N_C)^{1/2}\exp\!\left[-\frac{E_g}{2k_BT}\right]
+  = 2\left(\frac{2\pi k_BT}{h^2}\right)^{3/2}(m_e m_h)^{3/4}\exp\!\left[-\frac{E_g}{2k_BT}\right]\,}\]
+  <p>したがって <strong>質量作用の法則</strong></p>
+  \[\boxed{\,pn = n_i^2\,}\]
+  <p>が成り立つ。これは<strong>熱平衡状態であれば真性・外因性を問わず成立</strong>する重要な関係である。</p>
+
+  <h2 class="font-serif">7. 外因性半導体：<i>n</i> 型と <i>p</i> 型</h2>
+  <p>外因性半導体（extrinsic semiconductor）は、キャリアを放出する不純物原子（ドーパント）を含む半導体である。</p>
+  <table>
+    <thead>
+      <tr><th>型</th><th>ドーパント条件</th><th>多数キャリア</th><th>少数キャリア</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>\(n\) 型</td><td>\(N_D > N_A\)</td><td>自由電子</td><td>自由正孔</td></tr>
+      <tr><td>\(p\) 型</td><td>\(N_D < N_A\)</td><td>自由正孔</td><td>自由電子</td></tr>
+    </tbody>
+  </table>
+  <ul>
+    <li><strong>ドナー</strong>（donor）：伝導帯に電子を供給する置換型不純物。IV族半導体なら V族元素（Si に対する P, As など）。</li>
+    <li><strong>アクセプタ</strong>（acceptor）：価電子帯に正孔を供給する（価電子帯の電子を捕獲する）置換型不純物。IV族半導体なら III族元素（Si に対する B など）。</li>
+  </ul>
+
+  <figure>
+    <svg viewBox="0 0 640 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="n型半導体とp型半導体のエネルギーバンドと不純物準位">
+      <defs>
+        <marker id="ah03b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse">
+          <path d="M 0 0 L 10 5 L 0 10 z" fill="#2e7d6e"/>
+        </marker>
+        <marker id="ah03c" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+          <path d="M 0 0 L 10 5 L 0 10 z" fill="#a8a49e"/>
+        </marker>
+      </defs>
+
+      <!-- ===== n型パネル ===== -->
+      <text x="170" y="26" font-size="12" fill="#2c2a29" text-anchor="middle" font-weight="600"><tspan font-style="italic">n</tspan> 型</text>
+      <rect x="40" y="40" width="260" height="38" fill="#f0ede8"/>
+      <line x1="40" y1="78" x2="300" y2="78" stroke="#2c2a29" stroke-width="2"/>
+      <text x="48" y="58" font-size="9.5" fill="#96938f">伝導帯</text>
+      <rect x="40" y="225" width="260" height="38" fill="#f0ede8"/>
+      <line x1="40" y1="225" x2="300" y2="225" stroke="#2c2a29" stroke-width="2"/>
+      <text x="48" y="252" font-size="9.5" fill="#96938f">価電子帯</text>
+      <text x="268" y="94" font-size="10" fill="#4a4845" font-style="italic">E</text><text x="276" y="97" font-size="7.5" fill="#4a4845">C</text>
+      <text x="268" y="219" font-size="10" fill="#4a4845" font-style="italic">E</text><text x="276" y="222" font-size="7.5" fill="#4a4845">V</text>
+      <!-- ドナー準位 -->
+      <line x1="70" y1="105" x2="240" y2="105" stroke="#b06040" stroke-width="1.2" stroke-dasharray="6 4"/>
+      <text x="246" y="109" font-size="10" fill="#b06040" font-style="italic">E</text><text x="254" y="112" font-size="7.5" fill="#b06040">D</text>
+      <!-- 中性ドナー● / イオン化ドナー⊕ -->
+      <circle cx="95" cy="105" r="4" fill="#4a4845"/>
+      <circle cx="175" cy="105" r="4" fill="#4a4845"/>
+      <circle cx="135" cy="105" r="6.5" fill="#fcfbfa" stroke="#b06040" stroke-width="1.4"/>
+      <line x1="131" y1="105" x2="139" y2="105" stroke="#b06040" stroke-width="1.4"/>
+      <line x1="135" y1="101" x2="135" y2="109" stroke="#b06040" stroke-width="1.4"/>
+      <circle cx="215" cy="105" r="6.5" fill="#fcfbfa" stroke="#b06040" stroke-width="1.4"/>
+      <line x1="211" y1="105" x2="219" y2="105" stroke="#b06040" stroke-width="1.4"/>
+      <line x1="215" y1="101" x2="215" y2="109" stroke="#b06040" stroke-width="1.4"/>
+      <!-- 伝導帯内の電子 -->
+      <circle cx="120" cy="68" r="4" fill="#2e7d6e"/>
+      <circle cx="160" cy="68" r="4" fill="#2e7d6e"/>
+      <circle cx="200" cy="68" r="4" fill="#2e7d6e"/>
+      <text x="210" y="60" font-size="10" fill="#2e7d6e" font-style="italic">e</text><text x="217" y="55" font-size="7.5" fill="#2e7d6e">−</text>
+      <!-- 遷移矢印: D⇒C -->
+      <line x1="150" y1="101" x2="150" y2="82" stroke="#2e7d6e" stroke-width="1.6" marker-end="url(#ah03b)"/>
+      <!-- 遷移矢印: V⇒C（細） -->
+      <line x1="75" y1="221" x2="75" y2="82" stroke="#a8a49e" stroke-width="1.1" marker-end="url(#ah03c)"/>
+      <circle cx="75" cy="233" r="4" fill="#fcfbfa" stroke="#b06040" stroke-width="1.3"/>
+      <text x="84" y="240" font-size="10" fill="#b06040" font-style="italic">h</text><text x="91" y="235" font-size="7.5" fill="#b06040">+</text>
+
+      <!-- ===== p型パネル ===== -->
+      <text x="470" y="26" font-size="12" fill="#2c2a29" text-anchor="middle" font-weight="600"><tspan font-style="italic">p</tspan> 型</text>
+      <rect x="340" y="40" width="260" height="38" fill="#f0ede8"/>
+      <line x1="340" y1="78" x2="600" y2="78" stroke="#2c2a29" stroke-width="2"/>
+      <text x="348" y="58" font-size="9.5" fill="#96938f">伝導帯</text>
+      <rect x="340" y="225" width="260" height="38" fill="#f0ede8"/>
+      <line x1="340" y1="225" x2="600" y2="225" stroke="#2c2a29" stroke-width="2"/>
+      <text x="348" y="252" font-size="9.5" fill="#96938f">価電子帯</text>
+      <text x="568" y="94" font-size="10" fill="#4a4845" font-style="italic">E</text><text x="576" y="97" font-size="7.5" fill="#4a4845">C</text>
+      <text x="568" y="219" font-size="10" fill="#4a4845" font-style="italic">E</text><text x="576" y="222" font-size="7.5" fill="#4a4845">V</text>
+      <!-- アクセプタ準位 -->
+      <line x1="370" y1="198" x2="540" y2="198" stroke="#2e7d6e" stroke-width="1.2" stroke-dasharray="6 4"/>
+      <text x="546" y="202" font-size="10" fill="#2e7d6e" font-style="italic">E</text><text x="554" y="205" font-size="7.5" fill="#2e7d6e">A</text>
+      <!-- イオン化アクセプタ⊖ -->
+      <circle cx="395" cy="198" r="6.5" fill="#fcfbfa" stroke="#2e7d6e" stroke-width="1.4"/>
+      <line x1="391" y1="198" x2="399" y2="198" stroke="#2e7d6e" stroke-width="1.4"/>
+      <circle cx="455" cy="198" r="6.5" fill="#fcfbfa" stroke="#2e7d6e" stroke-width="1.4"/>
+      <line x1="451" y1="198" x2="459" y2="198" stroke="#2e7d6e" stroke-width="1.4"/>
+      <circle cx="515" cy="198" r="6.5" fill="#fcfbfa" stroke="#2e7d6e" stroke-width="1.4"/>
+      <line x1="511" y1="198" x2="519" y2="198" stroke="#2e7d6e" stroke-width="1.4"/>
+      <!-- 価電子帯内の正孔 -->
+      <circle cx="415" cy="236" r="4" fill="#fcfbfa" stroke="#b06040" stroke-width="1.3"/>
+      <circle cx="475" cy="236" r="4" fill="#fcfbfa" stroke="#b06040" stroke-width="1.3"/>
+      <circle cx="535" cy="236" r="4" fill="#fcfbfa" stroke="#b06040" stroke-width="1.3"/>
+      <text x="545" y="248" font-size="10" fill="#b06040" font-style="italic">h</text><text x="552" y="243" font-size="7.5" fill="#b06040">+</text>
+      <!-- 遷移矢印: V⇒A -->
+      <line x1="435" y1="221" x2="435" y2="206" stroke="#2e7d6e" stroke-width="1.6" marker-end="url(#ah03b)"/>
+      <!-- 遷移矢印: V⇒C（細）＋少数電子 -->
+      <line x1="560" y1="221" x2="560" y2="82" stroke="#a8a49e" stroke-width="1.1" marker-end="url(#ah03c)"/>
+      <circle cx="560" cy="68" r="4" fill="#2e7d6e"/>
+      <text x="570" y="60" font-size="10" fill="#2e7d6e" font-style="italic">e</text><text x="577" y="55" font-size="7.5" fill="#2e7d6e">−</text>
+    </svg>
+    <figcaption>図2　外因性半導体のバンド図。左：n 型（ドナー準位 E<sub>D</sub> から伝導帯へ電子を放出、⊕はイオン化ドナー）。右：p 型（アクセプタ準位 E<sub>A</sub> が価電子帯の電子を捕獲し正孔 h<sup>+</sup> を生成、⊖はイオン化アクセプタ）。細い矢印は価電子帯からの熱励起。</figcaption>
+  </figure>
+
+  <h2 class="font-serif">8. 不純物準位：水素原子様モデル</h2>
+  <p>ドナーは「1価のイオン核（\(+e\) の固定電荷）＋束縛電子」とみなせる。比誘電率 \(\varepsilon_r\) の媒質中、有効質量 \(m^*\) の電子に対するシュレーディンガー方程式</p>
+  \[\left[-\frac{\hbar^2}{2m^*}\nabla^2 - \frac{e^2}{4\pi\varepsilon_0\varepsilon_r r}\right]\Psi(\mathbf r) = E\,\Psi(\mathbf r)\]
+  <p>は水素原子と同型で、束縛エネルギーと有効ボーア半径は水素の値をスケールしたものになる。</p>
+  \[E_n = -13.6\ \mathrm{eV}\cdot\frac{m^*}{m}\frac{1}{\varepsilon_r^2}\frac{1}{n^2},
+  \qquad
+  a_B^* = a_B\,\frac{m}{m^*}\,\varepsilon_r = 0.053\ \mathrm{nm}\cdot\frac{m}{m^*}\varepsilon_r\]
+  <p><strong>Si の例</strong>（\(\varepsilon_r = 11.9,\ m^*=0.33m\)）では基底状態 \(E_1 \approx -32\ \mathrm{meV}\)、\(a_B^*\approx 1.9\ \mathrm{nm}\)。イオン化エネルギーが室温の \(k_BT(300\,\mathrm K)=25.9\ \mathrm{meV}\) と同程度に小さいため、室温では大半のドナーがイオン化する。</p>
+  <div class="note">
+    主なイオン化エネルギー（meV）：Si 中の P=44, As=49, B=45／GaAs 中の浅い準位は 6 前後。
+  </div>
+
+  <h2 class="font-serif">9. ドナー準位の電子占有数</h2>
+  <p>熱平衡でのドナー準位の占有を、次を仮定して求める。(1) 1つのドナーは1つの準位を作る、(2) 1準位に捕獲される電子は最大1個、(3) 異なるドナー間の電子相互作用はない。</p>
+  <p>グランドカノニカル分布で平均粒子数を評価すると、<strong>スピン縮退による因子2</strong>が現れ、中性ドナー密度 \(N_D^0\) とイオン化ドナー密度 \(N_D^+\) は</p>
+  \[N_D^0 = N_D\,\frac{1}{1+\tfrac12\exp\!\left[(E_D-E_F)/k_BT\right]},
+  \qquad
+  N_D^+ = N_D\,\frac{1}{1+2\exp\!\left[-(E_D-E_F)/k_BT\right]}.\]
+  <p>アクセプタも同様に（正孔について因子は状況により異なるが）</p>
+  \[N_A^- = N_A\,\frac{1}{1+2\exp\!\left[(E_A-E_F)/k_BT\right]}.\]
+
+  <h2 class="font-serif">10. <i>n</i> 型半導体のキャリア密度の温度依存性</h2>
+  <p>電気的中性条件</p>
+  \[n(T) = p(T) + N_D^+(T)\]
+  <p>に \(N_D^+\) と \(n,p\) の表式を代入すると \(E_F\) について解析的には解けない。そこで<strong>3つの温度領域</strong>に分けて考える。</p>
+
+  <h3>(1) 高温・真性領域（<i>n</i><sub>i</sub> ≫ <i>N</i><sub>D</sub>）</h3>
+  <p>ドナーは全てイオン化し、価電子帯からの熱励起がドナー由来の電子数を上回る。真性半導体に近づき、</p>
+  \[n = p = n_i = (N_V N_C)^{1/2}\exp\!\left[-\frac{E_g}{2k_BT}\right],
+  \qquad E_F \simeq E_i = \frac{E_g}{2}.\]
+
+  <h3>(2) 中間温度・出払（飽和）領域（<i>N</i><sub>D</sub> ≫ <i>n</i><sub>i</sub>）</h3>
+  <p>ドナーはほぼ全てイオン化し、\(p\simeq 0\)。</p>
+  \[n(T) \simeq N_D, \qquad p(T)\simeq \frac{n_i^2}{N_D}\ \text{（質量作用の法則）}.\]
+  <p>フェルミ準位は</p>
+  \[E_C - E_F = k_BT\ln\frac{N_C(T)}{N_D},
+  \qquad E_F - E_i = k_BT\ln\frac{N_D}{n_i}.\]
+  <p>デバイス動作の基本となる領域で、キャリア密度がドナー密度で決まり温度に鈍感（プラトー）。</p>
+
+  <h3>(3) 低温・不純物（凍結）領域（freeze-out）</h3>
+  <p>価電子帯からの励起は無視でき、ドナー準位が電子を再捕獲し始める（\(E_F-E_D\gg k_BT\)）。中性条件と式 (9) の積から \(E_F\) を消去して</p>
+  \[n(T) \simeq \left(\frac{N_D N_C(T)}{2}\right)^{1/2}\exp\!\left[-\frac{\Delta E_D}{2k_BT}\right],
+  \qquad \Delta E_D \equiv E_C - E_D,\]
+  \[E_F = \frac{E_C+E_D}{2} + \frac{k_BT}{2}\ln\frac{N_D}{2N_C}.\]
+  <p>活性化エネルギーが \(\Delta E_D/2\) となる点が特徴（真性領域の \(E_g/2\) と対照的）。</p>
+
+  <h3>まとめ図（模式）</h3>
+  <p>\(\ln n\) を \(1/T\) に対してプロットすると、高温側から順に「真性領域（傾き \(-E_g/2\)）→ 出払領域（ほぼ平坦、\(n\simeq N_D\)）→ 凍結領域（傾き \(-\Delta E_D/2\)）」の3領域が現れる。</p>
+
+  <figure>
+    <svg viewBox="0 0 560 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="n型半導体のキャリア密度の温度依存性の模式図">
+      <!-- axes -->
+      <line x1="55" y1="250" x2="530" y2="250" stroke="#73706c" stroke-width="1.4"/>
+      <polygon points="530,250 521,246 521,254" fill="#73706c"/>
+      <line x1="55" y1="250" x2="55" y2="25" stroke="#73706c" stroke-width="1.4"/>
+      <polygon points="55,25 51,34 59,34" fill="#73706c"/>
+      <text x="522" y="272" font-size="12" fill="#73706c" font-style="italic">1/T</text>
+      <text x="24" y="38" font-size="12" fill="#73706c" font-style="italic">ln&#8202;n</text>
+      <text x="80" y="272" font-size="10" fill="#96938f">←高温側</text>
+      <text x="450" y="272" font-size="10" fill="#96938f">低温側→</text>
+      <!-- region separators -->
+      <line x1="200" y1="35" x2="200" y2="250" stroke="#c8c4be" stroke-width="1" stroke-dasharray="4 4"/>
+      <line x1="360" y1="35" x2="360" y2="250" stroke="#c8c4be" stroke-width="1" stroke-dasharray="4 4"/>
+      <!-- region labels -->
+      <text x="128" y="30" font-size="11" fill="#4a4845" text-anchor="middle">真性領域</text>
+      <text x="280" y="30" font-size="11" fill="#4a4845" text-anchor="middle">出払（飽和）領域</text>
+      <text x="445" y="30" font-size="11" fill="#4a4845" text-anchor="middle">凍結領域</text>
+      <!-- curve -->
+      <path d="M 80 48 L 200 148 L 230 152 L 330 153 L 360 156 L 510 208" fill="none" stroke="#2e7d6e" stroke-width="2.4" stroke-linejoin="round"/>
+      <!-- slope annotations -->
+      <text x="76" y="128" font-size="10.5" fill="#2e7d6e">傾き −E<tspan dy="3" font-size="8">g</tspan><tspan dy="-3">/2k</tspan><tspan dy="3" font-size="8">B</tspan></text>
+      <text x="280" y="140" font-size="10.5" fill="#2e7d6e" text-anchor="middle">n ≃ N<tspan dy="3" font-size="8">D</tspan></text>
+      <text x="398" y="230" font-size="10.5" fill="#2e7d6e">傾き −ΔE<tspan dy="3" font-size="8">D</tspan><tspan dy="-3">/2k</tspan><tspan dy="3" font-size="8">B</tspan></text>
+    </svg>
+    <figcaption>図3　n 型半導体における ln n – 1/T 特性の模式図。高温側から真性・出払・凍結の3領域が現れる。</figcaption>
+  </figure>
+
+  <h2 class="font-serif">11. 補償のある場合（<i>N</i><sub>D</sub> ≫ <i>N</i><sub>A</sub> の <i>n</i> 型）</h2>
+  <p>ドナーとアクセプタが共存すると、アクセプタはドナー電子を受け取って完全にイオン化する。電気的中性条件は</p>
+  \[n(T) + N_A^- = p(T) + N_D^+.\]
+  <p>極低温（\(N_A > n_{D\Rightarrow C}\)）では新たに <strong>極低温・不純物領域</strong> が現れ、</p>
+  \[n(T) \simeq \frac{N_D - N_A}{N_A}\,\frac{N_C}{2}\exp\!\left[-\frac{\Delta E_D}{k_BT}\right],
+  \qquad
+  E_F = E_D + k_BT\ln\frac{N_D-N_A}{2N_A}.\]
+  <p>活性化エネルギーが \(\Delta E_D/2\) ではなく \(\Delta E_D\) になる点が非補償の場合との違い。</p>
+
+  <h2 class="font-serif">12. 縮退半導体</h2>
+  <p>高密度にドープして不純物密度が有効状態密度を超える（\(N_D,\,N_A > N_C,\,N_V\)、目安として \(>10^{18}\text{–}10^{19}\ \mathrm{cm^{-3}}\)）と、</p>
+  \[E_C - E_F = k_BT\ln\frac{N_C(T)}{N_D} < 0\]
+  <p>となり、<strong>フェルミ準位が伝導帯（\(n^+\)型）または価電子帯（\(p^+\)型）の中に入る</strong>。この状態を <strong>縮退半導体</strong>という。</p>
+  <ul>
+    <li>ドナー（アクセプタ）準位が広がってバンドを形成し、イオン化エネルギーが減少。</li>
+    <li>不純物バンドが伝導帯（価電子帯）と合体し、イオン化エネルギーが実質 0 に。</li>
+    <li>ボルツマン近似が使えず、フェルミ・ディラック統計をそのまま扱う必要がある。</li>
+  </ul>
+  <p>\(10^{18}\ \mathrm{cm^{-3}}\) は「一辺 10 nm の立方体中にドーパント1個」に相当し、有効ボーア半径（数 nm）と波動関数が重なり始めるスケールである。</p>
+
+  <h2 class="font-serif">キーポイント</h2>
+  <ul>
+    <li>有効状態密度 \(N_C, N_V \propto T^{3/2}\) を用いると、キャリア密度は
+      \(n=N_C e^{-(E_C-E_F)/k_BT}\)、\(p=N_V e^{-(E_F-E_V)/k_BT}\) とコンパクトに書ける。</li>
+    <li>熱平衡では常に \(pn=n_i^2\)（質量作用の法則）。</li>
+    <li>\(n\) 型の \(\ln n\)–\(1/T\) 特性は「真性 → 出払 → 凍結」の3領域。出払領域で \(n\simeq N_D\)。</li>
+    <li>ドナー占有には<strong>因子2</strong>（スピン縮退）が入る。</li>
+    <li>高濃度ドープでフェルミ準位がバンド内に入ると縮退半導体。</li>
+  </ul>
+
+</main>
+
+<footer>
+  <p class="font-serif">&copy; 2026 半導体物理学ノート</p>
+</footer>
+
+</body>
+</html>

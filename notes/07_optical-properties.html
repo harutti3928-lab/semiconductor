@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>第7回　半導体の光学的性質</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    body { margin: 0; padding: 0; background-color: #fcfbfa; color: #2c2a29; font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "YakuHanJPs", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif; line-height: 1.9; -webkit-font-smoothing: antialiased; }
+    .font-serif { font-family: "Times New Roman", "Georgia", "Noto Serif JP", serif; }
+    header { max-width: 740px; margin: 0 auto; padding: 64px 24px 36px; border-bottom: 1px solid #e6e4e0; }
+    .breadcrumb { font-size: 9pt; color: #96938f; letter-spacing: 0.5px; margin-bottom: 20px; }
+    .breadcrumb a { color: #96938f; text-decoration: none; }
+    .breadcrumb a:hover { color: #2e7d6e; }
+    header h1 { font-size: 20pt; font-weight: 600; letter-spacing: 1.2px; margin: 0 0 10px; color: #1a1919; }
+    header p { font-size: 10pt; color: #73706c; margin: 0; letter-spacing: 1px; }
+    main { max-width: 740px; margin: 0 auto; padding: 52px 24px 100px; }
+    h2 { font-size: 13pt; font-weight: 600; color: #2c2a29; margin: 48px 0 20px; letter-spacing: 0.8px; position: relative; display: inline-block; }
+    h2::after { content: ''; position: absolute; bottom: -5px; left: 0; width: 100%; height: 1px; background-color: #2c2a29; }
+    h3 { font-size: 11pt; font-weight: 600; color: #3a3836; margin: 28px 0 10px; }
+    p { font-size: 10.5pt; margin: 0 0 16px; }
+    main ul, main ol { font-size: 10.5pt; padding-left: 22px; line-height: 1.9; margin: 0 0 16px; }
+    main li { margin-bottom: 4px; }
+    table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 10pt; }
+    th { text-align: left; padding: 10px 14px; background: #f0ede8; border-bottom: 2px solid #dedad5; font-weight: 600; letter-spacing: 0.5px; }
+    td { padding: 10px 14px; border-bottom: 1px solid #ece9e4; vertical-align: top; }
+    tr:last-child td { border-bottom: none; }
+    .note { background: #f5f3ef; border-left: 3px solid #b0a898; padding: 14px 18px; margin: 24px 0; font-size: 10pt; color: #4a4845; border-radius: 0 4px 4px 0; }
+    code { font-family: "SFMono-Regular", "Consolas", "Menlo", monospace; font-size: 9.5pt; background: #f0ede8; padding: 1px 6px; border-radius: 3px; }
+    pre { background: #f5f3ef; padding: 18px 20px; border-radius: 4px; font-family: "SFMono-Regular", "Consolas", "Menlo", monospace; font-size: 9.5pt; overflow-x: auto; margin: 20px 0; line-height: 1.7; }
+    footer { max-width: 740px; margin: 0 auto; padding: 36px 24px; border-top: 1px solid #e6e4e0; text-align: center; font-size: 8.5pt; color: #96938f; letter-spacing: 1px; }
+  </style>
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['\\(', '\\)']],
+        displayMath: [['\\[', '\\]']],
+        tags: 'none'
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    };
+  </script>
+  <link rel="stylesheet" href="../site.css">
+  <script defer src="../site.js"></script>
+  <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+</head>
+<body>
+
+<header>
+  <div class="breadcrumb"><a href="../index.html">半導体物理学ノート</a> &rsaquo; <a href="../index.html#hetero">ヘテロ構造・光物性</a></div>
+  <h1 class="font-serif">第7回　半導体の光学的性質</h1>
+  <p class="font-serif">— 吸収・直接/間接遷移・励起子・発光再結合 —</p>
+</header>
+
+<main>
+
+  <h2 class="font-serif">この回の内容</h2>
+  <ul>
+    <li>半導体の光吸収：波長依存性、吸収係数（直接許容/禁制/間接遷移）、電子と光の相互作用、自由キャリア吸収、励起子吸収、量子井戸の光吸収</li>
+    <li>半導体の発光現象：励起方法による分類、放射/非放射再結合、励起子発光、ドナー–アクセプタ対発光</li>
+  </ul>
+
+  <h2 class="font-serif">1. 光吸収の波長依存性</h2>
+  <p>半導体の吸収機構をエネルギーの低い順に並べると：</p>
+  <table>
+    <thead>
+      <tr><th>機構</th><th>エネルギー領域</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>自由キャリア（電子・正孔）吸収</td><td>マイクロ波</td></tr>
+      <tr><td>不純物吸収（ドナー・アクセプタ）</td><td>遠赤外</td></tr>
+      <tr><td>格子振動（光学フォノン）吸収</td><td>赤外</td></tr>
+      <tr><td><strong>基礎吸収</strong>（価電子帯→伝導帯遷移）</td><td>可視〜近赤外</td></tr>
+      <tr><td>励起子吸収</td><td>基礎吸収端近傍</td></tr>
+    </tbody>
+  </table>
+  <p>基礎吸収の起こる最低エネルギーを<strong>基礎吸収端</strong>という。</p>
+
+  <h2 class="font-serif">2. 吸収係数と侵入長</h2>
+  <p>エネルギー流密度 \(I\) の減衰から吸収係数 \(\alpha\) を定義する。</p>
+  \[\alpha(\omega) = -\frac{1}{I(\omega)}\frac{dI(\omega)}{dz}
+  \quad\Longrightarrow\quad
+  I(z) = I_0\,e^{-\alpha z}.\]
+  <p><strong>侵入長</strong>は \(1/\alpha\)。Si（300 K）の例：Ar レーザ (488 nm) で \(\alpha=10^4\ \mathrm{cm^{-1}}\)、\(1/\alpha=1\ \mu\mathrm m\)。Nd:YAG (1064 nm) では \(\alpha=20\ \mathrm{cm^{-1}}\)、\(1/\alpha=500\ \mu\mathrm m\)（間接遷移半導体はバンドギャップ近傍で吸収が弱く深く侵入する）。</p>
+  <p>吸収係数は、始状態（密度 \(n_i\)）から終状態（密度 \(n_f\)）への遷移確率 \(W_{if}\) を用いて</p>
+  \[\alpha(\omega) = A\,W_{if}\,n_i\,n_f\quad(\text{和は }E_f-E_i=\text{一定でとる}).\]
+
+  <h2 class="font-serif">3. 直接許容遷移</h2>
+  <p>放物線バンド（直接型）でエネルギー保存 \(E_f-E_i=\hbar\omega\)、運動量保存を課す。</p>
+  \[E_f = \frac{\hbar^2 k^2}{2m_e^*}+E_g,\quad E_i = -\frac{\hbar^2 k^2}{2m_h^*}
+  \;\Rightarrow\;
+  \hbar\omega - E_g = \frac{\hbar^2 k^2}{2m_r},\quad \frac1{m_r}=\frac1{m_e^*}+\frac1{m_h^*}.\]
+  <p>\(m_r\) は換算質量。<strong>結合状態密度</strong>は自由電子の状態密度と同型で</p>
+  \[N(\hbar\omega) = \frac{(2m_r)^{3/2}}{2\pi^2\hbar^3}(\hbar\omega-E_g)^{1/2}.\]
+  <p>遷移確率が光エネルギーによらないので、吸収係数は</p>
+  \[\boxed{\,\alpha(\omega) = A^*(\hbar\omega - E_g)^{1/2}\,}
+  \qquad
+  A^* \simeq \frac{e^2}{n c\hbar^2 m_e^*}\left(\frac{m_e^* m_h^*}{m_h^*+m_e^*}\right)^{3/2}.\]
+  <p>屈折率 \(n=4\)、自由電子質量とすると \(\alpha\simeq2\times10^4(\hbar\omega-E_g)^{1/2}\ \mathrm{cm^{-1}}\)（\(\hbar\omega\) は eV）。\(\alpha^2\)–\(\hbar\omega\) プロットの外挿から \(E_g\) が求まる。</p>
+  <p><strong>直接禁制遷移</strong>（\(k=0\) で行列要素が消える場合）は \(k^2\) に比例して遷移確率が増えるので</p>
+  \[\alpha(\omega) = A(\hbar\omega - E_g)^{3/2}.\]
+
+  <h2 class="font-serif">4. 間接遷移</h2>
+  <p>始状態と終状態の波数が異なる（\(k_i\ne k_f\)）ため、運動量保存を<strong>フォノン</strong>（波数 \(\mathbf p\)、エネルギー \(E_p\)）が担う。エネルギー保存は</p>
+  \[E_f - E_i \pm E_p = \hbar\omega\quad(\text{フォノン吸収}+/\text{放出}-).\]
+  <p>吸収係数は（始状態密度）×（終状態密度）×（フォノン数）を可能な全状態で積分して得られ、フォノン数はボーズ統計に従う。</p>
+  \[\alpha_a(\omega) = \frac{A(\hbar\omega-E_g+E_p)^2}{\exp(E_p/k_BT)-1}\quad(\text{フォノン吸収},\ \hbar\omega>E_g-E_p),\]
+  \[\alpha_e(\omega) = \frac{A(\hbar\omega-E_g-E_p)^2}{1-\exp(-E_p/k_BT)}\quad(\text{フォノン放出},\ \hbar\omega>E_g+E_p).\]
+  <p>\(\hbar\omega>E_g+E_p\) では両方可能で \(\alpha=\alpha_a+\alpha_e\)。<strong>\(\alpha^{1/2}\)–\(\hbar\omega\) プロットが2本の直線</strong>になり、その折れ曲がりから \(E_g\pm E_p\)、したがって \(E_g\) とフォノンエネルギー \(E_p\) が求まる。吸収の温度依存性はフォノン数（ボーズ因子）を通して現れる。</p>
+
+  <h2 class="font-serif">5. 吸収端に関する現象</h2>
+  <ul>
+    <li><strong>Burstein–Moss シフト</strong>：縮退半導体でバンドが電子に埋められる（band filling）と、価電子帯から占有済み準位への遷移が禁じられ、実効的な吸収端が高エネルギー側にシフトする。</li>
+    <li><strong>アーバック則（Urbach's rule）</strong>：吸収端が指数関数的に立ち上がり、\(d(\ln\alpha)/d(\hbar\omega)=1/k_BT\)。バンドの裾（不純物バンド）や励起子に由来する。</li>
+  </ul>
+
+  <h2 class="font-serif">6. 電子と光の相互作用</h2>
+
+  <h3>半古典論：遷移双極子モーメント</h3>
+  <p>光の電場を \(E_x=E_0 e^{i\omega t}\)（波長 ≫ 原子サイズ）とすると、摂動ハミルトニアン \(H'=exE_0 e^{i\omega t}\)。状態 \(n\to m\) の遷移確率は</p>
+  \[W_{mn} = \frac{2\pi}{\hbar}\bigl|\langle\varphi_m|H'|\varphi_n\rangle\bigr|^2,\qquad
+  M_{mn} = \langle\varphi_m|ex|\varphi_n\rangle\ (\text{遷移双極子モーメント}).\]
+  <p><strong>電気双極子遷移の選択則</strong>（パリティ）：</p>
+  <ul>
+    <li>許容遷移：始状態と終状態が<strong>異なるパリティ</strong>（s–p, d–f など）。</li>
+    <li>禁制遷移：<strong>同じパリティ</strong>（s–d, p–p など）。</li>
+  </ul>
+
+  <h3>量子論：<b>p</b>⋅<b>A</b> 相互作用</h3>
+  <p>電磁場をベクトルポテンシャル \(\mathbf A\) で表すと、ハミルトニアンは \(H=\frac{1}{2m}(\mathbf p+e\mathbf A)^2+V\) で、摂動項 \(H'=\frac{e}{m}\mathbf p\cdot\mathbf A\)。\(\mathbf A\) を生成消滅演算子で書き、価電子帯ブロッホ状態（波数 \(k'\)）→伝導帯（波数 \(k\)）の遷移を計算すると、光の波数 \(k_p\simeq0\) より</p>
+  \[\boxed{\,k = k'\quad(\text{直接遷移})\,}\]
+  <p>同じ波数状態間でのみ光学遷移が可能。行列要素 \(G_1\) が消えない条件から、\(u_c\) と \(u_v\) が異なるパリティを持つとき許容遷移となり、\(\alpha\propto(\hbar\omega-E_g)^{1/2}\) が再現される。放射場の量子化では、光子数 \(n\) の状態に対し吸収 \(\propto n\)、放出 \(\propto(n+1)\)（自然放出 + 誘導放出、→ 第8回レーザ）。</p>
+
+  <h2 class="font-serif">7. 励起子（exciton）</h2>
+  <p>光吸収で生成した伝導帯電子（\(-e\)）と価電子帯正孔（\(+e\)）がクーロン引力で束縛状態を作ったもの。ボーズ統計に従う中性粒子で、電気伝導には寄与しないが光学的性質に大きく関与する。</p>
+  <ul>
+    <li><strong>自由励起子（モット・ワニエ励起子）</strong>：束縛が緩く広がった対。半導体で観測。</li>
+    <li><strong>局在励起子（フレンケル励起子）</strong>：構成原子に強く局在。イオン結晶・分子結晶。</li>
+  </ul>
+  <p>自由励起子は水素様原子モデルで扱える。全エネルギーは重心運動 \(E_K\) と相対運動 \(E_n\) の和：</p>
+  \[E = E_K + E_n,\qquad E_K = \frac{\hbar^2 K^2}{2M},\ M=m_e^*+m_h^*,\]
+  \[E_n = -13.6\ \mathrm{eV}\cdot\frac{\mu/m}{\varepsilon_r^2}\frac{1}{n^2},\qquad
+  \frac1\mu = \frac1{m_e^*}+\frac1{m_h^*},\]
+  \[a_B^* = a_B\,\frac{m}{\mu}\,\varepsilon_r = 0.053\ \mathrm{nm}\cdot\frac{m}{\mu}\varepsilon_r.\]
+  <p>励起子準位は伝導帯直下 \(n=1,2,\dots\) に現れ、価電子帯頂上からこれらへの光学遷移が吸収スペクトルに鋭い線を与える。GaAs の励起子束縛エネルギーは約 4.2 meV と小さく、低温で顕著。</p>
+
+  <h2 class="font-serif">8. 量子井戸の光吸収</h2>
+  <p>量子井戸では電子・正孔がサブバンドを作り、遷移エネルギーは</p>
+  \[E(n,k_x,k_y) = E_G + E_e(n_e) + E_h(n_h) + \frac{\hbar^2}{2m_r}(k_x^2+k_y^2).\]
+  <p>\(z\) 方向包絡関数の重なり \(\int\zeta_e\zeta_h\,dz\) から<strong>選択則 \(\Delta n = n_e - n_h = 0\)</strong> が出る（主に同じ量子数間の遷移）。2次元の結合状態密度が階段状なので、吸収スペクトルは<strong>階段状</strong>になり、各ステップの立ち上がりに励起子ピークが重なる。井戸幅で吸収端を制御できる。</p>
+
+  <h2 class="font-serif">9. 発光現象</h2>
+
+  <h3>励起方法による分類</h3>
+  <table>
+    <thead>
+      <tr><th>名称</th><th>励起源</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>熱発光（黒体放射）</td><td>加熱</td></tr>
+      <tr><td>フォトルミネセンス (PL)</td><td>光照射</td></tr>
+      <tr><td>カソードルミネセンス (CL)</td><td>電子線</td></tr>
+      <tr><td>エレクトロルミネセンス (EL)</td><td>電圧印加</td></tr>
+      <tr><td>化学発光／生物発光／摩擦発光</td><td>化学反応など</td></tr>
+    </tbody>
+  </table>
+
+  <h3>放射再結合と非放射再結合</h3>
+  <p>励起された電子は一定寿命で正孔と再結合する。</p>
+  <ul>
+    <li><strong>放射再結合</strong>（発光）：寿命 \(\tau_r\)</li>
+    <li><strong>非放射再結合</strong>（多フォノン放出、オージェ過程、欠陥準位）：寿命 \(\tau_{nr}\)</li>
+  </ul>
+  <p>過剰キャリア密度 \(\Delta n\) に対し、放射・非放射の回数は \(R_r=\Delta n/\tau_r\)、\(R_{nr}=\Delta n/\tau_{nr}\)。<strong>発光効率</strong>は</p>
+  \[\boxed{\,\eta = \frac{R_r}{R_r+R_{nr}} = \frac{1}{1+\tau_r/\tau_{nr}}\,},\qquad
+  \frac{1}{\tau_{\text{eff}}} = \frac{1}{\tau_r}+\frac{1}{\tau_{nr}}.\]
+  <p>弱励起（\(\Delta n=\Delta p\ll n_0,p_0\)）での放射再結合寿命は</p>
+  \[\tau_r = \frac{\Delta n}{R} = \frac{n_0 p_0}{(n_0+p_0)R_0}.\]
+  <p>真性半導体では \(\tau_r\) が長く、不純物半導体では短い。</p>
+
+  <h3>半導体からの発光過程</h3>
+  <p>(a) 自由電子–自由正孔、(b) 自由電子–アクセプタ束縛正孔（およびその逆）、(c) 自由励起子、(d) 中性ドナー束縛励起子、(e) ドナー–アクセプタ対発光。実際には不純物に束縛された励起子からの発光が自由励起子より強く観測されることが多い。</p>
+  <p>自由励起子の発光エネルギーは（運動エネルギーがほぼ 0 なので）</p>
+  \[E_{\text{ex}} = \hbar\nu_{\text{ex}} = E_G - |E_n|,\]
+  <p>バンドギャップの温度依存性は <strong>Varshni の経験式</strong> \(E_g(T)=E_g(0)-\alpha T^2/(T+\beta)\) に従う。</p>
+
+  <h2 class="font-serif">10. ドナー–アクセプタ対（D–A ペア）発光</h2>
+  <p>ドナーに捕らえられた電子とアクセプタに捕らえられた正孔の再結合。発光前は両者中性、発光後は両者イオン化してクーロンエネルギーの利得が生じるため、対の距離 \(r\) に依存して発光エネルギーが変わる。</p>
+  \[\boxed{\,E(r) = \hbar\nu(r) = E_G - (E_D + E_A) + \frac{e^2}{4\pi\varepsilon_0\varepsilon_r r}\,}\]
+  <ul>
+    <li>遷移確率は両者の波動関数の重なりに依存し、近い対ほど高い。</li>
+    <li>励起強度を強くすると、遠い対（遷移確率が低く飽和しやすい）が飽和するため、発光ピークが<strong>高エネルギー側にシフト</strong>する。</li>
+    <li>結晶格子上で許される離散的な \(r\) に対応して、スペクトルが離散線の列になる。</li>
+  </ul>
+
+  <h2 class="font-serif">キーポイント</h2>
+  <ul>
+    <li>吸収端の形で遷移型が判別できる：直接許容 \(\alpha\propto(\hbar\omega-E_g)^{1/2}\)、直接禁制 \(\propto{}^{3/2}\)、間接 \(\propto(\hbar\omega-E_g\pm E_p)^2\)。</li>
+    <li>直接遷移は \(k=k'\)、電気双極子選択則はパリティで決まる。</li>
+    <li>励起子は水素様モデル、\(E_n\propto\mu/\varepsilon_r^2\)。量子井戸吸収は階段状＋選択則 \(\Delta n=0\)。</li>
+    <li>発光効率 \(\eta=1/(1+\tau_r/\tau_{nr})\)。</li>
+    <li>D–A ペア発光は距離依存 \(E(r)=E_G-(E_D+E_A)+e^2/4\pi\varepsilon_0\varepsilon_r r\)。</li>
+  </ul>
+
+</main>
+
+<footer>
+  <p class="font-serif">&copy; 2026 半導体物理学ノート</p>
+</footer>
+
+</body>
+</html>

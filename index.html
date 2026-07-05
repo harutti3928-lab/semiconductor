@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>半導体物理学ノート</title>
+    <style>
+      *, *::before, *::after {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        background-color: #fcfbfa;
+        color: #2c2a29;
+        font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "YakuHanJPs", "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3", Meiryo, sans-serif;
+        line-height: 1.8;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      .font-serif {
+        font-family: "Times New Roman", "Georgia", "Noto Serif JP", "BIZ UDPMincho", serif;
+      }
+
+      header {
+        max-width: 740px;
+        margin: 0 auto;
+        padding: 80px 24px 40px 24px;
+        text-align: center;
+        border-bottom: 1px solid #e6e4e0;
+      }
+
+      header h1 {
+        font-size: 24pt;
+        font-weight: 600;
+        letter-spacing: 2px;
+        margin: 0 0 12px 0;
+        color: #1a1919;
+      }
+
+      header p {
+        font-size: 10pt;
+        color: #73706c;
+        margin: 0;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+      }
+
+      .lead {
+        max-width: 740px;
+        margin: 0 auto;
+        padding: 36px 24px 0;
+        font-size: 10pt;
+        color: #73706c;
+      }
+
+      main {
+        max-width: 740px;
+        margin: 0 auto;
+        padding: 40px 24px 100px 24px;
+      }
+
+      .section {
+        margin-bottom: 60px;
+      }
+
+      h2 {
+        font-size: 14pt;
+        font-weight: 600;
+        color: #2c2a29;
+        margin-top: 0;
+        margin-bottom: 32px;
+        letter-spacing: 1px;
+        position: relative;
+        display: inline-block;
+      }
+
+      h2::after {
+        content: '';
+        position: absolute;
+        bottom: -6px;
+        left: 0;
+        width: 100%;
+        height: 1px;
+        background-color: #2c2a29;
+      }
+
+      ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      li {
+        margin-bottom: 20px;
+        border-bottom: 1px solid #f0ede9;
+        padding-bottom: 14px;
+      }
+
+      li:last-child {
+        border-bottom: none;
+      }
+
+      li a {
+        display: block;
+        color: #1a1a1a;
+        text-decoration: none;
+        font-size: 11.5pt;
+        font-weight: 500;
+        transition: color 0.25s ease;
+      }
+
+      li a:hover {
+        color: #2e7d6e;
+      }
+
+      li .desc {
+        font-size: 9.5pt;
+        color: #96938f;
+        margin-top: 4px;
+        letter-spacing: 0.3px;
+      }
+
+      .kai {
+        display: inline-block;
+        font-size: 8pt;
+        font-weight: 600;
+        letter-spacing: 1px;
+        color: #ffffff;
+        background-color: #8aa89f;
+        border-radius: 3px;
+        padding: 1px 7px;
+        margin-right: 8px;
+        vertical-align: middle;
+      }
+
+      footer {
+        max-width: 740px;
+        margin: 0 auto;
+        padding: 40px 24px;
+        border-top: 1px solid #e6e4e0;
+        text-align: center;
+        font-size: 8.5pt;
+        color: #96938f;
+        letter-spacing: 1px;
+      }
+    </style>
+  <link rel="stylesheet" href="./site.css">
+  <script defer src="./site.js"></script>
+  </head>
+  <body>
+
+    <header>
+      <h1 class="font-serif">半導体物理学ノート</h1>
+      <p class="font-serif">— Semiconductor Physics Lecture Notes —</p>
+    </header>
+
+    <div class="lead">
+      大学院講義「半導体物理学」（令和8年度・全11回）のまとめノート。
+      キャリア統計から各種接合・デバイス、電子輸送、2次元電子系・量子ホール効果まで、
+      数式の導出込みで整理しています（資料の揃っている第3回〜第11回を収録）。
+    </div>
+
+    <main>
+
+      <!-- キャリア統計 -->
+      <div class="section" id="carrier">
+        <h2 class="font-serif">キャリア統計</h2>
+        <ul>
+          <li>
+            <a href="notes/03_carrier-statistics.html"><span class="kai">第3回</span>真性半導体と外因性半導体のキャリア統計</a>
+            <div class="desc">状態密度、有効状態密度、質量作用の法則、ドナー/アクセプタ、キャリア密度の温度依存性、縮退半導体</div>
+          </li>
+        </ul>
+      </div>
+
+      <!-- 接合・MIS -->
+      <div class="section" id="junction">
+        <h2 class="font-serif">接合・MIS</h2>
+        <ul>
+          <li>
+            <a href="notes/04_pn-junction.html"><span class="kai">第4回</span>pn接合</a>
+            <div class="desc">ビルトインポテンシャル、ポアソン方程式、空乏層、I–V特性、生成・再結合、降伏</div>
+          </li>
+          <li>
+            <a href="notes/05_metal-semiconductor-mis.html"><span class="kai">第5回</span>金属–半導体接合と MIS 構造</a>
+            <div class="desc">仕事関数、ショットキー障壁、熱電子放出、オーミック接触、MIS の蓄積/空乏/反転、フェルミ準位ピニング</div>
+          </li>
+        </ul>
+      </div>
+
+      <!-- ヘテロ構造・光物性 -->
+      <div class="section" id="hetero">
+        <h2 class="font-serif">ヘテロ構造・光物性</h2>
+        <ul>
+          <li>
+            <a href="notes/06_heterostructure-nanostructure.html"><span class="kai">第6回</span>半導体ヘテロ接合とナノ構造</a>
+            <div class="desc">電子親和力則、バンドオフセット、量子井戸、超格子、共鳴トンネル、ブロッホ振動、HEMT</div>
+          </li>
+          <li>
+            <a href="notes/07_optical-properties.html"><span class="kai">第7回</span>半導体の光学的性質</a>
+            <div class="desc">吸収係数、直接/間接遷移、遷移双極子モーメント、励起子、発光再結合、D–Aペア発光</div>
+          </li>
+          <li>
+            <a href="notes/08_optoelectronic-devices.html"><span class="kai">第8回</span>半導体光デバイス</a>
+            <div class="desc">LED、レーザ（アインシュタイン係数、反転分布、共振条件）、フォトダイオード、太陽電池、CCD</div>
+          </li>
+        </ul>
+      </div>
+
+      <!-- トランジスタ -->
+      <div class="section" id="transistor">
+        <h2 class="font-serif">トランジスタ</h2>
+        <ul>
+          <li>
+            <a href="notes/09_transistors.html"><span class="kai">第9回</span>トランジスタ</a>
+            <div class="desc">バイポーラ、HBT、JFET/MOSFET/MESFET/HEMT、CMOS、フラッシュメモリ、Beyond CMOS</div>
+          </li>
+        </ul>
+      </div>
+
+      <!-- 輸送・量子効果 -->
+      <div class="section" id="transport">
+        <h2 class="font-serif">輸送・量子効果</h2>
+        <ul>
+          <li>
+            <a href="notes/10_transport-scattering.html"><span class="kai">第10回</span>電子の伝導と散乱</a>
+            <div class="desc">ドルーデ理論、ボルツマン方程式、イオン化不純物散乱、フォノン散乱、移動度の温度依存性</div>
+          </li>
+          <li>
+            <a href="notes/11_2deg-quantum-transport.html"><span class="kai">第11回</span>2次元電子系と量子輸送</a>
+            <div class="desc">ランダウ準位、SdH振動、量子ホール効果、エッジ状態、ランダウアー公式、量子ポイントコンタクト、AB効果</div>
+          </li>
+        </ul>
+      </div>
+
+    </main>
+
+    <footer>
+      <p class="font-serif">&copy; 2026 半導体物理学ノート. Semiconductor Physics Notes.</p>
+    </footer>
+
+  </body>
+</html>
