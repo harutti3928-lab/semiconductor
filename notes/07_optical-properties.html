@@ -76,6 +76,44 @@
       <tr><td>励起子吸収</td><td>基礎吸収端近傍</td></tr>
     </tbody>
   </table>
+
+  <figure>
+    <svg viewBox="0 0 560 270" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="半導体の吸収係数の光子エネルギー依存性の模式図。低エネルギー側から自由キャリア吸収・不純物吸収・格子振動吸収、そして基礎吸収端の急峻な立ち上がりと励起子ピーク">
+      <defs>
+        <marker id="ab7a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+          <path d="M 0 0 L 10 5 L 0 10 z" fill="#73706c"/>
+        </marker>
+      </defs>
+      <!-- 軸 -->
+      <line x1="64" y1="236" x2="64" y2="42" stroke="#73706c" stroke-width="1.1" marker-end="url(#ab7a)"/>
+      <line x1="64" y1="236" x2="540" y2="236" stroke="#73706c" stroke-width="1.1" marker-end="url(#ab7a)"/>
+      <text x="30" y="140" font-size="9.5" fill="#4a4845" text-anchor="middle" transform="rotate(-90 30 140)">吸収係数 α（対数）</text>
+      <text x="300" y="262" font-size="9.5" fill="#4a4845" text-anchor="middle">光子エネルギー ħω →</text>
+      <text x="96" y="250" font-size="8" fill="#96938f" text-anchor="middle">低（赤外）</text>
+      <text x="500" y="250" font-size="8" fill="#96938f" text-anchor="middle">高（可視〜紫外）</text>
+      <!-- 透明域ベースライン -->
+      <line x1="66" y1="190" x2="405" y2="190" stroke="#e2ded7" stroke-width="1"/>
+      <!-- 自由キャリア吸収 -->
+      <path d="M 66 76 C 92 114 116 156 140 188" fill="none" stroke="#2c2a29" stroke-width="1.8"/>
+      <text x="110" y="66" font-size="8.5" fill="#4a4845" text-anchor="middle">自由キャリア吸収</text>
+      <!-- 不純物吸収 -->
+      <path d="M 150 190 C 158 170 170 170 178 190" fill="none" stroke="#2c2a29" stroke-width="1.6"/>
+      <text x="164" y="160" font-size="8" fill="#4a4845" text-anchor="middle">不純物</text>
+      <!-- 格子振動吸収 -->
+      <path d="M 206 190 C 216 164 231 164 241 190" fill="none" stroke="#2c2a29" stroke-width="1.6"/>
+      <text x="224" y="154" font-size="8" fill="#4a4845" text-anchor="middle">格子振動</text>
+      <!-- 励起子ピーク -->
+      <path d="M 393 190 C 398 190 400 124 404 124 C 408 124 410 190 415 190" fill="none" stroke="#2c2a29" stroke-width="1.8"/>
+      <text x="386" y="120" font-size="8.5" fill="#4a4845" text-anchor="end">励起子</text>
+      <!-- 基礎吸収端 -->
+      <path d="M 415 194 C 440 188 462 110 490 72 L 524 52" fill="none" stroke="#2c2a29" stroke-width="1.8"/>
+      <text x="500" y="98" font-size="8.5" fill="#4a4845" text-anchor="middle">基礎吸収</text>
+      <line x1="415" y1="200" x2="415" y2="48" stroke="#b06040" stroke-width="0.9" stroke-dasharray="4 3"/>
+      <text x="418" y="46" font-size="9" fill="#b06040" font-style="italic">E</text><text x="425" y="49" font-size="6.5" fill="#b06040">g</text>
+    </svg>
+    <figcaption>図1　吸収係数 α（対数）の光子エネルギー依存性の模式図。低エネルギー側から順に、自由キャリア吸収（長波長ほど強い）、不純物吸収、格子振動（光学フォノン）吸収が現れ、透明域を挟んで ħω=E<sub>g</sub> で<strong>基礎吸収</strong>が急峻に立ち上がる。その直下に鋭い<strong>励起子</strong>ピークが重なる。基礎吸収の起こる最低エネルギーが<strong>基礎吸収端</strong>。</figcaption>
+  </figure>
+
   <p>基礎吸収の起こる最低エネルギーを<strong>基礎吸収端</strong>という。</p>
 
   <h2 class="font-serif">2. 吸収係数と侵入長</h2>
@@ -88,6 +126,59 @@
   \[\alpha(\omega) = A\,W_{if}\,n_i\,n_f\quad(\text{和は }E_f-E_i=\text{一定でとる}).\]
 
   <h2 class="font-serif">3. 直接許容遷移</h2>
+
+  <figure>
+    <svg viewBox="0 0 620 260" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="直接遷移と間接遷移のE-kバンド図。直接遷移は同じ波数で光子のみ、間接遷移は伝導帯の底が異なる波数にありフォノンが運動量を補う">
+      <defs>
+        <marker id="tr7a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse">
+          <path d="M 0 0 L 10 5 L 0 10 z" fill="#c07a3a"/>
+        </marker>
+        <marker id="tr7p" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse">
+          <path d="M 0 0 L 10 5 L 0 10 z" fill="#3f7a63"/>
+        </marker>
+        <marker id="tr7k" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5.5" markerHeight="5.5" orient="auto-start-reverse">
+          <path d="M 0 0 L 10 5 L 0 10 z" fill="#73706c"/>
+        </marker>
+      </defs>
+
+      <!-- ===== 直接遷移 ===== -->
+      <line x1="55" y1="230" x2="285" y2="230" stroke="#73706c" stroke-width="1" marker-end="url(#tr7k)"/>
+      <text x="289" y="234" font-size="9" fill="#4a4845" font-style="italic">k</text>
+      <line x1="80" y1="230" x2="80" y2="40" stroke="#73706c" stroke-width="1" marker-end="url(#tr7k)"/>
+      <text x="72" y="42" font-size="9" fill="#4a4845" font-style="italic">E</text>
+      <path d="M 110 68 C 145 100 155 100 170 100 C 185 100 195 100 230 68" fill="none" stroke="#2c2a29" stroke-width="2"/>
+      <path d="M 110 202 C 145 170 155 170 170 170 C 185 170 195 170 230 202" fill="none" stroke="#2c2a29" stroke-width="2"/>
+      <text x="234" y="70" font-size="9" fill="#4a4845">伝導帯</text>
+      <text x="234" y="205" font-size="9" fill="#4a4845">価電子帯</text>
+      <line x1="170" y1="168" x2="170" y2="103" stroke="#c07a3a" stroke-width="2" marker-end="url(#tr7a)"/>
+      <text x="175" y="140" font-size="9" fill="#c07a3a" font-style="italic">ħω</text>
+      <circle cx="170" cy="100" r="3.4" fill="#2e7d6e"/>
+      <circle cx="170" cy="170" r="3.6" fill="#fcfbfa" stroke="#4a4845" stroke-width="1.1"/>
+      <text x="170" y="250" font-size="10" fill="#2c2a29" text-anchor="middle">直接遷移（Δk=0）</text>
+
+      <!-- ===== 間接遷移 ===== -->
+      <line x1="335" y1="230" x2="600" y2="230" stroke="#73706c" stroke-width="1" marker-end="url(#tr7k)"/>
+      <text x="604" y="234" font-size="9" fill="#4a4845" font-style="italic">k</text>
+      <line x1="360" y1="230" x2="360" y2="40" stroke="#73706c" stroke-width="1" marker-end="url(#tr7k)"/>
+      <text x="352" y="42" font-size="9" fill="#4a4845" font-style="italic">E</text>
+      <!-- 価電子帯（k=0で頂上） -->
+      <path d="M 390 200 C 420 170 428 168 440 168 C 452 168 460 170 490 200" fill="none" stroke="#2c2a29" stroke-width="2"/>
+      <!-- 伝導帯（k≠0で底） -->
+      <path d="M 470 92 C 500 62 508 60 520 60 C 532 60 540 62 570 92" fill="none" stroke="#2c2a29" stroke-width="2"/>
+      <text x="574" y="66" font-size="9" fill="#4a4845">伝導帯</text>
+      <text x="392" y="214" font-size="9" fill="#4a4845">価電子帯</text>
+      <!-- 光子（縦）＋フォノン（横） -->
+      <line x1="440" y1="166" x2="440" y2="104" stroke="#c07a3a" stroke-width="2" marker-end="url(#tr7a)"/>
+      <text x="415" y="136" font-size="9" fill="#c07a3a" font-style="italic" text-anchor="end">ħω</text>
+      <line x1="443" y1="98" x2="515" y2="64" stroke="#3f7a63" stroke-width="1.8" stroke-dasharray="4 3" marker-end="url(#tr7p)"/>
+      <text x="486" y="88" font-size="9" fill="#3f7a63">フォノン E<tspan dy="2" font-size="6.5">p</tspan></text>
+      <circle cx="520" cy="60" r="3.4" fill="#2e7d6e"/>
+      <circle cx="440" cy="168" r="3.6" fill="#fcfbfa" stroke="#4a4845" stroke-width="1.1"/>
+      <text x="466" y="250" font-size="10" fill="#2c2a29" text-anchor="middle">間接遷移（Δk≠0：フォノンが補償）</text>
+    </svg>
+    <figcaption>図2　直接遷移（左）と間接遷移（右）の E–k バンド図。直接型は伝導帯の底と価電子帯の頂上が同じ波数にあり、光子（ħω, 縦）だけで <strong>Δk=0</strong> の遷移が起こる。間接型は伝導帯の底が異なる波数にあるため、光子に加えて<strong>フォノン</strong>（E<sub>p</sub>, 横）が運動量差を補償する（●：電子、○：正孔）。</figcaption>
+  </figure>
+
   <p>放物線バンド（直接型）でエネルギー保存 \(E_f-E_i=\hbar\omega\)、運動量保存を課す。</p>
   \[E_f = \frac{\hbar^2 k^2}{2m_e^*}+E_g,\quad E_i = -\frac{\hbar^2 k^2}{2m_h^*}
   \;\Rightarrow\;
@@ -110,11 +201,95 @@
   \[\alpha_e(\omega) = \frac{A(\hbar\omega-E_g-E_p)^2}{1-\exp(-E_p/k_BT)}\quad(\text{フォノン放出},\ \hbar\omega>E_g+E_p).\]
   <p>\(\hbar\omega>E_g+E_p\) では両方可能で \(\alpha=\alpha_a+\alpha_e\)。<strong>\(\alpha^{1/2}\)–\(\hbar\omega\) プロットが2本の直線</strong>になり、その折れ曲がりから \(E_g\pm E_p\)、したがって \(E_g\) とフォノンエネルギー \(E_p\) が求まる。吸収の温度依存性はフォノン数（ボーズ因子）を通して現れる。</p>
 
+  <figure>
+    <svg viewBox="0 0 620 250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="吸収端の形による遷移型の判別。左は吸収係数と光子エネルギーの関係、右は間接遷移のα^1/2プロットが2本の直線になりEg±Epが求まる様子">
+      <defs>
+        <marker id="ed7a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+          <path d="M 0 0 L 10 5 L 0 10 z" fill="#73706c"/>
+        </marker>
+      </defs>
+      <!-- ===== 左：α–ħω 比較 ===== -->
+      <line x1="60" y1="210" x2="60" y2="34" stroke="#73706c" stroke-width="1.1" marker-end="url(#ed7a)"/>
+      <text x="52" y="34" font-size="9" fill="#4a4845" font-style="italic" text-anchor="end">α</text>
+      <line x1="60" y1="210" x2="290" y2="210" stroke="#73706c" stroke-width="1.1" marker-end="url(#ed7a)"/>
+      <text x="294" y="214" font-size="9" fill="#4a4845" font-style="italic">ħω</text>
+      <line x1="120" y1="210" x2="120" y2="220" stroke="#73706c" stroke-width="0.9"/>
+      <text x="120" y="232" font-size="8.5" fill="#73706c" text-anchor="middle" font-style="italic">E<tspan dy="2" font-size="6.5">g</tspan></text>
+      <!-- 直接許容 √ -->
+      <path d="M 120 210 C 140 178 175 138 220 96 C 240 78 258 66 272 58" fill="none" stroke="#2c2a29" stroke-width="2"/>
+      <text x="250" y="66" font-size="8" fill="#2c2a29" text-anchor="end">直接許容 ∝(ħω−E<tspan dy="2" font-size="6">g</tspan><tspan dy="-2">)</tspan><tspan dy="-4" font-size="6">1/2</tspan></text>
+      <!-- 直接禁制 3/2 -->
+      <path d="M 120 210 C 150 206 185 188 220 158 C 244 138 262 118 276 104" fill="none" stroke="#8a8680" stroke-width="1.6" stroke-dasharray="5 3"/>
+      <text x="285" y="120" font-size="8" fill="#8a8680" text-anchor="end">直接禁制 ∝ ³ᐟ²</text>
+      <!-- 間接 ^2 -->
+      <path d="M 120 210 C 165 210 205 202 240 188 C 258 180 272 172 282 166" fill="none" stroke="#6a86b0" stroke-width="1.6"/>
+      <text x="262" y="200" font-size="8" fill="#6a86b0" text-anchor="middle">間接 ∝(ħω−E<tspan dy="2" font-size="6">g</tspan><tspan dy="-2">±E</tspan><tspan dy="2" font-size="6">p</tspan><tspan dy="-2">)</tspan><tspan dy="-4" font-size="6">2</tspan></text>
+
+      <!-- ===== 右：間接の α^1/2 二直線 ===== -->
+      <line x1="360" y1="210" x2="360" y2="34" stroke="#73706c" stroke-width="1.1" marker-end="url(#ed7a)"/>
+      <text x="352" y="40" font-size="9" fill="#4a4845" font-style="italic" text-anchor="end">√α</text>
+      <line x1="360" y1="210" x2="600" y2="210" stroke="#73706c" stroke-width="1.1" marker-end="url(#ed7a)"/>
+      <text x="604" y="214" font-size="9" fill="#4a4845" font-style="italic">ħω</text>
+      <!-- 外挿直線（漸近線） -->
+      <line x1="430" y1="210" x2="576" y2="132" stroke="#6a86b0" stroke-width="0.9" stroke-dasharray="5 3"/>
+      <line x1="500" y1="210" x2="580" y2="66" stroke="#6a86b0" stroke-width="0.9" stroke-dasharray="5 3"/>
+      <!-- 実測曲線（線1→折れ曲がり→線2） -->
+      <path d="M 430 210 L 500 172 C 528 158 552 114 570 90" fill="none" stroke="#2c2a29" stroke-width="2"/>
+      <!-- 切片 -->
+      <circle cx="430" cy="210" r="2.6" fill="#b06040"/>
+      <circle cx="500" cy="210" r="2.6" fill="#b06040"/>
+      <text x="426" y="228" font-size="8" fill="#73706c" text-anchor="middle" font-style="italic">E<tspan dy="2" font-size="6">g</tspan><tspan dy="-2">−E</tspan><tspan dy="2" font-size="6">p</tspan></text>
+      <text x="506" y="228" font-size="8" fill="#73706c" text-anchor="middle" font-style="italic">E<tspan dy="2" font-size="6">g</tspan><tspan dy="-2">+E</tspan><tspan dy="2" font-size="6">p</tspan></text>
+      <text x="470" y="188" font-size="7.5" fill="#4a4845" text-anchor="middle">フォノン吸収</text>
+      <text x="556" y="108" font-size="7.5" fill="#4a4845" text-anchor="middle">＋放出</text>
+    </svg>
+    <figcaption>図3　吸収端の形で遷移型が判別できる。（左）α–ħω 曲線は、直接許容が \((\hbar\omega-E_g)^{1/2}\)、直接禁制が \({}^{3/2}\)、間接が \((\hbar\omega-E_g\pm E_p)^2\) と立ち上がりが異なる。（右）間接遷移では \(\sqrt{\alpha}\)–ħω プロットが 2 本の直線になり、外挿の交点（折れ曲がり）から E<sub>g</sub>−E<sub>p</sub>（フォノン吸収）と E<sub>g</sub>+E<sub>p</sub>（フォノン放出）、したがって E<sub>g</sub> と E<sub>p</sub> が求まる。</figcaption>
+  </figure>
+
   <h2 class="font-serif">5. 吸収端に関する現象</h2>
   <ul>
     <li><strong>Burstein–Moss シフト</strong>：縮退半導体でバンドが電子に埋められる（band filling）と、価電子帯から占有済み準位への遷移が禁じられ、実効的な吸収端が高エネルギー側にシフトする。</li>
     <li><strong>アーバック則（Urbach's rule）</strong>：吸収端が指数関数的に立ち上がり、\(d(\ln\alpha)/d(\hbar\omega)=1/k_BT\)。バンドの裾（不純物バンド）や励起子に由来する。</li>
   </ul>
+
+  <figure>
+    <svg viewBox="0 0 440 260" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="縮退n型半導体のBurstein-Mossシフト。伝導帯がフェルミ準位まで電子で埋まると、実効的な吸収端がEgからEg+ξnへ高エネルギー側へシフトする">
+      <defs>
+        <marker id="bm7a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+          <path d="M 0 0 L 10 5 L 0 10 z" fill="#73706c"/>
+        </marker>
+        <marker id="bm7o" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse">
+          <path d="M 0 0 L 10 5 L 0 10 z" fill="#c07a3a"/>
+        </marker>
+      </defs>
+      <line x1="60" y1="235" x2="410" y2="235" stroke="#73706c" stroke-width="1" marker-end="url(#bm7a)"/>
+      <text x="414" y="239" font-size="9" fill="#4a4845" font-style="italic">k</text>
+      <line x1="220" y1="235" x2="220" y2="30" stroke="#73706c" stroke-width="1" marker-end="url(#bm7a)"/>
+      <text x="212" y="32" font-size="9" fill="#4a4845" font-style="italic">E</text>
+      <!-- 伝導帯 -->
+      <path d="M 120 70 C 180 118 200 122 220 122 C 240 122 260 118 320 70" fill="none" stroke="#2c2a29" stroke-width="2"/>
+      <!-- フェルミ準位まで電子で充填 -->
+      <path d="M 168 96 C 195 116 200 116 220 116 C 240 116 245 116 272 96 L 272 96 C 250 104 190 104 168 96 Z" fill="#cfe0d8"/>
+      <line x1="150" y1="96" x2="290" y2="96" stroke="#2e7d6e" stroke-width="1.2" stroke-dasharray="5 3"/>
+      <text x="296" y="99" font-size="8.5" fill="#2e7d6e" font-style="italic">E</text><text x="303" y="102" font-size="6.5" fill="#2e7d6e">F</text>
+      <!-- 価電子帯 -->
+      <path d="M 120 200 C 180 152 200 148 220 148 C 240 148 260 152 320 200" fill="none" stroke="#2c2a29" stroke-width="2"/>
+      <text x="324" y="70" font-size="9" fill="#4a4845">伝導帯</text>
+      <text x="324" y="203" font-size="9" fill="#4a4845">価電子帯</text>
+      <!-- 本来の吸収端 Eg（k=0, 占有ゆえ禁止） -->
+      <line x1="220" y1="146" x2="220" y2="124" stroke="#8a8680" stroke-width="1.6" stroke-dasharray="3 2" marker-end="url(#bm7a)"/>
+      <text x="196" y="138" font-size="8.5" fill="#8a8680" font-style="italic" text-anchor="end">E<tspan dy="2" font-size="6">g</tspan></text>
+      <text x="150" y="128" font-size="7" fill="#8a8680" text-anchor="middle">（占有・禁止）</text>
+      <!-- 実効吸収端 Eg+ξn（空き準位へ） -->
+      <line x1="278" y1="158" x2="278" y2="86" stroke="#c07a3a" stroke-width="2" marker-end="url(#bm7o)"/>
+      <text x="284" y="126" font-size="8.5" fill="#c07a3a" font-style="italic">E<tspan dy="2" font-size="6">g</tspan><tspan dy="-2">+ξ</tspan><tspan dy="2" font-size="6">n</tspan></text>
+      <!-- ξn -->
+      <line x1="238" y1="122" x2="238" y2="96" stroke="#73706c" stroke-width="1" marker-start="url(#bm7a)" marker-end="url(#bm7a)"/>
+      <text x="243" y="112" font-size="8" fill="#4a4845" font-style="italic">ξ<tspan dy="2" font-size="6">n</tspan></text>
+      <text x="220" y="252" font-size="8.5" fill="#96938f" text-anchor="middle">バンド・フィリング（band filling）で吸収端が高エネルギー側へ</text>
+    </svg>
+    <figcaption>図4　縮退 n 型半導体の <strong>Burstein–Moss シフト</strong>。伝導帯がフェルミ準位 E<sub>F</sub> まで電子で埋まる（band filling）と、価電子帯頂上から k=0 の伝導帯底への遷移（E<sub>g</sub>）は終状態が占有済みで禁じられる。空き準位へ遷移するには E<sub>F</sub> より上（k≠0）が必要になり、実効的な吸収端が E<sub>g</sub>+ξ<sub>n</sub> へ高エネルギー側にシフトする。</figcaption>
+  </figure>
 
   <h2 class="font-serif">6. 電子と光の相互作用</h2>
 
@@ -144,12 +319,110 @@
   \[E_n = -13.6\ \mathrm{eV}\cdot\frac{\mu/m}{\varepsilon_r^2}\frac{1}{n^2},\qquad
   \frac1\mu = \frac1{m_e^*}+\frac1{m_h^*},\]
   \[a_B^* = a_B\,\frac{m}{\mu}\,\varepsilon_r = 0.053\ \mathrm{nm}\cdot\frac{m}{\mu}\varepsilon_r.\]
+
+  <figure>
+    <svg viewBox="0 0 500 280" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="励起子の水素様エネルギー準位。伝導帯の底の直下に n=1,2,3... の励起子準位ができ、価電子帯からの遷移が吸収スペクトルに鋭い線を与える">
+      <defs>
+        <marker id="ex7a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+          <path d="M 0 0 L 10 5 L 0 10 z" fill="#73706c"/>
+        </marker>
+      </defs>
+      <!-- 軸 -->
+      <line x1="60" y1="245" x2="330" y2="245" stroke="#73706c" stroke-width="1" marker-end="url(#ex7a)"/>
+      <text x="334" y="249" font-size="9" fill="#4a4845" font-style="italic">k</text>
+      <line x1="195" y1="245" x2="195" y2="28" stroke="#73706c" stroke-width="1" marker-end="url(#ex7a)"/>
+      <text x="187" y="30" font-size="9" fill="#4a4845" font-style="italic">E</text>
+      <!-- 伝導帯 -->
+      <path d="M 105 70 C 160 108 175 110 195 110 C 215 110 230 108 285 70" fill="none" stroke="#2c2a29" stroke-width="2"/>
+      <text x="289" y="72" font-size="9" fill="#4a4845">伝導帯</text>
+      <line x1="105" y1="110" x2="285" y2="110" stroke="#a8a49e" stroke-width="0.7" stroke-dasharray="3 3"/>
+      <text x="60" y="113" font-size="8.5" fill="#4a4845" font-style="italic">E</text><text x="67" y="116" font-size="6.5" fill="#4a4845">C</text>
+      <!-- 励起子準位（水素様、E_C直下に収束） -->
+      <line x1="160" y1="138" x2="230" y2="138" stroke="#b06040" stroke-width="1.3"/>
+      <line x1="160" y1="120" x2="230" y2="120" stroke="#b06040" stroke-width="1.1"/>
+      <line x1="160" y1="114" x2="230" y2="114" stroke="#b06040" stroke-width="1"/>
+      <text x="236" y="141" font-size="8" fill="#b06040" font-style="italic">n=1</text>
+      <text x="236" y="123" font-size="8" fill="#b06040" font-style="italic">n=2</text>
+      <text x="236" y="115" font-size="7.5" fill="#b06040" font-style="italic">n=3⋯</text>
+      <text x="150" y="102" font-size="8" fill="#b06040" text-anchor="end">励起子準位</text>
+      <!-- 価電子帯 -->
+      <path d="M 105 218 C 160 180 175 178 195 178 C 215 178 230 180 285 218" fill="none" stroke="#2c2a29" stroke-width="2"/>
+      <text x="289" y="221" font-size="9" fill="#4a4845">価電子帯</text>
+      <!-- Eg -->
+      <line x1="195" y1="176" x2="195" y2="112" stroke="#73706c" stroke-width="1" marker-start="url(#ex7a)" marker-end="url(#ex7a)"/>
+      <text x="200" y="150" font-size="9" fill="#4a4845" font-style="italic">E<tspan dy="2" font-size="6.5">g</tspan></text>
+      <!-- 束縛エネルギー -->
+      <line x1="140" y1="110" x2="140" y2="138" stroke="#c07a3a" stroke-width="1" marker-start="url(#ex7a)" marker-end="url(#ex7a)"/>
+      <text x="135" y="128" font-size="7.5" fill="#c07a3a" text-anchor="end">|E<tspan dy="2" font-size="6">1</tspan><tspan dy="-2">|</tspan></text>
+
+      <!-- 吸収スペクトルの模式（右） -->
+      <line x1="370" y1="235" x2="370" y2="45" stroke="#73706c" stroke-width="1" marker-end="url(#ex7a)"/>
+      <text x="366" y="45" font-size="8" fill="#4a4845" text-anchor="end">α</text>
+      <line x1="370" y1="235" x2="490" y2="235" stroke="#73706c" stroke-width="1" marker-end="url(#ex7a)"/>
+      <text x="490" y="248" font-size="8.5" fill="#4a4845" font-style="italic" text-anchor="end">ħω</text>
+      <!-- 励起子吸収線＋連続吸収 -->
+      <line x1="410" y1="235" x2="410" y2="90" stroke="#b06040" stroke-width="1.6"/>
+      <line x1="430" y1="235" x2="430" y2="140" stroke="#b06040" stroke-width="1.3"/>
+      <line x1="440" y1="235" x2="440" y2="160" stroke="#b06040" stroke-width="1.1"/>
+      <path d="M 448 235 C 460 180 470 150 490 132" fill="none" stroke="#2c2a29" stroke-width="1.8"/>
+      <line x1="448" y1="235" x2="448" y2="245" stroke="#8a8680" stroke-width="0.8" stroke-dasharray="3 2"/>
+      <text x="448" y="256" font-size="7.5" fill="#73706c" text-anchor="middle" font-style="italic">E<tspan dy="2" font-size="6">g</tspan></text>
+      <text x="410" y="82" font-size="8" fill="#b06040" text-anchor="middle">n=1</text>
+      <text x="430" y="228" font-size="6.5" fill="#73706c" text-anchor="middle"> </text>
+      <text x="430" y="55" font-size="7.5" fill="#96938f" text-anchor="middle">励起子吸収線</text>
+    </svg>
+    <figcaption>図5　自由励起子は水素様原子モデルで扱え、伝導帯の底 E<sub>C</sub> の直下に n=1,2,3… の束縛準位（E<sub>n</sub>∝−μ/ε<sub>r</sub><sup>2</sup>·1/n²）を作る。価電子帯頂上からこれらへの光学遷移は、基礎吸収端（連続吸収）より低エネルギー側に<strong>鋭い励起子吸収線</strong>を与える（右）。GaAs の束縛エネルギーは約 4.2 meV と小さく、低温で顕著。</figcaption>
+  </figure>
+
   <p>励起子準位は伝導帯直下 \(n=1,2,\dots\) に現れ、価電子帯頂上からこれらへの光学遷移が吸収スペクトルに鋭い線を与える。GaAs の励起子束縛エネルギーは約 4.2 meV と小さく、低温で顕著。</p>
 
   <h2 class="font-serif">8. 量子井戸の光吸収</h2>
   <p>量子井戸では電子・正孔がサブバンドを作り、遷移エネルギーは</p>
   \[E(n,k_x,k_y) = E_G + E_e(n_e) + E_h(n_h) + \frac{\hbar^2}{2m_r}(k_x^2+k_y^2).\]
   <p>\(z\) 方向包絡関数の重なり \(\int\zeta_e\zeta_h\,dz\) から<strong>選択則 \(\Delta n = n_e - n_h = 0\)</strong> が出る（主に同じ量子数間の遷移）。2次元の結合状態密度が階段状なので、吸収スペクトルは<strong>階段状</strong>になり、各ステップの立ち上がりに励起子ピークが重なる。井戸幅で吸収端を制御できる。</p>
+
+  <figure>
+    <svg viewBox="0 0 560 240" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="バルクと量子井戸の吸収スペクトルの比較。バルクは平方根状に立ち上がり励起子ピークが1本、量子井戸は階段状で各ステップに励起子ピークが重なる">
+      <defs>
+        <marker id="qa7a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+          <path d="M 0 0 L 10 5 L 0 10 z" fill="#73706c"/>
+        </marker>
+      </defs>
+      <!-- ===== バルク ===== -->
+      <line x1="50" y1="200" x2="50" y2="34" stroke="#73706c" stroke-width="1.1" marker-end="url(#qa7a)"/>
+      <text x="44" y="36" font-size="8.5" fill="#4a4845">α</text>
+      <line x1="50" y1="200" x2="260" y2="200" stroke="#73706c" stroke-width="1.1" marker-end="url(#qa7a)"/>
+      <text x="264" y="204" font-size="8.5" fill="#4a4845" font-style="italic">ħω</text>
+      <!-- √ 連続吸収 -->
+      <path d="M 110 200 C 140 150 175 118 210 96 C 228 85 242 78 252 73" fill="none" stroke="#2c2a29" stroke-width="1.8"/>
+      <!-- 励起子ピーク -->
+      <path d="M 100 200 C 106 200 108 150 112 150 C 116 150 118 200 122 200" fill="none" stroke="#b06040" stroke-width="1.6"/>
+      <line x1="110" y1="200" x2="110" y2="210" stroke="#8a8680" stroke-width="0.8" stroke-dasharray="3 2"/>
+      <text x="110" y="222" font-size="8" fill="#73706c" text-anchor="middle" font-style="italic">E<tspan dy="2" font-size="6">g</tspan></text>
+      <text x="185" y="52" font-size="9.5" fill="#2c2a29" text-anchor="middle">バルク（3D）</text>
+      <text x="118" y="140" font-size="7.5" fill="#b06040">励起子</text>
+
+      <!-- ===== 量子井戸 ===== -->
+      <line x1="320" y1="200" x2="320" y2="34" stroke="#73706c" stroke-width="1.1" marker-end="url(#qa7a)"/>
+      <text x="314" y="36" font-size="8.5" fill="#4a4845">α</text>
+      <line x1="320" y1="200" x2="540" y2="200" stroke="#73706c" stroke-width="1.1" marker-end="url(#qa7a)"/>
+      <text x="544" y="204" font-size="8.5" fill="#4a4845" font-style="italic">ħω</text>
+      <!-- 階段状の結合状態密度 -->
+      <path d="M 360 200 L 360 150 L 420 150 L 420 110 L 480 110 L 480 74 L 535 74" fill="none" stroke="#2c2a29" stroke-width="1.8"/>
+      <!-- 各ステップの励起子ピーク -->
+      <path d="M 354 200 C 359 200 361 128 366 128 C 371 128 373 200 378 200" fill="none" stroke="#b06040" stroke-width="1.5"/>
+      <path d="M 414 150 C 419 150 421 90 426 90 C 431 90 433 150 438 150" fill="none" stroke="#b06040" stroke-width="1.4"/>
+      <path d="M 474 110 C 479 110 481 56 486 56 C 491 56 493 110 498 110" fill="none" stroke="#b06040" stroke-width="1.3"/>
+      <line x1="360" y1="200" x2="360" y2="210" stroke="#8a8680" stroke-width="0.8" stroke-dasharray="3 2"/>
+      <text x="360" y="222" font-size="7.5" fill="#73706c" text-anchor="middle" font-style="italic">n=1</text>
+      <text x="420" y="222" font-size="7.5" fill="#73706c" text-anchor="middle" font-style="italic">n=2</text>
+      <text x="480" y="222" font-size="7.5" fill="#73706c" text-anchor="middle" font-style="italic">n=3</text>
+      <line x1="420" y1="200" x2="420" y2="210" stroke="#8a8680" stroke-width="0.6" stroke-dasharray="3 2"/>
+      <line x1="480" y1="200" x2="480" y2="210" stroke="#8a8680" stroke-width="0.6" stroke-dasharray="3 2"/>
+      <text x="440" y="52" font-size="9.5" fill="#2c2a29" text-anchor="middle">量子井戸（2D）</text>
+    </svg>
+    <figcaption>図6　バルク（左）と量子井戸（右）の吸収スペクトル。バルクは結合状態密度が \(\sqrt{\hbar\omega-E_g}\) なので滑らかに立ち上がり、吸収端に励起子ピークが 1 本重なる。量子井戸は 2 次元結合状態密度が<strong>階段状</strong>なので吸収も階段状になり、選択則 Δn=0 の各サブバンド遷移（n=1,2,3…）の立ち上がりごとに励起子ピークが重なる。井戸幅で各ステップ位置（吸収端）を制御できる。</figcaption>
+  </figure>
 
   <h2 class="font-serif">9. 発光現象</h2>
 
@@ -182,6 +455,67 @@
 
   <h3>半導体からの発光過程</h3>
   <p>(a) 自由電子–自由正孔、(b) 自由電子–アクセプタ束縛正孔（およびその逆）、(c) 自由励起子、(d) 中性ドナー束縛励起子、(e) ドナー–アクセプタ対発光。実際には不純物に束縛された励起子からの発光が自由励起子より強く観測されることが多い。</p>
+
+  <figure>
+    <svg viewBox="0 0 600 230" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="半導体中の代表的な発光過程a〜eのバンド図。自由電子-自由正孔、自由電子-束縛正孔、自由励起子、束縛励起子、ドナー・アクセプタ対発光">
+      <defs>
+        <marker id="em7a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+          <path d="M 0 0 L 10 5 L 0 10 z" fill="#c07a3a"/>
+        </marker>
+        <marker id="em7b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+          <path d="M 0 0 L 10 5 L 0 10 z" fill="#73706c"/>
+        </marker>
+      </defs>
+      <!-- 伝導帯・価電子帯 -->
+      <line x1="40" y1="55" x2="580" y2="55" stroke="#2c2a29" stroke-width="2"/>
+      <line x1="40" y1="185" x2="580" y2="185" stroke="#2c2a29" stroke-width="2"/>
+      <text x="44" y="48" font-size="8.5" fill="#4a4845">伝導帯</text>
+      <text x="44" y="200" font-size="8.5" fill="#4a4845">価電子帯</text>
+      <line x1="60" y1="55" x2="60" y2="185" stroke="#73706c" stroke-width="1" marker-start="url(#em7b)" marker-end="url(#em7b)"/>
+      <text x="52" y="124" font-size="8.5" fill="#4a4845" font-style="italic" text-anchor="end">E<tspan dy="2" font-size="6">g</tspan></text>
+
+      <!-- (a) 自由電子–自由正孔 -->
+      <circle cx="130" cy="55" r="3.4" fill="#2e7d6e"/>
+      <circle cx="130" cy="185" r="3.6" fill="#fcfbfa" stroke="#4a4845" stroke-width="1.1"/>
+      <line x1="130" y1="58" x2="130" y2="180" stroke="#c07a3a" stroke-width="1.8" marker-end="url(#em7a)"/>
+      <text x="130" y="216" font-size="9" fill="#2c2a29" text-anchor="middle">(a)</text>
+
+      <!-- (b) 自由電子–アクセプタ束縛正孔 -->
+      <circle cx="215" cy="55" r="3.4" fill="#2e7d6e"/>
+      <line x1="200" y1="168" x2="230" y2="168" stroke="#2c2a29" stroke-width="1.1"/>
+      <circle cx="215" cy="168" r="3.6" fill="#fcfbfa" stroke="#4a4845" stroke-width="1.1"/>
+      <line x1="215" y1="58" x2="215" y2="163" stroke="#c07a3a" stroke-width="1.8" marker-end="url(#em7a)"/>
+      <text x="234" y="166" font-size="7" fill="#96938f">A</text>
+      <text x="215" y="216" font-size="9" fill="#2c2a29" text-anchor="middle">(b)</text>
+
+      <!-- (c) 自由励起子 -->
+      <circle cx="300" cy="72" r="3.4" fill="#2e7d6e"/>
+      <circle cx="300" cy="185" r="3.6" fill="#fcfbfa" stroke="#4a4845" stroke-width="1.1"/>
+      <ellipse cx="300" cy="80" rx="12" ry="9" fill="none" stroke="#8a8680" stroke-width="0.8" stroke-dasharray="3 2"/>
+      <line x1="300" y1="80" x2="300" y2="180" stroke="#c07a3a" stroke-width="1.8" marker-end="url(#em7a)"/>
+      <text x="300" y="216" font-size="9" fill="#2c2a29" text-anchor="middle">(c)</text>
+
+      <!-- (d) 中性ドナー束縛励起子 -->
+      <line x1="385" y1="72" x2="415" y2="72" stroke="#2c2a29" stroke-width="1.1"/>
+      <circle cx="400" cy="72" r="3.4" fill="#2e7d6e"/>
+      <circle cx="400" cy="185" r="3.6" fill="#fcfbfa" stroke="#4a4845" stroke-width="1.1"/>
+      <ellipse cx="400" cy="80" rx="13" ry="10" fill="none" stroke="#8a8680" stroke-width="0.8" stroke-dasharray="3 2"/>
+      <line x1="400" y1="80" x2="400" y2="180" stroke="#c07a3a" stroke-width="1.8" marker-end="url(#em7a)"/>
+      <text x="420" y="70" font-size="7" fill="#96938f">D</text>
+      <text x="400" y="216" font-size="9" fill="#2c2a29" text-anchor="middle">(d)</text>
+
+      <!-- (e) D-A ペア -->
+      <line x1="470" y1="74" x2="500" y2="74" stroke="#2c2a29" stroke-width="1.1"/>
+      <circle cx="485" cy="74" r="3.4" fill="#2e7d6e"/>
+      <line x1="500" y1="166" x2="530" y2="166" stroke="#2c2a29" stroke-width="1.1"/>
+      <circle cx="515" cy="166" r="3.6" fill="#fcfbfa" stroke="#4a4845" stroke-width="1.1"/>
+      <line x1="486" y1="77" x2="514" y2="162" stroke="#c07a3a" stroke-width="1.8" marker-end="url(#em7a)"/>
+      <text x="470" y="70" font-size="7" fill="#96938f">D</text>
+      <text x="534" y="164" font-size="7" fill="#96938f">A</text>
+      <text x="500" y="216" font-size="9" fill="#2c2a29" text-anchor="middle">(e)</text>
+    </svg>
+    <figcaption>図7　半導体中の代表的な発光（再結合）過程。(a) 自由電子–自由正孔、(b) 自由電子とアクセプタ（A）束縛正孔、(c) 自由励起子、(d) 中性ドナー（D）束縛励起子、(e) ドナー–アクセプタ対発光。●：電子、○：正孔、短い横線：不純物準位、破線楕円：励起子。実際には不純物束縛励起子の発光が自由励起子より強く観測されることが多い。</figcaption>
+  </figure>
   <p>自由励起子の発光エネルギーは（運動エネルギーがほぼ 0 なので）</p>
   \[E_{\text{ex}} = \hbar\nu_{\text{ex}} = E_G - |E_n|,\]
   <p>バンドギャップの温度依存性は <strong>Varshni の経験式</strong> \(E_g(T)=E_g(0)-\alpha T^2/(T+\beta)\) に従う。</p>
@@ -189,6 +523,54 @@
   <h2 class="font-serif">10. ドナー–アクセプタ対（D–A ペア）発光</h2>
   <p>ドナーに捕らえられた電子とアクセプタに捕らえられた正孔の再結合。発光前は両者中性、発光後は両者イオン化してクーロンエネルギーの利得が生じるため、対の距離 \(r\) に依存して発光エネルギーが変わる。</p>
   \[\boxed{\,E(r) = \hbar\nu(r) = E_G - (E_D + E_A) + \frac{e^2}{4\pi\varepsilon_0\varepsilon_r r}\,}\]
+
+  <figure>
+    <svg viewBox="0 0 520 280" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="距離r離れたドナー・アクセプタ対の発光。ドナー準位の電子とアクセプタ準位の正孔が再結合し、クーロン項により発光エネルギーが距離に依存する">
+      <defs>
+        <marker id="da7a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+          <path d="M 0 0 L 10 5 L 0 10 z" fill="#73706c"/>
+        </marker>
+        <marker id="da7o" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+          <path d="M 0 0 L 10 5 L 0 10 z" fill="#c07a3a"/>
+        </marker>
+      </defs>
+      <!-- 伝導帯・価電子帯 -->
+      <line x1="40" y1="95" x2="480" y2="95" stroke="#2c2a29" stroke-width="2"/>
+      <line x1="40" y1="215" x2="480" y2="215" stroke="#2c2a29" stroke-width="2"/>
+      <rect x="40" y="215" width="440" height="18" fill="#f0ede8"/>
+      <text x="44" y="88" font-size="8.5" fill="#4a4845">伝導帯</text>
+      <text x="44" y="229" font-size="8.5" fill="#4a4845">価電子帯</text>
+      <line x1="62" y1="95" x2="62" y2="215" stroke="#73706c" stroke-width="1" marker-start="url(#da7a)" marker-end="url(#da7a)"/>
+      <text x="54" y="158" font-size="8.5" fill="#4a4845" font-style="italic" text-anchor="end">E<tspan dy="2" font-size="6">G</tspan></text>
+      <!-- ドナー準位（右, 電子） -->
+      <line x1="300" y1="118" x2="360" y2="118" stroke="#2c2a29" stroke-width="1.2"/>
+      <circle cx="330" cy="118" r="3.4" fill="#2e7d6e"/>
+      <line x1="366" y1="95" x2="366" y2="118" stroke="#73706c" stroke-width="1" marker-start="url(#da7a)" marker-end="url(#da7a)"/>
+      <text x="372" y="112" font-size="8" fill="#4a4845" font-style="italic">E<tspan dy="2" font-size="6">D</tspan></text>
+      <!-- アクセプタ準位（左, 正孔） -->
+      <line x1="150" y1="192" x2="210" y2="192" stroke="#2c2a29" stroke-width="1.2"/>
+      <circle cx="180" cy="192" r="3.6" fill="#fcfbfa" stroke="#4a4845" stroke-width="1.1"/>
+      <line x1="144" y1="215" x2="144" y2="192" stroke="#73706c" stroke-width="1" marker-start="url(#da7a)" marker-end="url(#da7a)"/>
+      <text x="138" y="209" font-size="8" fill="#4a4845" font-style="italic" text-anchor="end">E<tspan dy="2" font-size="6">A</tspan></text>
+      <!-- 発光遷移 -->
+      <line x1="328" y1="121" x2="184" y2="188" stroke="#c07a3a" stroke-width="1.8" marker-end="url(#da7o)"/>
+      <text x="262" y="146" font-size="8" fill="#c07a3a" transform="rotate(-25 262 146)">発光 hν(r)</text>
+      <!-- 電子の波動関数 φe（ドナー上） -->
+      <path d="M 300 60 C 320 60 326 34 330 34 C 334 34 340 60 360 60" fill="none" stroke="#a07fb0" stroke-width="1.2"/>
+      <text x="366" y="46" font-size="7.5" fill="#a07fb0" font-style="italic">φ<tspan dy="2" font-size="6">e</tspan></text>
+      <!-- 正孔の波動関数 φh（アクセプタ上） -->
+      <path d="M 150 258 C 172 258 176 240 180 240 C 184 240 188 258 210 258" fill="none" stroke="#a07fb0" stroke-width="1.2"/>
+      <text x="214" y="252" font-size="7.5" fill="#a07fb0" font-style="italic">φ<tspan dy="2" font-size="6">h</tspan></text>
+      <!-- 距離 r -->
+      <line x1="180" y1="248" x2="330" y2="248" stroke="#73706c" stroke-width="1" marker-start="url(#da7a)" marker-end="url(#da7a)"/>
+      <line x1="180" y1="196" x2="180" y2="250" stroke="#a8a49e" stroke-width="0.7" stroke-dasharray="3 3"/>
+      <line x1="330" y1="122" x2="330" y2="250" stroke="#a8a49e" stroke-width="0.7" stroke-dasharray="3 3"/>
+      <text x="255" y="244" font-size="9" fill="#4a4845" font-style="italic" text-anchor="middle">r</text>
+      <text x="180" y="272" font-size="8" fill="#96938f" text-anchor="middle">アクセプタ</text>
+      <text x="330" y="272" font-size="8" fill="#96938f" text-anchor="middle">ドナー</text>
+    </svg>
+    <figcaption>図8　距離 r 離れたドナー–アクセプタ対の発光。ドナー準位（E<sub>D</sub>）に捕らえられた電子（●）とアクセプタ準位（E<sub>A</sub>）の正孔（○）が再結合する。発光後は両者がイオン化してクーロン項 e²/4πε₀ε<sub>r</sub>r の利得が生じるため、発光エネルギーは対の距離 r に依存する。遷移確率は両波動関数 φ<sub>e</sub>, φ<sub>h</sub> の重なりに依存し、近い対ほど高い。</figcaption>
+  </figure>
   <ul>
     <li>遷移確率は両者の波動関数の重なりに依存し、近い対ほど高い。</li>
     <li>励起強度を強くすると、遠い対（遷移確率が低く飽和しやすい）が飽和するため、発光ピークが<strong>高エネルギー側にシフト</strong>する。</li>

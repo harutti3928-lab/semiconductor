@@ -85,6 +85,86 @@
   </ol>
   <p>熱平衡ではフェルミ準位が全体で一致し、バンドが曲がる。この曲がりの電位差が<strong>ビルトインポテンシャル（内蔵電位）</strong>\(V_{bi}\) である。</p>
 
+  <figure>
+    <svg viewBox="0 0 680 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="pn接合の形成前と熱平衡後のエネルギーバンド図">
+      <defs>
+        <marker id="ah04a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+          <path d="M 0 0 L 10 5 L 0 10 z" fill="#73706c"/>
+        </marker>
+        <marker id="ah04b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse">
+          <path d="M 0 0 L 10 5 L 0 10 z" fill="#2e7d6e"/>
+        </marker>
+      </defs>
+
+      <!-- ===== 左：接合前 ===== -->
+      <text x="180" y="30" font-size="11" fill="#4a4845" text-anchor="middle">接合前</text>
+      <text x="10" y="84" font-size="11" fill="#4a4845" font-style="italic">E</text><text x="19" y="87" font-size="8" fill="#4a4845">C</text>
+      <text x="10" y="234" font-size="11" fill="#4a4845" font-style="italic">E</text><text x="19" y="237" font-size="8" fill="#4a4845">V</text>
+      <!-- n型ブロック -->
+      <rect x="42" y="50" width="124" height="30" fill="#f0ede8"/>
+      <line x1="42" y1="80" x2="166" y2="80" stroke="#2c2a29" stroke-width="2"/>
+      <rect x="42" y="230" width="124" height="30" fill="#f0ede8"/>
+      <line x1="42" y1="230" x2="166" y2="230" stroke="#2c2a29" stroke-width="2"/>
+      <circle cx="70" cy="70" r="3.5" fill="#2e7d6e"/><circle cx="95" cy="70" r="3.5" fill="#2e7d6e"/><circle cx="120" cy="70" r="3.5" fill="#2e7d6e"/><circle cx="145" cy="70" r="3.5" fill="#2e7d6e"/>
+      <text x="152" y="64" font-size="10" fill="#2e7d6e" font-style="italic">e</text><text x="159" y="59" font-size="7.5" fill="#2e7d6e">−</text>
+      <line x1="56" y1="102" x2="152" y2="102" stroke="#b06040" stroke-width="1.4" stroke-dasharray="6 4"/>
+      <text x="94" y="97" font-size="10" fill="#b06040" font-style="italic">E</text><text x="102" y="100" font-size="7.5" fill="#b06040">Fn</text>
+      <text x="104" y="290" font-size="11.5" font-weight="600" fill="#2c2a29" text-anchor="middle"><tspan font-style="italic">n</tspan> 型</text>
+      <!-- p型ブロック -->
+      <rect x="192" y="50" width="124" height="30" fill="#f0ede8"/>
+      <line x1="192" y1="80" x2="316" y2="80" stroke="#2c2a29" stroke-width="2"/>
+      <rect x="192" y="230" width="124" height="30" fill="#f0ede8"/>
+      <line x1="192" y1="230" x2="316" y2="230" stroke="#2c2a29" stroke-width="2"/>
+      <circle cx="220" cy="241" r="3.5" fill="#fcfbfa" stroke="#b06040" stroke-width="1.3"/><circle cx="245" cy="241" r="3.5" fill="#fcfbfa" stroke="#b06040" stroke-width="1.3"/><circle cx="270" cy="241" r="3.5" fill="#fcfbfa" stroke="#b06040" stroke-width="1.3"/>
+      <text x="288" y="255" font-size="10" fill="#b06040" font-style="italic">h</text><text x="295" y="250" font-size="7.5" fill="#b06040">+</text>
+      <line x1="206" y1="208" x2="302" y2="208" stroke="#b06040" stroke-width="1.4" stroke-dasharray="6 4"/>
+      <text x="240" y="203" font-size="10" fill="#b06040" font-style="italic">E</text><text x="248" y="206" font-size="7.5" fill="#b06040">Fp</text>
+      <text x="254" y="290" font-size="11.5" font-weight="600" fill="#2c2a29" text-anchor="middle"><tspan font-style="italic">p</tspan> 型</text>
+
+      <!-- 接合矢印 -->
+      <line x1="330" y1="168" x2="372" y2="168" stroke="#73706c" stroke-width="1.4" marker-end="url(#ah04a)"/>
+      <text x="351" y="156" font-size="10" fill="#73706c" text-anchor="middle">接合</text>
+
+      <!-- ===== 右：熱平衡 ===== -->
+      <text x="517" y="30" font-size="11" fill="#4a4845" text-anchor="middle">熱平衡（フェルミ準位が一致）</text>
+      <path d="M 385 148 L 462 148 C 500 148 506 68 544 68 L 650 68 L 650 42 L 385 42 Z" fill="#f0ede8"/>
+      <path d="M 385 278 L 462 278 C 500 278 506 198 544 198 L 650 198 L 650 296 L 385 296 Z" fill="#f0ede8"/>
+      <path d="M 385 148 L 462 148 C 500 148 506 68 544 68 L 650 68" fill="none" stroke="#2c2a29" stroke-width="2"/>
+      <path d="M 385 278 L 462 278 C 500 278 506 198 544 198 L 650 198" fill="none" stroke="#2c2a29" stroke-width="2"/>
+      <path d="M 385 213 L 462 213 C 500 213 506 133 544 133 L 650 133" fill="none" stroke="#a8a49e" stroke-width="1" stroke-dasharray="2 3"/>
+      <text x="620" y="127" font-size="9.5" fill="#96938f" font-style="italic">E</text><text x="628" y="130" font-size="7" fill="#96938f">i</text>
+      <line x1="385" y1="173" x2="650" y2="173" stroke="#b06040" stroke-width="1.4" stroke-dasharray="5 3"/>
+      <text x="654" y="177" font-size="10" fill="#b06040" font-style="italic">E</text><text x="662" y="180" font-size="7.5" fill="#b06040">F</text>
+      <text x="654" y="72" font-size="10" fill="#4a4845" font-style="italic">E</text><text x="662" y="75" font-size="7.5" fill="#4a4845">C</text>
+      <text x="654" y="202" font-size="10" fill="#4a4845" font-style="italic">E</text><text x="662" y="205" font-size="7.5" fill="#4a4845">V</text>
+      <circle cx="398" cy="140" r="3.5" fill="#2e7d6e"/><circle cx="416" cy="140" r="3.5" fill="#2e7d6e"/><circle cx="434" cy="140" r="3.5" fill="#2e7d6e"/>
+      <text x="443" y="133" font-size="10" fill="#2e7d6e" font-style="italic">e</text><text x="450" y="128" font-size="7.5" fill="#2e7d6e">−</text>
+      <circle cx="588" cy="206" r="3.5" fill="#fcfbfa" stroke="#b06040" stroke-width="1.3"/><circle cx="606" cy="206" r="3.5" fill="#fcfbfa" stroke="#b06040" stroke-width="1.3"/><circle cx="624" cy="206" r="3.5" fill="#fcfbfa" stroke="#b06040" stroke-width="1.3"/>
+      <text x="634" y="212" font-size="10" fill="#b06040" font-style="italic">h</text><text x="641" y="207" font-size="7.5" fill="#b06040">+</text>
+      <!-- 空間電荷（イオン化ドナー⊕・アクセプタ⊖） -->
+      <circle cx="474" cy="163" r="6" fill="#fcfbfa" stroke="#b06040" stroke-width="1.4"/>
+      <line x1="470" y1="163" x2="478" y2="163" stroke="#b06040" stroke-width="1.4"/><line x1="474" y1="159" x2="474" y2="167" stroke="#b06040" stroke-width="1.4"/>
+      <circle cx="492" cy="163" r="6" fill="#fcfbfa" stroke="#b06040" stroke-width="1.4"/>
+      <line x1="488" y1="163" x2="496" y2="163" stroke="#b06040" stroke-width="1.4"/><line x1="492" y1="159" x2="492" y2="167" stroke="#b06040" stroke-width="1.4"/>
+      <circle cx="514" cy="184" r="6" fill="#fcfbfa" stroke="#2e7d6e" stroke-width="1.4"/>
+      <line x1="510" y1="184" x2="518" y2="184" stroke="#2e7d6e" stroke-width="1.4"/>
+      <circle cx="532" cy="184" r="6" fill="#fcfbfa" stroke="#2e7d6e" stroke-width="1.4"/>
+      <line x1="528" y1="184" x2="536" y2="184" stroke="#2e7d6e" stroke-width="1.4"/>
+      <!-- eVbi -->
+      <line x1="405" y1="68" x2="540" y2="68" stroke="#a8a49e" stroke-width="1" stroke-dasharray="3 3"/>
+      <line x1="418" y1="72" x2="418" y2="144" stroke="#2e7d6e" stroke-width="1.6" marker-start="url(#ah04b)" marker-end="url(#ah04b)"/>
+      <text x="426" y="105" font-size="10.5" fill="#2e7d6e" font-style="italic">eV</text><text x="441" y="108" font-size="7.5" fill="#2e7d6e">bi</text>
+      <!-- 空乏層幅 W -->
+      <line x1="462" y1="56" x2="462" y2="292" stroke="#c8c4be" stroke-width="1" stroke-dasharray="4 4"/>
+      <line x1="544" y1="56" x2="544" y2="292" stroke="#c8c4be" stroke-width="1" stroke-dasharray="4 4"/>
+      <line x1="466" y1="288" x2="540" y2="288" stroke="#73706c" stroke-width="1.3" marker-start="url(#ah04a)" marker-end="url(#ah04a)"/>
+      <text x="503" y="281" font-size="10.5" fill="#73706c" text-anchor="middle" font-style="italic">W</text>
+      <text x="415" y="292" font-size="11.5" font-weight="600" fill="#2c2a29" text-anchor="middle"><tspan font-style="italic">n</tspan> 型</text>
+      <text x="610" y="292" font-size="11.5" font-weight="600" fill="#2c2a29" text-anchor="middle"><tspan font-style="italic">p</tspan> 型</text>
+    </svg>
+    <figcaption>図1　pn接合のエネルギーバンド図。左：接合前は n 型と p 型でフェルミ準位（E<sub>Fn</sub>, E<sub>Fp</sub>）が異なる。右：接合後の熱平衡ではフェルミ準位 E<sub>F</sub> が全体で一致するようにバンドが曲がり、エネルギー差 eV<sub>bi</sub>（ビルトインポテンシャル）と、イオン化ドナー⊕・アクセプタ⊖が露出した空乏層（幅 W）が生じる。</figcaption>
+  </figure>
+
   <h2 class="font-serif">3. ビルトインポテンシャルの導出</h2>
   <p>接合形成で生じたポテンシャル \(\phi(x)\) を考え、\(E_C, E_V\) を \(-e\phi(x)\) だけシフトさせると、キャリア密度は</p>
   \[n(x) = N_C\exp\!\left[-\frac{(E_C-e\phi(x))-E_F}{k_BT}\right],\qquad
@@ -123,12 +203,129 @@
   x_n:x_p = N_A:N_D.\]
   <p>低ドープ側に空乏層が広く伸びる（片側階段接合の基礎）。</p>
 
+  <figure>
+    <svg viewBox="0 0 560 340" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="空乏近似における空間電荷密度・電場・電位の分布">
+      <defs>
+        <marker id="ah04c" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+          <path d="M 0 0 L 10 5 L 0 10 z" fill="#73706c"/>
+        </marker>
+        <marker id="ah04d" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse">
+          <path d="M 0 0 L 10 5 L 0 10 z" fill="#2e7d6e"/>
+        </marker>
+      </defs>
+      <!-- 位置ガイド（-xn, 0, xp） -->
+      <line x1="195" y1="22" x2="195" y2="318" stroke="#c8c4be" stroke-width="1" stroke-dasharray="4 4"/>
+      <line x1="265" y1="22" x2="265" y2="318" stroke="#c8c4be" stroke-width="1" stroke-dasharray="4 4"/>
+      <line x1="370" y1="22" x2="370" y2="318" stroke="#c8c4be" stroke-width="1" stroke-dasharray="4 4"/>
+
+      <!-- (a) 空間電荷密度 -->
+      <line x1="70" y1="75" x2="505" y2="75" stroke="#73706c" stroke-width="1.2" marker-end="url(#ah04c)"/>
+      <line x1="70" y1="120" x2="70" y2="22" stroke="#73706c" stroke-width="1.2" marker-end="url(#ah04c)"/>
+      <text x="78" y="32" font-size="10" fill="#4a4845">電荷密度 ρ(x)</text>
+      <rect x="195" y="30" width="70" height="45" fill="rgba(176,96,64,0.18)" stroke="#b06040" stroke-width="1.6"/>
+      <circle cx="212" cy="52" r="5" fill="#fcfbfa" stroke="#b06040" stroke-width="1.3"/>
+      <line x1="208.8" y1="52" x2="215.2" y2="52" stroke="#b06040" stroke-width="1.3"/><line x1="212" y1="48.8" x2="212" y2="55.2" stroke="#b06040" stroke-width="1.3"/>
+      <circle cx="232" cy="52" r="5" fill="#fcfbfa" stroke="#b06040" stroke-width="1.3"/>
+      <line x1="228.8" y1="52" x2="235.2" y2="52" stroke="#b06040" stroke-width="1.3"/><line x1="232" y1="48.8" x2="232" y2="55.2" stroke="#b06040" stroke-width="1.3"/>
+      <circle cx="252" cy="52" r="5" fill="#fcfbfa" stroke="#b06040" stroke-width="1.3"/>
+      <line x1="248.8" y1="52" x2="255.2" y2="52" stroke="#b06040" stroke-width="1.3"/><line x1="252" y1="48.8" x2="252" y2="55.2" stroke="#b06040" stroke-width="1.3"/>
+      <rect x="265" y="75" width="105" height="30" fill="rgba(46,125,110,0.22)" stroke="#2e7d6e" stroke-width="1.6"/>
+      <circle cx="287" cy="90" r="5" fill="#fcfbfa" stroke="#2e7d6e" stroke-width="1.3"/><line x1="283.8" y1="90" x2="290.2" y2="90" stroke="#2e7d6e" stroke-width="1.3"/>
+      <circle cx="309" cy="90" r="5" fill="#fcfbfa" stroke="#2e7d6e" stroke-width="1.3"/><line x1="305.8" y1="90" x2="312.2" y2="90" stroke="#2e7d6e" stroke-width="1.3"/>
+      <circle cx="331" cy="90" r="5" fill="#fcfbfa" stroke="#2e7d6e" stroke-width="1.3"/><line x1="327.8" y1="90" x2="334.2" y2="90" stroke="#2e7d6e" stroke-width="1.3"/>
+      <circle cx="353" cy="90" r="5" fill="#fcfbfa" stroke="#2e7d6e" stroke-width="1.3"/><line x1="349.8" y1="90" x2="356.2" y2="90" stroke="#2e7d6e" stroke-width="1.3"/>
+      <text x="230" y="24" font-size="10" fill="#b06040" text-anchor="middle">+<tspan font-style="italic">qN</tspan><tspan dy="3" font-size="7.5">D</tspan></text>
+      <text x="317" y="122" font-size="10" fill="#2e7d6e" text-anchor="middle">−<tspan font-style="italic">qN</tspan><tspan dy="3" font-size="7.5">A</tspan></text>
+      <text x="191" y="90" font-size="9.5" fill="#4a4845" text-anchor="end" font-style="italic">−x<tspan dy="3" font-size="7">n</tspan></text>
+      <text x="259" y="90" font-size="9.5" fill="#4a4845" text-anchor="end">0</text>
+      <text x="374" y="90" font-size="9.5" fill="#4a4845" font-style="italic">x<tspan dy="3" font-size="7">p</tspan></text>
+
+      <!-- (b) 電場 -->
+      <line x1="70" y1="170" x2="505" y2="170" stroke="#73706c" stroke-width="1.2" marker-end="url(#ah04c)"/>
+      <line x1="70" y1="170" x2="70" y2="106" stroke="#73706c" stroke-width="1.2" marker-end="url(#ah04c)"/>
+      <text x="78" y="118" font-size="10" fill="#4a4845">電場 ℰ(x)</text>
+      <path d="M 195 170 L 265 118 L 370 170" fill="rgba(46,125,110,0.22)" stroke="#2e7d6e" stroke-width="2" stroke-linejoin="round"/>
+      <text x="273" y="114" font-size="10" fill="#2e7d6e" font-style="italic">ℰ</text><text x="282" y="117" font-size="7.5" fill="#2e7d6e">max</text>
+
+      <!-- (c) 電位 -->
+      <line x1="70" y1="318" x2="505" y2="318" stroke="#73706c" stroke-width="1.2" marker-end="url(#ah04c)"/>
+      <line x1="70" y1="318" x2="70" y2="212" stroke="#73706c" stroke-width="1.2" marker-end="url(#ah04c)"/>
+      <text x="509" y="322" font-size="11" fill="#73706c" font-style="italic">x</text>
+      <text x="80" y="248" font-size="10" fill="#4a4845">電位 V(x)</text>
+      <path d="M 70 225 L 195 225 Q 230 225 265 257 Q 317.5 305 370 305 L 500 305" fill="none" stroke="#2c2a29" stroke-width="2.2"/>
+      <line x1="195" y1="225" x2="438" y2="225" stroke="#a8a49e" stroke-width="1" stroke-dasharray="3 3"/>
+      <line x1="430" y1="228" x2="430" y2="302" stroke="#2e7d6e" stroke-width="1.6" marker-start="url(#ah04d)" marker-end="url(#ah04d)"/>
+      <text x="438" y="268" font-size="10.5" fill="#2e7d6e" font-style="italic">V</text><text x="446" y="271" font-size="7.5" fill="#2e7d6e">bi</text>
+    </svg>
+    <figcaption>図2　空乏近似による階段接合の1次元モデル。上：空間電荷密度 ρ(x) は箱形で、電荷中性条件 N<sub>D</sub>x<sub>n</sub> = N<sub>A</sub>x<sub>p</sub> より両側の面積（総電荷）が等しい。中：電場 ℰ(x) は接合面 x = 0 で最大 ℰ<sub>max</sub> となる三角形分布。下：電位 V(x) はさらに積分した放物線をつないだ形で、全体の電位差がビルトインポテンシャル V<sub>bi</sub>。低ドープ側（この図では p 側）ほど空乏層が広い。</figcaption>
+  </figure>
+
   <h2 class="font-serif">5. 外部電圧印加時：空乏層と接合容量</h2>
   <p>\(p\) 側の電位を \(n\) 側に対して下げる向きを<strong>順方向（正）</strong>にとる。外部電圧 \(V\) はほぼ全て抵抗の高い空乏層にかかるので、接合部の実効電位は \(V_{bi}-V\) となる。空乏層幅は</p>
   \[W(V) = \sqrt{\frac{2\varepsilon_s}{q}\frac{N_A+N_D}{N_A N_D}(V_{bi}-V)} = W(0)\sqrt{1-\frac{V}{V_{bi}}}.\]
   <p>順バイアスで狭く、逆バイアスで広くなる。空間電荷量が電圧で変化するので接合は容量として働き、単位面積あたり</p>
   \[C = \frac{dQ}{dV} = \frac{\varepsilon_s}{W} = \sqrt{\frac{e\varepsilon_s N_D}{2(V_{bi}-V)}}\quad(\text{片側接合}).\]
   <p>\(1/C^2\) を \(V\) に対してプロットすると直線になり、傾きからドーピング密度、切片から \(V_{bi}\) が求まる。</p>
+
+  <figure>
+    <svg viewBox="0 0 640 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="順バイアス・逆バイアス時のpn接合バンド図の変化（障壁の高さと空乏層幅）">
+      <defs>
+        <marker id="ah04e" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse">
+          <path d="M 0 0 L 10 5 L 0 10 z" fill="#73706c"/>
+        </marker>
+        <marker id="ah04f" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse">
+          <path d="M 0 0 L 10 5 L 0 10 z" fill="#2e7d6e"/>
+        </marker>
+        <marker id="ah04g" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse">
+          <path d="M 0 0 L 10 5 L 0 10 z" fill="#b06040"/>
+        </marker>
+      </defs>
+      <line x1="319" y1="38" x2="319" y2="278" stroke="#e0ddd8" stroke-width="1"/>
+
+      <!-- ===== 左：順バイアス ===== -->
+      <text x="170" y="26" font-size="11.5" font-weight="600" fill="#2c2a29" text-anchor="middle">順バイアス（V 正）</text>
+      <path d="M 38 150 L 118 150 C 152 150 164 70 198 70 L 302 70" fill="none" stroke="#2c2a29" stroke-width="2.2"/>
+      <path d="M 38 260 L 118 260 C 152 260 164 180 198 180 L 302 180" fill="none" stroke="#2c2a29" stroke-width="2.2"/>
+      <path d="M 118 150 L 128 150 C 154 150 162 94 188 94 L 302 94" fill="none" stroke="#2e7d6e" stroke-width="2" stroke-dasharray="6 4"/>
+      <path d="M 118 260 L 128 260 C 154 260 162 204 188 204 L 302 204" fill="none" stroke="#2e7d6e" stroke-width="2" stroke-dasharray="6 4"/>
+      <line x1="120" y1="150" x2="298" y2="150" stroke="#a8a49e" stroke-width="1" stroke-dasharray="3 3"/>
+      <line x1="225" y1="73" x2="225" y2="147" stroke="#73706c" stroke-width="1.5" marker-start="url(#ah04e)" marker-end="url(#ah04e)"/>
+      <text x="225" y="64" font-size="10" fill="#73706c" text-anchor="middle" font-style="italic">eV<tspan dy="3" font-size="7.5">bi</tspan></text>
+      <line x1="272" y1="97" x2="272" y2="147" stroke="#2e7d6e" stroke-width="1.5" marker-start="url(#ah04f)" marker-end="url(#ah04f)"/>
+      <text x="272" y="88" font-size="10" fill="#2e7d6e" text-anchor="middle" font-style="italic">e(V<tspan dy="3" font-size="7.5">bi</tspan><tspan dy="-3">−V)</tspan></text>
+      <circle cx="56" cy="143" r="3.5" fill="#2e7d6e"/><circle cx="74" cy="143" r="3.5" fill="#2e7d6e"/><circle cx="92" cy="143" r="3.5" fill="#2e7d6e"/>
+      <text x="20" y="154" font-size="10.5" fill="#4a4845" font-style="italic">E</text><text x="28" y="157" font-size="7.5" fill="#4a4845">C</text>
+      <text x="20" y="264" font-size="10.5" fill="#4a4845" font-style="italic">E</text><text x="28" y="267" font-size="7.5" fill="#4a4845">V</text>
+      <text x="80" y="208" font-size="11" font-weight="600" fill="#2c2a29" text-anchor="middle"><tspan font-style="italic">n</tspan> 型</text>
+      <text x="252" y="238" font-size="11" font-weight="600" fill="#2c2a29" text-anchor="middle"><tspan font-style="italic">p</tspan> 型</text>
+      <line x1="56" y1="288" x2="80" y2="288" stroke="#2c2a29" stroke-width="2"/>
+      <text x="86" y="292" font-size="9.5" fill="#4a4845">熱平衡</text>
+      <line x1="146" y1="288" x2="170" y2="288" stroke="#2e7d6e" stroke-width="2" stroke-dasharray="6 4"/>
+      <text x="176" y="292" font-size="9.5" fill="#4a4845">順バイアス</text>
+
+      <!-- ===== 右：逆バイアス ===== -->
+      <text x="480" y="26" font-size="11.5" font-weight="600" fill="#2c2a29" text-anchor="middle">逆バイアス（V 負）</text>
+      <path d="M 348 150 L 428 150 C 462 150 474 70 508 70 L 612 70" fill="none" stroke="#2c2a29" stroke-width="2.2"/>
+      <path d="M 348 260 L 428 260 C 462 260 474 180 508 180 L 612 180" fill="none" stroke="#2c2a29" stroke-width="2.2"/>
+      <path d="M 416 150 C 452 150 478 46 520 46 L 612 46" fill="none" stroke="#b06040" stroke-width="2" stroke-dasharray="6 4"/>
+      <path d="M 416 260 C 452 260 478 156 520 156 L 612 156" fill="none" stroke="#b06040" stroke-width="2" stroke-dasharray="6 4"/>
+      <line x1="430" y1="150" x2="608" y2="150" stroke="#a8a49e" stroke-width="1" stroke-dasharray="3 3"/>
+      <line x1="535" y1="73" x2="535" y2="147" stroke="#73706c" stroke-width="1.5" marker-start="url(#ah04e)" marker-end="url(#ah04e)"/>
+      <text x="535" y="64" font-size="10" fill="#73706c" text-anchor="middle" font-style="italic">eV<tspan dy="3" font-size="7.5">bi</tspan></text>
+      <line x1="582" y1="49" x2="582" y2="147" stroke="#b06040" stroke-width="1.5" marker-start="url(#ah04g)" marker-end="url(#ah04g)"/>
+      <text x="582" y="40" font-size="10" fill="#b06040" text-anchor="middle" font-style="italic">e(V<tspan dy="3" font-size="7.5">bi</tspan><tspan dy="-3">+|V|)</tspan></text>
+      <circle cx="366" cy="143" r="3.5" fill="#2e7d6e"/><circle cx="384" cy="143" r="3.5" fill="#2e7d6e"/><circle cx="402" cy="143" r="3.5" fill="#2e7d6e"/>
+      <text x="330" y="154" font-size="10.5" fill="#4a4845" font-style="italic">E</text><text x="338" y="157" font-size="7.5" fill="#4a4845">C</text>
+      <text x="330" y="264" font-size="10.5" fill="#4a4845" font-style="italic">E</text><text x="338" y="267" font-size="7.5" fill="#4a4845">V</text>
+      <text x="390" y="208" font-size="11" font-weight="600" fill="#2c2a29" text-anchor="middle"><tspan font-style="italic">n</tspan> 型</text>
+      <text x="562" y="238" font-size="11" font-weight="600" fill="#2c2a29" text-anchor="middle"><tspan font-style="italic">p</tspan> 型</text>
+      <line x1="366" y1="288" x2="390" y2="288" stroke="#2c2a29" stroke-width="2"/>
+      <text x="396" y="292" font-size="9.5" fill="#4a4845">熱平衡</text>
+      <line x1="456" y1="288" x2="480" y2="288" stroke="#b06040" stroke-width="2" stroke-dasharray="6 4"/>
+      <text x="486" y="292" font-size="9.5" fill="#4a4845">逆バイアス</text>
+    </svg>
+    <figcaption>図3　外部電圧印加時のバンド図の変化（実線：熱平衡、破線：バイアス印加時）。順バイアスでは接合部の障壁が e(V<sub>bi</sub>−V) に下がって空乏層幅が狭くなり、多数キャリアが相手側へ注入されやすくなる。逆バイアスでは障壁が e(V<sub>bi</sub>+|V|) に上がり空乏層は広がる。</figcaption>
+  </figure>
 
   <h2 class="font-serif">6. I–V 特性（ショックレー方程式）</h2>
 
@@ -157,6 +354,64 @@
   \[\boxed{\,J = J_0\left[\exp\!\left(\frac{eV}{k_BT}\right)-1\right],\qquad
   J_0 = e\left(\frac{D_e n_{p0}}{L_e} + \frac{D_h p_{n0}}{L_h}\right)\,}\]
   <p>を得る。電流は <strong>少数キャリア</strong>によって支配される。\(J_0\) は逆方向飽和電流密度。</p>
+
+  <figure>
+    <svg viewBox="0 0 620 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="順バイアス時の少数キャリア注入と拡散による減衰分布の模式図">
+      <defs>
+        <marker id="ah04h" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+          <path d="M 0 0 L 10 5 L 0 10 z" fill="#73706c"/>
+        </marker>
+        <marker id="ah04i" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse">
+          <path d="M 0 0 L 10 5 L 0 10 z" fill="#2e7d6e"/>
+        </marker>
+        <marker id="ah04j" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse">
+          <path d="M 0 0 L 10 5 L 0 10 z" fill="#b06040"/>
+        </marker>
+      </defs>
+      <!-- 空乏層 -->
+      <rect x="285" y="45" width="50" height="205" fill="#f0ede8"/>
+      <line x1="285" y1="45" x2="285" y2="250" stroke="#a8a49e" stroke-width="1" stroke-dasharray="4 3"/>
+      <line x1="335" y1="45" x2="335" y2="250" stroke="#a8a49e" stroke-width="1" stroke-dasharray="4 3"/>
+      <line x1="310" y1="45" x2="310" y2="250" stroke="#c8c4be" stroke-width="1" stroke-dasharray="4 4"/>
+      <!-- 軸 -->
+      <line x1="50" y1="250" x2="595" y2="250" stroke="#73706c" stroke-width="1.4" marker-end="url(#ah04h)"/>
+      <line x1="50" y1="250" x2="50" y2="38" stroke="#73706c" stroke-width="1.4" marker-end="url(#ah04h)"/>
+      <text x="58" y="34" font-size="10" fill="#73706c">少数キャリア密度</text>
+      <text x="601" y="254" font-size="11" fill="#73706c" font-style="italic">x</text>
+      <text x="285" y="266" font-size="9.5" fill="#4a4845" text-anchor="middle" font-style="italic">−x<tspan dy="3" font-size="7">n</tspan></text>
+      <text x="310" y="266" font-size="9.5" fill="#4a4845" text-anchor="middle">0</text>
+      <text x="335" y="266" font-size="9.5" fill="#4a4845" text-anchor="middle" font-style="italic">x<tspan dy="3" font-size="7">p</tspan></text>
+      <text x="165" y="285" font-size="10" fill="#4a4845" text-anchor="middle"><tspan font-style="italic">n</tspan> 型中性領域</text>
+      <text x="310" y="285" font-size="10" fill="#4a4845" text-anchor="middle">空乏層</text>
+      <text x="465" y="285" font-size="10" fill="#4a4845" text-anchor="middle"><tspan font-style="italic">p</tspan> 型中性領域</text>
+      <text x="120" y="52" font-size="10" fill="#4a4845">順バイアス（V 正）</text>
+      <!-- 平衡値の基線 -->
+      <line x1="335" y1="225" x2="585" y2="225" stroke="#a8a49e" stroke-width="1" stroke-dasharray="5 4"/>
+      <text x="556" y="238" font-size="9.5" fill="#96938f" font-style="italic">n<tspan dy="3" font-size="7">p0</tspan></text>
+      <line x1="55" y1="232" x2="285" y2="232" stroke="#a8a49e" stroke-width="1" stroke-dasharray="5 4"/>
+      <text x="60" y="244" font-size="9.5" fill="#96938f" font-style="italic">p<tspan dy="3" font-size="7">n0</tspan></text>
+      <!-- p側：注入電子の減衰（拡散長 Le） -->
+      <path d="M 335 80 C 360 135 380 158 405 172 C 430 186 450 196 475 205 C 500 214 540 220 585 221" fill="none" stroke="#2e7d6e" stroke-width="2.2"/>
+      <!-- n側：注入正孔の減衰（拡散長 Lh） -->
+      <path d="M 285 120 C 265 163 250 178 230 191 C 210 204 195 211 175 217 C 150 224 100 229 55 230" fill="none" stroke="#b06040" stroke-width="2.2"/>
+      <!-- 注入の向き -->
+      <line x1="298" y1="60" x2="356" y2="60" stroke="#2e7d6e" stroke-width="1.6" marker-end="url(#ah04i)"/>
+      <text x="362" y="64" font-size="9.5" fill="#2e7d6e">電子注入</text>
+      <line x1="322" y1="95" x2="264" y2="95" stroke="#b06040" stroke-width="1.6" marker-end="url(#ah04j)"/>
+      <text x="258" y="99" font-size="9.5" fill="#b06040" text-anchor="end">正孔注入</text>
+      <!-- 境界値 -->
+      <text x="352" y="84" font-size="10" fill="#2e7d6e" font-style="italic">n<tspan dy="3" font-size="8">p</tspan><tspan dy="-3">(x</tspan><tspan dy="3" font-size="8">p</tspan><tspan dy="-3">) = n</tspan><tspan dy="3" font-size="8">p0</tspan><tspan dy="-3"> e</tspan><tspan dy="-8" font-size="8">eV/k</tspan><tspan dy="2" font-size="6">B</tspan><tspan dy="-2" font-size="8">T</tspan></text>
+      <text x="58" y="100" font-size="10" fill="#b06040" font-style="italic">p<tspan dy="3" font-size="8">n</tspan><tspan dy="-3">(−x</tspan><tspan dy="3" font-size="8">n</tspan><tspan dy="-3">) = p</tspan><tspan dy="3" font-size="8">n0</tspan><tspan dy="-3"> e</tspan><tspan dy="-8" font-size="8">eV/k</tspan><tspan dy="2" font-size="6">B</tspan><tspan dy="-2" font-size="8">T</tspan></text>
+      <line x1="160" y1="104" x2="276" y2="116" stroke="#a8a49e" stroke-width="1"/>
+      <!-- 拡散長 -->
+      <line x1="337" y1="242" x2="405" y2="242" stroke="#73706c" stroke-width="1.1" marker-start="url(#ah04h)" marker-end="url(#ah04h)"/>
+      <text x="371" y="237" font-size="9.5" fill="#4a4845" text-anchor="middle" font-style="italic">L<tspan dy="3" font-size="7">e</tspan></text>
+      <line x1="232" y1="242" x2="283" y2="242" stroke="#73706c" stroke-width="1.1" marker-start="url(#ah04h)" marker-end="url(#ah04h)"/>
+      <text x="257" y="237" font-size="9.5" fill="#4a4845" text-anchor="middle" font-style="italic">L<tspan dy="3" font-size="7">h</tspan></text>
+      <text x="455" y="150" font-size="9" fill="#96938f" text-anchor="middle">拡散しながら再結合で減衰</text>
+    </svg>
+    <figcaption>図4　順バイアス時の少数キャリア分布の模式図。空乏層端で少数キャリア密度は平衡値の e<sup>eV/k<sub>B</sub>T</sup> 倍に増え（注入）、中性領域を拡散しながら再結合して、拡散長 L<sub>e</sub>, L<sub>h</sub> のスケールで平衡値 n<sub>p0</sub>, p<sub>n0</sub> へ指数関数的に戻る。空乏層端でのこの密度勾配が拡散電流、すなわちダイオード電流を決める。</figcaption>
+  </figure>
 
   <h2 class="font-serif">7. キャリアの生成と再結合</h2>
   <ul>

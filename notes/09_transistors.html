@@ -78,6 +78,47 @@
   </ol>
   <p>pn 接合と同じく注入は \(n_p = n_{p0}\exp(eV/k_BT)\)、電流は \(I = I_s[\exp(eV/k_BT)-1]\)。</p>
 
+  <figure>
+    <svg viewBox="0 0 560 230" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="npnバイポーラトランジスタの構造と動作。エミッタから注入された電子が薄いベースを再結合せず通過してコレクタに収集される">
+      <defs>
+        <marker id="bp9e" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+          <path d="M 0 0 L 10 5 L 0 10 z" fill="#73706c"/>
+        </marker>
+        <marker id="bp9g" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+          <path d="M 0 0 L 10 5 L 0 10 z" fill="#2e7d6e"/>
+        </marker>
+      </defs>
+      <!-- 素子 -->
+      <rect x="70" y="72" width="110" height="76" fill="#dce8e0" stroke="#b3ada1"/>
+      <rect x="180" y="72" width="46" height="76" fill="#f0e0d6" stroke="#b3ada1"/>
+      <rect x="226" y="72" width="194" height="76" fill="#e6ece9" stroke="#b3ada1"/>
+      <text x="125" y="106" font-size="10" fill="#4a4845" text-anchor="middle">n⁺</text>
+      <text x="203" y="106" font-size="9" fill="#4a4845" text-anchor="middle">p</text>
+      <text x="323" y="106" font-size="10" fill="#4a4845" text-anchor="middle">n</text>
+      <text x="125" y="164" font-size="9" fill="#4a4845" text-anchor="middle">エミッタ</text>
+      <text x="203" y="164" font-size="8" fill="#4a4845" text-anchor="middle">ベース</text>
+      <text x="323" y="164" font-size="9" fill="#4a4845" text-anchor="middle">コレクタ</text>
+      <text x="203" y="176" font-size="7" fill="#96938f" text-anchor="middle">（薄い）</text>
+      <!-- 電子の流れ -->
+      <line x1="92" y1="98" x2="400" y2="98" stroke="#2e7d6e" stroke-width="2.4" marker-end="url(#bp9g)"/>
+      <text x="250" y="90" font-size="9" fill="#2e7d6e" text-anchor="middle">電子（注入 → 再結合せず通過 → 収集）</text>
+      <!-- ベース再結合（わずか） -->
+      <line x1="203" y1="120" x2="203" y2="150" stroke="#b06040" stroke-width="1.2" stroke-dasharray="3 2" marker-end="url(#bp9e)"/>
+      <!-- 端子・バイアス -->
+      <line x1="70" y1="112" x2="34" y2="112" stroke="#73706c" stroke-width="1.2"/>
+      <text x="40" y="106" font-size="8.5" fill="#4a4845" font-style="italic">I<tspan dy="2" font-size="6.5">E</tspan></text>
+      <line x1="420" y1="112" x2="470" y2="112" stroke="#73706c" stroke-width="1.2"/>
+      <rect x="470" y="104" width="14" height="16" fill="#f0ede8" stroke="#b3ada1"/>
+      <text x="490" y="110" font-size="8.5" fill="#4a4845" font-style="italic">R<tspan dy="2" font-size="6.5">L</tspan></text>
+      <text x="440" y="106" font-size="8.5" fill="#4a4845" font-style="italic">I<tspan dy="2" font-size="6.5">C</tspan></text>
+      <line x1="203" y1="150" x2="203" y2="200" stroke="#73706c" stroke-width="1.2"/>
+      <text x="209" y="196" font-size="8.5" fill="#4a4845" font-style="italic">I<tspan dy="2" font-size="6.5">B</tspan></text>
+      <text x="125" y="218" font-size="8.5" fill="#73706c" text-anchor="middle">V<tspan dy="2" font-size="6.5">BE</tspan><tspan dy="-2"> 順方向</tspan></text>
+      <text x="323" y="218" font-size="8.5" fill="#73706c" text-anchor="middle">V<tspan dy="2" font-size="6.5">CB</tspan><tspan dy="-2"> 逆方向</tspan></text>
+    </svg>
+    <figcaption>図1　npn バイポーラトランジスタの構造と動作。エミッタ–ベース間を順方向、ベース–コレクタ間を逆方向にバイアスすると、エミッタ（n⁺）から注入された電子が<strong>薄いベース</strong>（p）を再結合せずに通過してコレクタ（n）に収集される。エミッタのドナー密度をベースのアクセプタ密度よりずっと大きく（N<sub>E</sub>≫N<sub>B</sub>）し、ベースを薄くするほどベース電流 I<sub>B</sub>（再結合・逆注入）が減り、I<sub>C</sub>/I<sub>E</sub>=α が 1 に近づく。</figcaption>
+  </figure>
+
   <h3>ベース接地（common-base）</h3>
   <p>入力側がエミッタ–ベース（順方向）、出力側がベース–コレクタ（逆方向）。\(V_{BE}\) の小さな変化が \(I_E\)（したがって \(I_C\)）を大きく変える。電流の関係は</p>
   \[I_E = I_B + I_C,\qquad I_C = \alpha I_E,\qquad
@@ -98,11 +139,80 @@
     <li>例：SiGe HBT、GaAs HBT。高周波デバイスとして GaAs HEMT と並ぶ。</li>
   </ul>
 
+  <figure>
+    <svg viewBox="0 0 560 250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="ヘテロ接合バイポーラトランジスタのバンド図。ワイドギャップのエミッタが価電子帯オフセットで正孔の逆注入を阻止しつつ、電子はコレクタへ流れる">
+      <defs>
+        <marker id="hb9c" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+          <path d="M 0 0 L 10 5 L 0 10 z" fill="#2e7d6e"/>
+        </marker>
+        <marker id="hb9d" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse">
+          <path d="M 0 0 L 10 5 L 0 10 z" fill="#b06040"/>
+        </marker>
+      </defs>
+      <!-- 領域境界 -->
+      <line x1="180" y1="34" x2="180" y2="210" stroke="#a8a49e" stroke-width="0.8" stroke-dasharray="4 3"/>
+      <line x1="255" y1="34" x2="255" y2="210" stroke="#a8a49e" stroke-width="0.8" stroke-dasharray="4 3"/>
+      <text x="115" y="30" font-size="8.5" fill="#4a4845" text-anchor="middle">エミッタ（ワイドギャップ）</text>
+      <text x="217" y="30" font-size="8.5" fill="#4a4845" text-anchor="middle">ベース</text>
+      <text x="390" y="30" font-size="8.5" fill="#4a4845" text-anchor="middle">コレクタ</text>
+      <!-- E_C -->
+      <path d="M 50 92 L 180 92 C 200 90 210 88 230 88 L 255 90 C 300 118 360 152 400 156 L 520 156" fill="none" stroke="#2c2a29" stroke-width="2"/>
+      <text x="524" y="159" font-size="9" fill="#4a4845" font-style="italic">E</text><text x="531" y="162" font-size="6.5" fill="#4a4845">C</text>
+      <!-- E_V（ワイドギャップエミッタで低い） -->
+      <path d="M 50 192 L 180 192 L 180 150 L 255 150 C 300 178 360 210 400 214 L 520 214" fill="none" stroke="#2c2a29" stroke-width="2"/>
+      <text x="524" y="217" font-size="9" fill="#4a4845" font-style="italic">E</text><text x="531" y="220" font-size="6.5" fill="#4a4845">V</text>
+      <!-- 電子：エミッタ→コレクタ -->
+      <circle cx="120" cy="92" r="3.6" fill="#2e7d6e"/>
+      <line x1="132" y1="93" x2="360" y2="150" stroke="#2e7d6e" stroke-width="1.8" marker-end="url(#hb9c)"/>
+      <text x="250" y="120" font-size="8.5" fill="#2e7d6e">電子は流れる</text>
+      <!-- 正孔：逆注入を阻止 -->
+      <circle cx="215" cy="150" r="3.6" fill="#fcfbfa" stroke="#b06040" stroke-width="1.3"/>
+      <line x1="205" y1="150" x2="188" y2="150" stroke="#b06040" stroke-width="1.6" marker-end="url(#hb9d)"/>
+      <line x1="180" y1="150" x2="180" y2="192" stroke="#b06040" stroke-width="2.4"/>
+      <text x="180" y="146" font-size="13" fill="#b06040" text-anchor="middle">✕</text>
+      <text x="150" y="176" font-size="8" fill="#b06040" text-anchor="middle">正孔の逆注入を阻止</text>
+      <!-- ΔE_V -->
+      <line x1="168" y1="192" x2="168" y2="150" stroke="#73706c" stroke-width="1" marker-start="url(#hb9d)" marker-end="url(#hb9d)"/>
+      <text x="146" y="174" font-size="8" fill="#4a4845" font-style="italic" text-anchor="end">ΔE<tspan dy="2" font-size="6">V</tspan></text>
+    </svg>
+    <figcaption>図2　ヘテロ接合バイポーラトランジスタ（HBT）のバンド図。エミッタを<strong>ワイドギャップ</strong>材料にすると、大きな価電子帯オフセット ΔE<sub>V</sub> がベースからエミッタへの<strong>正孔の逆注入を阻止</strong>する（○＝正孔、✕で阻止）。一方、電子（●）は伝導帯を通ってコレクタへ流れる。このためベースのアクセプタ密度を上げてベース抵抗を下げつつ、高いエミッタ効率（α≈1）を保てる。</figcaption>
+  </figure>
+
   <h2 class="font-serif">3. 電界効果トランジスタ（FET）</h2>
   <p>ゲート電圧でチャネルのキャリアを制御する多数キャリアデバイス。</p>
 
   <h3>JFET（接合型 FET）</h3>
   <p>pn 接合の空乏層でチャネルを絞る。ゲートに逆バイアスをかけると空乏層が広がりチャネルが狭まり、十分な負電圧で<strong>ピンチオフ</strong>する。</p>
+
+  <figure>
+    <svg viewBox="0 0 560 220" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="JFETのピンチオフ。ゲート逆バイアスを大きくすると空乏層が広がりチャネルが狭まり、やがて塞がってピンチオフする">
+      <!-- ===== 逆バイアス小 ===== -->
+      <text x="140" y="24" font-size="9.5" fill="#2c2a29" text-anchor="middle">逆バイアス（小）：チャネル開</text>
+      <rect x="45" y="70" width="190" height="70" fill="#dce8e0" stroke="#b3ada1"/>
+      <rect x="95" y="52" width="90" height="18" fill="#f0e0d6" stroke="#b3ada1"/>
+      <rect x="95" y="140" width="90" height="18" fill="#f0e0d6" stroke="#b3ada1"/>
+      <path d="M 95 70 C 115 96 165 96 185 70 Z" fill="#eef2ef" stroke="#b8c4bc" stroke-width="0.8"/>
+      <path d="M 95 140 C 115 114 165 114 185 140 Z" fill="#eef2ef" stroke="#b8c4bc" stroke-width="0.8"/>
+      <text x="140" y="108" font-size="7.5" fill="#3f7a63" text-anchor="middle">チャネル</text>
+      <text x="140" y="48" font-size="8" fill="#4a4845" text-anchor="middle">ゲート p⁺</text>
+      <text x="60" y="66" font-size="8" fill="#4a4845">S</text>
+      <text x="222" y="66" font-size="8" fill="#4a4845" text-anchor="end">D</text>
+      <text x="140" y="176" font-size="7.5" fill="#96938f" text-anchor="middle">空乏層（薄い）</text>
+
+      <!-- ===== 逆バイアス大 ===== -->
+      <text x="420" y="24" font-size="9.5" fill="#2c2a29" text-anchor="middle">逆バイアス（大）：ピンチオフ</text>
+      <rect x="325" y="70" width="190" height="70" fill="#dce8e0" stroke="#b3ada1"/>
+      <rect x="375" y="52" width="90" height="18" fill="#f0e0d6" stroke="#b3ada1"/>
+      <rect x="375" y="140" width="90" height="18" fill="#f0e0d6" stroke="#b3ada1"/>
+      <path d="M 375 70 C 400 112 440 112 465 70 Z" fill="#eef2ef" stroke="#b8c4bc" stroke-width="0.8"/>
+      <path d="M 375 140 C 400 98 440 98 465 140 Z" fill="#eef2ef" stroke="#b8c4bc" stroke-width="0.8"/>
+      <text x="420" y="48" font-size="8" fill="#4a4845" text-anchor="middle">ゲート p⁺</text>
+      <text x="340" y="66" font-size="8" fill="#4a4845">S</text>
+      <text x="502" y="66" font-size="8" fill="#4a4845" text-anchor="end">D</text>
+      <text x="420" y="176" font-size="7.5" fill="#b06040" text-anchor="middle">空乏層が接触 → チャネル遮断</text>
+    </svg>
+    <figcaption>図3　JFET のピンチオフ。ゲート（p⁺）に逆バイアスをかけると pn 接合の空乏層（薄い網掛け）がチャネル（n 型）に広がって電流経路を狭める（左）。逆バイアスを大きくすると上下の空乏層が接触してチャネルが塞がり、電流が流れなくなる（右、ピンチオフ）。</figcaption>
+  </figure>
 
   <h3>MOSFET</h3>
   <p>MIS（MOS）構造の反転層をチャネルに使う（→ 第5回の反転層）。</p>
@@ -111,6 +221,48 @@
     <li><strong>p チャネル</strong>（n 型基板、p⁺ ソース/ドレイン）：ゲート負電圧で正孔チャネル形成。</li>
     <li><strong>しきい値電圧</strong> \(V_{th}\)：ソース–ドレイン間のポテンシャル障壁をなくすのに必要なゲート電圧。</li>
   </ul>
+
+  <figure>
+    <svg viewBox="0 0 520 230" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="n-MOSFETの断面。p型基板にn+のソースとドレイン、ゲート酸化膜とゲートがあり、ゲート正電圧で反転層の電子チャネルができる">
+      <defs>
+        <marker id="mf9e" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+          <path d="M 0 0 L 10 5 L 0 10 z" fill="#73706c"/>
+        </marker>
+      </defs>
+      <!-- p型基板 -->
+      <rect x="40" y="118" width="440" height="92" fill="#f0e6de" stroke="#c9bcb0"/>
+      <text x="440" y="200" font-size="9" fill="#4a4845" text-anchor="end">p 型基板</text>
+      <!-- n+ ソース/ドレイン -->
+      <rect x="60" y="118" width="90" height="46" fill="#dce8e0" stroke="#b3ada1"/>
+      <rect x="370" y="118" width="90" height="46" fill="#dce8e0" stroke="#b3ada1"/>
+      <text x="105" y="146" font-size="9" fill="#4a4845" text-anchor="middle">n⁺</text>
+      <text x="415" y="146" font-size="9" fill="#4a4845" text-anchor="middle">n⁺</text>
+      <!-- 酸化膜 -->
+      <rect x="150" y="110" width="220" height="8" fill="#e6e1d6" stroke="#cfc7b8"/>
+      <!-- ゲート -->
+      <rect x="150" y="92" width="220" height="18" fill="#b3ada1"/>
+      <!-- 反転層（チャネル） -->
+      <rect x="150" y="118" width="220" height="6" fill="rgba(46,125,110,0.2)"/>
+      <circle cx="175" cy="121" r="2.6" fill="#2e7d6e"/><circle cx="205" cy="121" r="2.6" fill="#2e7d6e"/><circle cx="235" cy="121" r="2.6" fill="#2e7d6e"/><circle cx="265" cy="121" r="2.6" fill="#2e7d6e"/><circle cx="295" cy="121" r="2.6" fill="#2e7d6e"/><circle cx="325" cy="121" r="2.6" fill="#2e7d6e"/><circle cx="345" cy="121" r="2.6" fill="#2e7d6e"/>
+      <!-- 端子 -->
+      <line x1="105" y1="118" x2="105" y2="60" stroke="#73706c" stroke-width="1.2"/>
+      <text x="105" y="52" font-size="9" fill="#4a4845" text-anchor="middle">S</text>
+      <line x1="260" y1="92" x2="260" y2="60" stroke="#73706c" stroke-width="1.2"/>
+      <text x="260" y="52" font-size="9" fill="#4a4845" text-anchor="middle">G</text>
+      <text x="278" y="52" font-size="8" fill="#73706c">V<tspan dy="2" font-size="6">G</tspan><tspan dy="-2"> ＞ 0</tspan></text>
+      <line x1="415" y1="118" x2="415" y2="60" stroke="#73706c" stroke-width="1.2"/>
+      <text x="415" y="52" font-size="9" fill="#4a4845" text-anchor="middle">D</text>
+      <text x="433" y="52" font-size="8" fill="#73706c">V<tspan dy="2" font-size="6">D</tspan><tspan dy="-2"> ＞ 0</tspan></text>
+      <!-- ラベル -->
+      <text x="260" y="86" font-size="8" fill="#4a4845" text-anchor="middle">ゲート</text>
+      <text x="384" y="112" font-size="7" fill="#96938f" text-anchor="start">酸化膜</text>
+      <text x="260" y="140" font-size="7.5" fill="#3f7a63" text-anchor="middle">反転層（電子チャネル）</text>
+      <line x1="150" y1="222" x2="370" y2="222" stroke="#73706c" stroke-width="1" marker-start="url(#mf9e)" marker-end="url(#mf9e)"/>
+      <text x="260" y="219" font-size="7.5" fill="#96938f" text-anchor="middle">チャネル長 L</text>
+    </svg>
+    <figcaption>図4　n チャネル MOSFET の断面。p 型基板に n⁺ のソース／ドレインを設け、ゲート酸化膜を挟んでゲート電極を置く。ゲートに正電圧 V<sub>G</sub>&gt;V<sub>th</sub> をかけると基板表面が反転して<strong>電子チャネル（反転層）</strong>ができ、ソース–ドレイン間に電流が流れる。反転層は第 5 回の MIS 反転と同じ機構。</figcaption>
+  </figure>
+
   <table>
     <thead>
       <tr><th>キャリア</th><th>基板</th><th>型</th><th>\(V_{th}\)</th></tr>
@@ -136,8 +288,87 @@
   </table>
   <p><strong>電源とグラウンド間に定常電流が流れず省電力</strong>、理想的なスイッチとしてロジック IC の基礎になる。</p>
 
+  <figure>
+    <svg viewBox="0 0 560 250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="CMOSインバータの回路と伝達特性。上のp-MOSと下のn-MOSが相補的にオンオフし、入力を反転して出力する">
+      <defs>
+        <marker id="cm9e" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+          <path d="M 0 0 L 10 5 L 0 10 z" fill="#73706c"/>
+        </marker>
+      </defs>
+      <!-- ===== 回路 ===== -->
+      <line x1="150" y1="34" x2="150" y2="58" stroke="#2c2a29" stroke-width="1.4"/>
+      <text x="150" y="28" font-size="9" fill="#4a4845" text-anchor="middle" font-style="italic">V<tspan dy="2" font-size="6.5">DD</tspan></text>
+      <rect x="118" y="58" width="64" height="42" fill="#eef2ef" stroke="#b3ada1"/>
+      <text x="150" y="83" font-size="9" fill="#4a4845" text-anchor="middle">p-MOS</text>
+      <line x1="150" y1="100" x2="150" y2="150" stroke="#2c2a29" stroke-width="1.4"/>
+      <rect x="118" y="150" width="64" height="42" fill="#f0e6de" stroke="#b3ada1"/>
+      <text x="150" y="175" font-size="9" fill="#4a4845" text-anchor="middle">n-MOS</text>
+      <line x1="150" y1="192" x2="150" y2="214" stroke="#2c2a29" stroke-width="1.4"/>
+      <line x1="138" y1="214" x2="162" y2="214" stroke="#2c2a29" stroke-width="1.4"/>
+      <line x1="142" y1="219" x2="158" y2="219" stroke="#2c2a29" stroke-width="1.2"/>
+      <line x1="146" y1="224" x2="154" y2="224" stroke="#2c2a29" stroke-width="1"/>
+      <!-- 入力 -->
+      <line x1="60" y1="125" x2="118" y2="125" stroke="#2c2a29" stroke-width="1.4"/>
+      <line x1="90" y1="79" x2="118" y2="79" stroke="#2c2a29" stroke-width="1"/>
+      <line x1="90" y1="171" x2="118" y2="171" stroke="#2c2a29" stroke-width="1"/>
+      <line x1="90" y1="79" x2="90" y2="171" stroke="#2c2a29" stroke-width="1"/>
+      <circle cx="90" cy="125" r="2.6" fill="#2c2a29"/>
+      <text x="56" y="122" font-size="9" fill="#4a4845" text-anchor="end" font-style="italic">V<tspan dy="2" font-size="6.5">in</tspan></text>
+      <!-- 出力 -->
+      <line x1="150" y1="125" x2="230" y2="125" stroke="#2c2a29" stroke-width="1.4"/>
+      <circle cx="150" cy="125" r="2.6" fill="#2c2a29"/>
+      <text x="236" y="122" font-size="9" fill="#4a4845" font-style="italic">V<tspan dy="2" font-size="6.5">out</tspan></text>
+
+      <!-- ===== 伝達特性 ===== -->
+      <line x1="330" y1="210" x2="330" y2="40" stroke="#73706c" stroke-width="1.1" marker-end="url(#cm9e)"/>
+      <text x="322" y="44" font-size="8.5" fill="#4a4845" font-style="italic" text-anchor="end">V<tspan dy="2" font-size="6">out</tspan></text>
+      <line x1="330" y1="210" x2="540" y2="210" stroke="#73706c" stroke-width="1.1" marker-end="url(#cm9e)"/>
+      <text x="540" y="224" font-size="8.5" fill="#4a4845" font-style="italic" text-anchor="end">V<tspan dy="2" font-size="6">in</tspan></text>
+      <line x1="330" y1="60" x2="540" y2="60" stroke="#e2ded7" stroke-width="1" stroke-dasharray="4 3"/>
+      <text x="326" y="63" font-size="7.5" fill="#73706c" text-anchor="end" font-style="italic">V<tspan dy="2" font-size="6">DD</tspan></text>
+      <path d="M 340 60 L 410 60 C 425 60 428 90 435 130 C 442 170 445 200 460 200 L 530 200" fill="none" stroke="#2c2a29" stroke-width="2"/>
+      <text x="380" y="80" font-size="7.5" fill="#96938f">p-MOS ON</text>
+      <text x="380" y="90" font-size="7.5" fill="#96938f">n-MOS OFF</text>
+      <text x="497" y="188" font-size="7.5" fill="#96938f" text-anchor="middle">p-MOS OFF</text>
+      <text x="497" y="198" font-size="7.5" fill="#96938f" text-anchor="middle">n-MOS ON</text>
+    </svg>
+    <figcaption>図5　CMOS インバータ。電源 V<sub>DD</sub> 側に p-MOS、グラウンド側に n-MOS を直列に置き、両ゲートに共通入力 V<sub>in</sub> を与える。入力が低いと p-MOS が ON・n-MOS が OFF で出力は V<sub>DD</sub>、入力が高いと逆になって出力は 0（右：伝達特性）。どちらの状態でも電源–グラウンド間に定常電流が流れず<strong>省電力</strong>。</figcaption>
+  </figure>
+
   <h3>DRAM</h3>
   <p><strong>MOS ＋ キャパシタ</strong>（Dynamic Random Access Memory）。キャパシタの充放電で 1/0 を記憶。放電するのでリフレッシュが必要。</p>
+
+  <figure>
+    <svg viewBox="0 0 420 240" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="DRAMの1トランジスタ1キャパシタセル">
+      <defs>
+        <marker id="dr9e" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+          <path d="M 0 0 L 10 5 L 0 10 z" fill="#2e7d6e"/>
+        </marker>
+      </defs>
+      <line x1="300" y1="30" x2="300" y2="90" stroke="#2c2a29" stroke-width="1.6"/>
+      <text x="306" y="40" font-size="9" fill="#4a4845">ビット線</text>
+      <line x1="40" y1="120" x2="150" y2="120" stroke="#2c2a29" stroke-width="1.6"/>
+      <text x="44" y="112" font-size="9" fill="#4a4845">ワード線</text>
+      <rect x="150" y="96" width="60" height="48" fill="#f0e6de" stroke="#b3ada1"/>
+      <text x="180" y="124" font-size="8" fill="#4a4845" text-anchor="middle">パス Tr</text>
+      <line x1="210" y1="120" x2="300" y2="120" stroke="#2c2a29" stroke-width="1.4"/>
+      <line x1="300" y1="90" x2="300" y2="120" stroke="#2c2a29" stroke-width="1.4"/>
+      <circle cx="300" cy="120" r="2.4" fill="#2c2a29"/>
+      <line x1="180" y1="144" x2="180" y2="170" stroke="#2c2a29" stroke-width="1.4"/>
+      <line x1="158" y1="170" x2="202" y2="170" stroke="#2c2a29" stroke-width="1.8"/>
+      <line x1="158" y1="180" x2="202" y2="180" stroke="#2c2a29" stroke-width="1.8"/>
+      <line x1="180" y1="180" x2="180" y2="200" stroke="#2c2a29" stroke-width="1.4"/>
+      <line x1="168" y1="200" x2="192" y2="200" stroke="#2c2a29" stroke-width="1.4"/>
+      <line x1="172" y1="205" x2="188" y2="205" stroke="#2c2a29" stroke-width="1.2"/>
+      <line x1="176" y1="210" x2="184" y2="210" stroke="#2c2a29" stroke-width="1"/>
+      <text x="208" y="178" font-size="8.5" fill="#4a4845">キャパシタ</text>
+      <line x1="240" y1="108" x2="240" y2="90" stroke="#2e7d6e" stroke-width="1.4" marker-end="url(#dr9e)"/>
+      <line x1="255" y1="150" x2="255" y2="168" stroke="#2e7d6e" stroke-width="1.4" marker-end="url(#dr9e)"/>
+      <text x="248" y="86" font-size="8" fill="#2e7d6e">放電</text>
+      <text x="262" y="164" font-size="8" fill="#2e7d6e">充電</text>
+    </svg>
+    <figcaption>図6　DRAM の 1 トランジスタ 1 キャパシタ（1T1C）セル。<strong>ワード線</strong>で<strong>パストランジスタ</strong>を開き、<strong>ビット線</strong>と<strong>キャパシタ</strong>の間で電荷を充放電して 1／0 を記憶する。キャパシタは時間とともに放電するため、周期的な<strong>リフレッシュ</strong>が必要。</figcaption>
+  </figure>
 
   <h3>MESFET と PHEMT</h3>
   <ul>

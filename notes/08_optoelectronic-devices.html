@@ -94,6 +94,62 @@
   \[\boxed{\,B_{12} = B_{21},\qquad \frac{A_{21}}{B_{21}} = \frac{\hbar\omega^3}{\pi^2 c^3}\,}\]
   <p>が必要（アインシュタインの A 係数・B 係数の関係）。吸収と自然放出だけでは熱平衡分布を再現できず、<strong>誘導放出が必然的に存在する</strong>ことがわかる。フォトン数の観点では、吸収 \(\propto N_p\)、放出 \(\propto(N_p+1)\)（\(+1\) が自然放出）。</p>
 
+  <figure>
+    <svg viewBox="0 0 660 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="2準位系における吸収・自然放出・誘導放出の3過程の模式図">
+      <defs>
+        <marker id="ah08a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse">
+          <path d="M 0 0 L 10 5 L 0 10 z" fill="#2e7d6e"/>
+        </marker>
+        <marker id="ah08b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+          <path d="M 0 0 L 10 5 L 0 10 z" fill="#b06040"/>
+        </marker>
+      </defs>
+      <text x="330" y="22" font-size="10.5" fill="#4a4845" text-anchor="middle">2準位系：<tspan font-style="italic">ε</tspan><tspan dy="3" font-size="8">2</tspan><tspan dy="-3"> − </tspan><tspan font-style="italic">ε</tspan><tspan dy="3" font-size="8">1</tspan><tspan dy="-3"> = ħω</tspan></text>
+
+      <!-- 吸収 -->
+      <line x1="40" y1="80" x2="200" y2="80" stroke="#2c2a29" stroke-width="2"/>
+      <line x1="40" y1="190" x2="200" y2="190" stroke="#2c2a29" stroke-width="2"/>
+      <text x="14" y="84" font-size="11" fill="#4a4845" font-style="italic">ε<tspan dy="3" font-size="8">2</tspan></text>
+      <text x="14" y="194" font-size="11" fill="#4a4845" font-style="italic">ε<tspan dy="3" font-size="8">1</tspan></text>
+      <circle cx="140" cy="190" r="4.5" fill="none" stroke="#c8c4be" stroke-width="1.4"/>
+      <line x1="140" y1="183" x2="140" y2="88" stroke="#2e7d6e" stroke-width="2" marker-end="url(#ah08a)"/>
+      <circle cx="140" cy="80" r="4.5" fill="#2e7d6e"/>
+      <path d="M 48 135 q 4.5 -6 9 0 q 4.5 6 9 0 q 4.5 -6 9 0 q 4.5 6 9 0 q 4.5 -6 9 0 q 4.5 6 9 0 q 4.5 -6 9 0 q 4.5 6 9 0" fill="none" stroke="#b06040" stroke-width="1.6" marker-end="url(#ah08b)"/>
+      <text x="58" y="120" font-size="10" fill="#b06040" font-style="italic">ħω</text>
+      <text x="120" y="232" font-size="11" fill="#2c2a29" text-anchor="middle" font-weight="600">吸収</text>
+      <text x="120" y="256" font-size="10" fill="#4a4845" text-anchor="middle" font-style="italic">B<tspan dy="3" font-size="7.5">12</tspan><tspan dy="-3"> f</tspan><tspan dy="3" font-size="7.5">1</tspan><tspan dy="-3">(1−f</tspan><tspan dy="3" font-size="7.5">2</tspan><tspan dy="-3">)N</tspan><tspan dy="3" font-size="7.5">p</tspan></text>
+      <text x="120" y="274" font-size="9" fill="#96938f" text-anchor="middle">フォトン数に比例</text>
+
+      <!-- 自然放出 -->
+      <line x1="250" y1="80" x2="410" y2="80" stroke="#2c2a29" stroke-width="2"/>
+      <line x1="250" y1="190" x2="410" y2="190" stroke="#2c2a29" stroke-width="2"/>
+      <circle cx="330" cy="80" r="4.5" fill="none" stroke="#c8c4be" stroke-width="1.4"/>
+      <line x1="330" y1="87" x2="330" y2="182" stroke="#2e7d6e" stroke-width="2" marker-end="url(#ah08a)"/>
+      <circle cx="330" cy="190" r="4.5" fill="#2e7d6e"/>
+      <path d="M 350 135 q 4.5 -6 9 0 q 4.5 6 9 0 q 4.5 -6 9 0 q 4.5 6 9 0 q 4.5 -6 9 0 q 4.5 6 9 0 q 4.5 -6 9 0 q 4.5 6 9 0" fill="none" stroke="#b06040" stroke-width="1.6" marker-end="url(#ah08b)"/>
+      <text x="386" y="121" font-size="10" fill="#b06040" font-style="italic">ħω</text>
+      <text x="330" y="232" font-size="11" fill="#2c2a29" text-anchor="middle" font-weight="600">自然放出</text>
+      <text x="330" y="256" font-size="10" fill="#4a4845" text-anchor="middle" font-style="italic">A<tspan dy="3" font-size="7.5">21</tspan><tspan dy="-3"> f</tspan><tspan dy="3" font-size="7.5">2</tspan><tspan dy="-3">(1−f</tspan><tspan dy="3" font-size="7.5">1</tspan><tspan dy="-3">)</tspan></text>
+      <text x="330" y="274" font-size="9" fill="#96938f" text-anchor="middle">フォトン数によらない</text>
+
+      <!-- 誘導放出 -->
+      <line x1="460" y1="80" x2="620" y2="80" stroke="#2c2a29" stroke-width="2"/>
+      <line x1="460" y1="190" x2="620" y2="190" stroke="#2c2a29" stroke-width="2"/>
+      <circle cx="540" cy="80" r="4.5" fill="none" stroke="#c8c4be" stroke-width="1.4"/>
+      <line x1="540" y1="87" x2="540" y2="182" stroke="#2e7d6e" stroke-width="2" marker-end="url(#ah08a)"/>
+      <circle cx="540" cy="190" r="4.5" fill="#2e7d6e"/>
+      <path d="M 446 130 q 4 -5 8 0 q 4 5 8 0 q 4 -5 8 0 q 4 5 8 0 q 4 -5 8 0 q 4 5 8 0 q 4 -5 8 0 q 4 5 8 0" fill="none" stroke="#b06040" stroke-width="1.6" marker-end="url(#ah08b)"/>
+      <text x="452" y="116" font-size="9.5" fill="#b06040" font-style="italic">ħω</text>
+      <path d="M 560 122 q 4 -5 8 0 q 4 5 8 0 q 4 -5 8 0 q 4 5 8 0 q 4 -5 8 0 q 4 5 8 0 q 4 -5 8 0 q 4 5 8 0" fill="none" stroke="#b06040" stroke-width="1.6" marker-end="url(#ah08b)"/>
+      <path d="M 560 142 q 4 -5 8 0 q 4 5 8 0 q 4 -5 8 0 q 4 5 8 0 q 4 -5 8 0 q 4 5 8 0 q 4 -5 8 0 q 4 5 8 0" fill="none" stroke="#b06040" stroke-width="1.6" marker-end="url(#ah08b)"/>
+      <text x="592" y="108" font-size="9" fill="#b06040" text-anchor="middle">同波長・同位相</text>
+      <text x="540" y="232" font-size="11" fill="#2c2a29" text-anchor="middle" font-weight="600">誘導放出</text>
+      <text x="540" y="256" font-size="10" fill="#4a4845" text-anchor="middle" font-style="italic">B<tspan dy="3" font-size="7.5">21</tspan><tspan dy="-3"> f</tspan><tspan dy="3" font-size="7.5">2</tspan><tspan dy="-3">(1−f</tspan><tspan dy="3" font-size="7.5">1</tspan><tspan dy="-3">)N</tspan><tspan dy="3" font-size="7.5">p</tspan></text>
+      <text x="540" y="274" font-size="9" fill="#96938f" text-anchor="middle">フォトン数に比例（コヒーレント）</text>
+    </svg>
+    <figcaption>図1　2準位系（ħω = ε<sub>2</sub> − ε<sub>1</sub>）における光と電子の3つの素過程。○は遷移前、●は遷移後の電子。各パネル下段は単位時間当たりの遷移割合で、吸収と誘導放出はフォトン数 N<sub>p</sub> に比例し、自然放出は N<sub>p</sub> によらない。誘導放出では入射光と同波長・同位相のフォトンが放出され、光が増幅される。</figcaption>
+  </figure>
+
   <h2 class="font-serif">4. レーザ発振条件</h2>
 
   <h3>反転分布（利得）</h3>
@@ -108,16 +164,169 @@
   E_{Fn}-E_{Fp} < \hbar\omega:\ \text{吸収}.\]
   <p>利得が生じるには擬フェルミ準位差がバンドギャップを超える（\(E_{Fn}-E_{Fp}>\varepsilon_G\)）ほどの強い注入が必要。</p>
 
+  <figure>
+    <svg viewBox="0 0 640 340" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="反転分布状態のバンド図と光子エネルギーによる透過・増幅・吸収の3領域">
+      <defs>
+        <marker id="ah08c" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse">
+          <path d="M 0 0 L 10 5 L 0 10 z" fill="#2e7d6e"/>
+        </marker>
+        <marker id="ah08d" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+          <path d="M 0 0 L 10 5 L 0 10 z" fill="#b06040"/>
+        </marker>
+        <marker id="ah08e" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+          <path d="M 0 0 L 10 5 L 0 10 z" fill="#73706c"/>
+        </marker>
+      </defs>
+
+      <!-- 伝導帯 -->
+      <rect x="90" y="44" width="460" height="56" fill="#f0ede8"/>
+      <rect x="90" y="72" width="460" height="28" fill="rgba(46,125,110,0.22)"/>
+      <line x1="90" y1="100" x2="550" y2="100" stroke="#2c2a29" stroke-width="2"/>
+      <line x1="80" y1="72" x2="560" y2="72" stroke="#2e7d6e" stroke-width="1.4" stroke-dasharray="6 4"/>
+      <!-- 価電子帯 -->
+      <rect x="90" y="232" width="460" height="56" fill="#f0ede8"/>
+      <rect x="90" y="232" width="460" height="28" fill="rgba(176,96,64,0.18)"/>
+      <line x1="90" y1="232" x2="550" y2="232" stroke="#2c2a29" stroke-width="2"/>
+      <line x1="80" y1="260" x2="560" y2="260" stroke="#b06040" stroke-width="1.4" stroke-dasharray="6 4"/>
+
+      <text x="30" y="75" font-size="10" fill="#2e7d6e" font-style="italic">E</text><text x="38" y="78" font-size="7.5" fill="#2e7d6e">Fn</text>
+      <text x="56" y="104" font-size="10" fill="#4a4845" font-style="italic">E</text><text x="64" y="107" font-size="7.5" fill="#4a4845">C</text>
+      <text x="56" y="236" font-size="10" fill="#4a4845" font-style="italic">E</text><text x="64" y="239" font-size="7.5" fill="#4a4845">V</text>
+      <text x="30" y="264" font-size="10" fill="#b06040" font-style="italic">E</text><text x="38" y="267" font-size="7.5" fill="#b06040">Fp</text>
+      <text x="98" y="60" font-size="9.5" fill="#96938f">伝導帯</text>
+      <text x="98" y="281" font-size="9.5" fill="#96938f">価電子帯</text>
+      <text x="500" y="90" font-size="9.5" fill="#2e7d6e">電子</text>
+      <text x="500" y="252" font-size="9.5" fill="#b06040">正孔</text>
+      <circle cx="150" cy="86" r="3.5" fill="#2e7d6e"/>
+      <circle cx="175" cy="86" r="3.5" fill="#2e7d6e"/>
+      <circle cx="200" cy="86" r="3.5" fill="#2e7d6e"/>
+      <circle cx="150" cy="246" r="3.5" fill="#fcfbfa" stroke="#b06040" stroke-width="1.3"/>
+      <circle cx="175" cy="246" r="3.5" fill="#fcfbfa" stroke="#b06040" stroke-width="1.3"/>
+      <circle cx="200" cy="246" r="3.5" fill="#fcfbfa" stroke="#b06040" stroke-width="1.3"/>
+
+      <!-- バンドギャップと擬フェルミ準位差 -->
+      <line x1="112" y1="105" x2="112" y2="227" stroke="#73706c" stroke-width="1.2" marker-start="url(#ah08e)" marker-end="url(#ah08e)"/>
+      <text x="120" y="170" font-size="10.5" fill="#4a4845" font-style="italic">ε<tspan dy="3" font-size="8">G</tspan></text>
+      <line x1="562" y1="76" x2="562" y2="256" stroke="#73706c" stroke-width="1.2" marker-start="url(#ah08e)" marker-end="url(#ah08e)"/>
+      <text x="568" y="164" font-size="9.5" fill="#4a4845" font-style="italic">E<tspan dy="3" font-size="7">Fn</tspan><tspan dy="-3">−E</tspan><tspan dy="3" font-size="7">Fp</tspan></text>
+
+      <!-- 透過 -->
+      <path d="M 140 166 q 4 -5 8 0 q 4 5 8 0 q 4 -5 8 0 q 4 5 8 0 q 4 -5 8 0 q 4 5 8 0 q 4 -5 8 0 q 4 5 8 0 q 4 -5 8 0 q 4 5 8 0" fill="none" stroke="#a8a49e" stroke-width="1.4" marker-end="url(#ah08e)"/>
+      <text x="150" y="151" font-size="10" fill="#96938f" font-style="italic">ħω</text>
+
+      <!-- 増幅 -->
+      <path d="M 246 150 q 4 -5 8 0 q 4 5 8 0 q 4 -5 8 0 q 4 5 8 0 q 4 -5 8 0 q 4 5 8 0 q 4 -5 8 0 q 4 5 8 0" fill="none" stroke="#b06040" stroke-width="1.6" marker-end="url(#ah08d)"/>
+      <text x="254" y="136" font-size="10" fill="#b06040" font-style="italic">ħω</text>
+      <circle cx="330" cy="84" r="3.5" fill="#2e7d6e"/>
+      <line x1="330" y1="89" x2="330" y2="240" stroke="#2e7d6e" stroke-width="2.2" marker-end="url(#ah08c)"/>
+      <path d="M 342 142 q 4 -5 8 0 q 4 5 8 0 q 4 -5 8 0 q 4 5 8 0 q 4 -5 8 0 q 4 5 8 0 q 4 -5 8 0 q 4 5 8 0" fill="none" stroke="#b06040" stroke-width="1.6" marker-end="url(#ah08d)"/>
+      <path d="M 342 158 q 4 -5 8 0 q 4 5 8 0 q 4 -5 8 0 q 4 5 8 0 q 4 -5 8 0 q 4 5 8 0 q 4 -5 8 0 q 4 5 8 0" fill="none" stroke="#b06040" stroke-width="1.6" marker-end="url(#ah08d)"/>
+
+      <!-- 吸収 -->
+      <path d="M 390 172 q 4 -5 8 0 q 4 5 8 0 q 4 -5 8 0 q 4 5 8 0 q 4 -5 8 0 q 4 5 8 0 q 4 -5 8 0" fill="none" stroke="#b06040" stroke-width="1.6" marker-end="url(#ah08d)"/>
+      <text x="396" y="158" font-size="10" fill="#b06040" font-style="italic">ħω</text>
+      <circle cx="460" cy="282" r="3.5" fill="#2e7d6e"/>
+      <line x1="460" y1="276" x2="460" y2="58" stroke="#b06040" stroke-width="2.2" marker-end="url(#ah08d)"/>
+
+      <!-- 条件ラベル -->
+      <text x="186" y="312" font-size="11" fill="#4a4845" text-anchor="middle">透過</text>
+      <text x="186" y="328" font-size="9.5" fill="#73706c" text-anchor="middle" font-style="italic">ħω ＜ ε<tspan dy="3" font-size="7">G</tspan></text>
+      <text x="330" y="312" font-size="11" fill="#4a4845" text-anchor="middle">増幅（利得）</text>
+      <text x="330" y="328" font-size="9.5" fill="#73706c" text-anchor="middle" font-style="italic">ε<tspan dy="3" font-size="7">G</tspan><tspan dy="-3"> ＜ ħω ＜ E</tspan><tspan dy="3" font-size="7">Fn</tspan><tspan dy="-3">−E</tspan><tspan dy="3" font-size="7">Fp</tspan></text>
+      <text x="466" y="312" font-size="11" fill="#4a4845" text-anchor="middle">吸収</text>
+      <text x="466" y="328" font-size="9.5" fill="#73706c" text-anchor="middle" font-style="italic">E<tspan dy="3" font-size="7">Fn</tspan><tspan dy="-3">−E</tspan><tspan dy="3" font-size="7">Fp</tspan><tspan dy="-3"> ＜ ħω</tspan></text>
+    </svg>
+    <figcaption>図2　反転分布状態の半導体（擬フェルミ準位差 E<sub>Fn</sub> − E<sub>Fp</sub> がバンドギャップ ε<sub>G</sub> を超えるほど強く注入した状態）と光子エネルギー ħω の関係。ε<sub>G</sub> より小さい光は透過し、ε<sub>G</sub> と擬フェルミ準位差の間の光は誘導放出が吸収を上回って増幅される（ベルナール–デュラフォールの条件）。E<sub>Fp</sub> より下の価電子帯は電子で満たされているため、擬フェルミ準位差を超える光はこの電子を励起して吸収される。</figcaption>
+  </figure>
+
   <h3>共振器と発振しきい値</h3>
   <p>反転分布は光を増幅するだけで、発振には<strong>共振器</strong>が要る。強度 \(I\) の光が利得 \(g\)・損失 \(\alpha\) で進むと \(I=I_0\exp[(g-\alpha)x]\)。反射率 \(R_1,R_2\) の端面を1往復して元に戻る条件 \(I_0=R_1R_2 I_0\exp[(g-\alpha)2L]\) から、<strong>しきい値利得</strong></p>
   \[\boxed{\,g_{th} = \alpha + \frac{1}{2L}\ln\frac{1}{R_1R_2}\,}
   \qquad(\text{利得 = 内部損失 + 反射損失}).\]
   <p>しきい値電流密度 \(J_{th}\propto g_{th}\)。共振波長は \(\lambda = 2Ln_{eq}/m\)。</p>
 
+  <figure>
+    <svg viewBox="0 0 560 210" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="ファブリ・ペロー共振器。反射率R1,R2の2枚の鏡で挟んだ利得媒質中を光が往復して増幅され、利得が損失を上回るとレーザ発振する">
+      <defs>
+        <marker id="rc08a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse">
+          <path d="M 0 0 L 10 5 L 0 10 z" fill="#2e7d6e"/>
+        </marker>
+        <marker id="rc08e" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+          <path d="M 0 0 L 10 5 L 0 10 z" fill="#73706c"/>
+        </marker>
+      </defs>
+      <!-- 利得媒質 -->
+      <rect x="76" y="66" width="400" height="70" fill="#eef3f1" stroke="#cfd9d3" stroke-width="1"/>
+      <text x="276" y="56" font-size="9.5" fill="#4a4845" text-anchor="middle">利得 <tspan font-style="italic">g</tspan> ・損失 <tspan font-style="italic">α</tspan> ・屈折率 <tspan font-style="italic">n</tspan> の媒質（活性層）</text>
+      <!-- 鏡 -->
+      <rect x="64" y="50" width="12" height="102" fill="#b3ada1"/>
+      <rect x="476" y="50" width="12" height="102" fill="#b3ada1"/>
+      <!-- 往復光 -->
+      <line x1="82" y1="90" x2="470" y2="90" stroke="#2e7d6e" stroke-width="1.8" marker-end="url(#rc08a)"/>
+      <line x1="470" y1="112" x2="82" y2="112" stroke="#2e7d6e" stroke-width="1.8" marker-end="url(#rc08a)"/>
+      <!-- 出力光 -->
+      <line x1="64" y1="101" x2="34" y2="101" stroke="#2e7d6e" stroke-width="1.6" marker-end="url(#rc08a)"/>
+      <line x1="488" y1="101" x2="524" y2="101" stroke="#2e7d6e" stroke-width="2.2" marker-end="url(#rc08a)"/>
+      <text x="524" y="93" font-size="8.5" fill="#2e7d6e" text-anchor="end">出力</text>
+      <!-- L -->
+      <line x1="70" y1="172" x2="482" y2="172" stroke="#73706c" stroke-width="1" marker-start="url(#rc08e)" marker-end="url(#rc08e)"/>
+      <text x="276" y="167" font-size="9" fill="#4a4845" text-anchor="middle">共振器長 <tspan font-style="italic">L</tspan></text>
+      <!-- 鏡ラベル -->
+      <text x="70" y="192" font-size="9" fill="#4a4845" text-anchor="middle">鏡1</text>
+      <text x="70" y="204" font-size="8" fill="#96938f" text-anchor="middle" font-style="italic">R₁</text>
+      <text x="482" y="192" font-size="9" fill="#4a4845" text-anchor="middle">鏡2</text>
+      <text x="482" y="204" font-size="8" fill="#96938f" text-anchor="middle" font-style="italic">R₂</text>
+    </svg>
+    <figcaption>図3　ファブリ・ペロー共振器。反射率 R₁, R₂ の 2 枚の鏡（へき開端面）で利得媒質を挟み、光を往復させて誘導放出で増幅する。1 往復（2L）して元の強度に戻る条件から、しきい値利得 g<sub>th</sub> = α + (1/2L)ln(1/R₁R₂)（利得＝内部損失＋反射損失）が得られる。</figcaption>
+  </figure>
+
   <h3>縦モード</h3>
   <p>共振器長 ≫ 波長なので、定在波条件 \(2L = m(\lambda/n)\) を満たす多数の<strong>縦モード</strong>が立つ。隣接モード間隔は</p>
   \[\Delta\lambda = \frac{\lambda^2}{2nL}.\]
   <p>利得スペクトルの範囲内で発振モードが選ばれる。</p>
+
+  <figure>
+    <svg viewBox="0 0 560 240" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="共振器の縦モード列と利得スペクトルの関係。利得（自然放出スペクトル）の包絡線が損失線を超える波長のモードだけが発振する">
+      <defs>
+        <marker id="lm08e" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+          <path d="M 0 0 L 10 5 L 0 10 z" fill="#73706c"/>
+        </marker>
+      </defs>
+      <line x1="54" y1="200" x2="54" y2="30" stroke="#73706c" stroke-width="1.1" marker-end="url(#lm08e)"/>
+      <text x="48" y="34" font-size="8.5" fill="#4a4845" text-anchor="end">利得</text>
+      <line x1="54" y1="200" x2="546" y2="200" stroke="#73706c" stroke-width="1.1" marker-end="url(#lm08e)"/>
+      <text x="546" y="214" font-size="9" fill="#4a4845" font-style="italic" text-anchor="end">λ</text>
+      <!-- 縦モード列 -->
+      <g stroke="#c8c4be" stroke-width="1.4">
+        <line x1="118" y1="200" x2="118" y2="121"/>
+        <line x1="470" y1="200" x2="470" y2="103"/>
+        <line x1="502" y1="200" x2="502" y2="121"/>
+      </g>
+      <g stroke="#b06040" stroke-width="1.8">
+        <line x1="150" y1="200" x2="150" y2="103"/>
+        <line x1="182" y1="200" x2="182" y2="88"/>
+        <line x1="214" y1="200" x2="214" y2="77"/>
+        <line x1="246" y1="200" x2="246" y2="68"/>
+        <line x1="278" y1="200" x2="278" y2="64"/>
+        <line x1="310" y1="200" x2="310" y2="62"/>
+        <line x1="342" y1="200" x2="342" y2="64"/>
+        <line x1="374" y1="200" x2="374" y2="68"/>
+        <line x1="406" y1="200" x2="406" y2="77"/>
+        <line x1="438" y1="200" x2="438" y2="88"/>
+      </g>
+      <!-- 利得包絡線 -->
+      <path d="M 92 196 C 160 150 240 66 310 62 C 380 66 460 150 528 196" fill="none" stroke="#2c2a29" stroke-width="1.6" stroke-dasharray="5 3"/>
+      <!-- 損失線 -->
+      <line x1="70" y1="96" x2="530" y2="96" stroke="#6a86b0" stroke-width="1.3" stroke-dasharray="6 4"/>
+      <text x="524" y="90" font-size="8.5" fill="#6a86b0" text-anchor="end">損失（しきい値）</text>
+      <text x="300" y="48" font-size="8.5" fill="#4a4845" text-anchor="middle">利得（自然放出）スペクトル</text>
+      <!-- Δλ -->
+      <line x1="278" y1="214" x2="310" y2="214" stroke="#73706c" stroke-width="1" marker-start="url(#lm08e)" marker-end="url(#lm08e)"/>
+      <text x="294" y="228" font-size="8.5" fill="#4a4845" text-anchor="middle" font-style="italic">Δλ</text>
+      <text x="352" y="228" font-size="8" fill="#96938f">= λ²/2nL</text>
+    </svg>
+    <figcaption>図4　共振器には定在波条件 2L=m(λ/n) を満たす多数の<strong>縦モード</strong>（間隔 Δλ=λ²/2nL）が立つ。各モードの利得は利得（自然放出）スペクトルの包絡線で決まり、それが損失（しきい値）線を超えるモード（赤）だけが発振する。灰色のモードは損失を上回れず発振しない。</figcaption>
+  </figure>
 
   <h2 class="font-serif">5. さまざまなレーザ構造</h2>
   <ul>
@@ -126,6 +335,50 @@
     <li><strong>面発光レーザ（VCSEL）</strong>：基板垂直方向に共振器を作り、分布ブラッグ反射鏡（DBR、多層膜反射鏡）で高反射率を得る。</li>
     <li><strong>量子カスケードレーザ（QCL）</strong>：量子井戸の<strong>サブバンド間遷移</strong>を利用。発振波長を近赤外〜テラヘルツで広く選べ、カスケード構造で1つのキャリアから多数のフォトンを放出できる。</li>
   </ul>
+
+  <figure>
+    <svg viewBox="0 0 460 350" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="ダブルヘテロ構造。活性層をワイドギャップのクラッド層で挟み、バンドオフセットでキャリアを、屈折率差で光を、ともに活性層に閉じ込める">
+      <defs>
+        <marker id="dh08e" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+          <path d="M 0 0 L 10 5 L 0 10 z" fill="#73706c"/>
+        </marker>
+      </defs>
+      <!-- 活性層の境界 -->
+      <line x1="180" y1="46" x2="180" y2="332" stroke="#a8a49e" stroke-width="0.8" stroke-dasharray="4 3"/>
+      <line x1="250" y1="46" x2="250" y2="332" stroke="#a8a49e" stroke-width="0.8" stroke-dasharray="4 3"/>
+      <rect x="180" y="46" width="70" height="286" fill="#f4f1ec"/>
+      <!-- 層ラベル -->
+      <text x="118" y="34" font-size="8.5" fill="#4a4845" text-anchor="middle">n-AlGaAs</text>
+      <text x="215" y="34" font-size="8" fill="#3f7a63" text-anchor="middle">GaAs(活性層)</text>
+      <text x="325" y="34" font-size="8.5" fill="#4a4845" text-anchor="middle">p-AlGaAs</text>
+
+      <!-- パネル1：バンド -->
+      <path d="M 56 76 L 180 76 L 180 100 L 250 100 L 250 76 L 404 76" fill="none" stroke="#2c2a29" stroke-width="2"/>
+      <path d="M 56 132 L 180 132 L 180 112 L 250 112 L 250 132 L 404 132" fill="none" stroke="#2c2a29" stroke-width="2"/>
+      <text x="408" y="79" font-size="9" fill="#4a4845" font-style="italic">E</text><text x="415" y="82" font-size="6.5" fill="#4a4845">C</text>
+      <text x="408" y="135" font-size="9" fill="#4a4845" font-style="italic">E</text><text x="415" y="138" font-size="6.5" fill="#4a4845">V</text>
+      <circle cx="196" cy="94" r="3.2" fill="#2e7d6e"/><circle cx="215" cy="94" r="3.2" fill="#2e7d6e"/><circle cx="234" cy="94" r="3.2" fill="#2e7d6e"/>
+      <circle cx="196" cy="120" r="3.3" fill="#fcfbfa" stroke="#b06040" stroke-width="1.2"/><circle cx="215" cy="120" r="3.3" fill="#fcfbfa" stroke="#b06040" stroke-width="1.2"/><circle cx="234" cy="120" r="3.3" fill="#fcfbfa" stroke="#b06040" stroke-width="1.2"/>
+      <text x="52" y="66" font-size="8.5" fill="#96938f" text-anchor="end">バンド</text>
+      <text x="118" y="150" font-size="7.5" fill="#3f7a63" text-anchor="middle">キャリアを閉じ込め</text>
+
+      <!-- パネル2：屈折率 -->
+      <path d="M 56 205 L 180 205 L 180 182 L 250 182 L 250 205 L 404 205" fill="none" stroke="#2c2a29" stroke-width="2"/>
+      <text x="408" y="200" font-size="9" fill="#4a4845" font-style="italic">n</text>
+      <line x1="168" y1="205" x2="168" y2="182" stroke="#73706c" stroke-width="1" marker-start="url(#dh08e)" marker-end="url(#dh08e)"/>
+      <text x="148" y="197" font-size="8" fill="#4a4845" font-style="italic" text-anchor="end">Δn</text>
+      <text x="52" y="186" font-size="8.5" fill="#96938f" text-anchor="end">屈折率</text>
+
+      <!-- パネル3：光強度 -->
+      <path d="M 110 328 C 165 328 196 260 215 258 C 234 260 265 328 320 328" fill="none" stroke="#2c2a29" stroke-width="2"/>
+      <text x="52" y="300" font-size="8.5" fill="#96938f" text-anchor="end">光強度</text>
+      <text x="118" y="290" font-size="7.5" fill="#3f7a63" text-anchor="middle">光を閉じ込め</text>
+      <!-- d -->
+      <line x1="180" y1="342" x2="250" y2="342" stroke="#73706c" stroke-width="1" marker-start="url(#dh08e)" marker-end="url(#dh08e)"/>
+      <text x="215" y="350" font-size="8" fill="#4a4845" text-anchor="middle" font-style="italic">d &lt; 1 μm</text>
+    </svg>
+    <figcaption>図5　ダブルヘテロ（DH）構造。狭ギャップの活性層（GaAs）を両側からワイドギャップのクラッド層（AlGaAs）で挟むと、バンドオフセットで<strong>キャリア（電子・正孔）を活性層に閉じ込め</strong>（上）、同時に活性層の高い屈折率（Δn〜5%）が導波路となって<strong>光も閉じ込める</strong>（中・下）。両者の重なりで利得が高まり、しきい値電流が大きく下がる。</figcaption>
+  </figure>
 
   <h3>パーセル効果とナノレーザ</h3>
   <p>微小共振器では自然放出レートが変化する（<strong>パーセル効果</strong>）。フェルミの黄金律</p>
@@ -140,8 +393,105 @@
   </ul>
   <p>種類：pn 接合型、<strong>pin 型</strong>（真性層で空乏層を広げ感度向上）、<strong>アバランシェ型</strong>（なだれ増倍で高感度）、ショットキー障壁型、ヘテロ接合型。</p>
 
+  <figure>
+    <svg viewBox="0 0 560 250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="逆バイアスしたpinフォトダイオードのバンド図。広い真性(i)層でフォトンが電子正孔対を生成し、内蔵電界で電子はn側、正孔はp側にドリフトして光電流になる">
+      <defs>
+        <marker id="pd08c" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse">
+          <path d="M 0 0 L 10 5 L 0 10 z" fill="#2e7d6e"/>
+        </marker>
+        <marker id="pd08d" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse">
+          <path d="M 0 0 L 10 5 L 0 10 z" fill="#b06040"/>
+        </marker>
+        <marker id="pd08e" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+          <path d="M 0 0 L 10 5 L 0 10 z" fill="#73706c"/>
+        </marker>
+      </defs>
+      <!-- 領域境界 -->
+      <line x1="150" y1="30" x2="150" y2="210" stroke="#a8a49e" stroke-width="0.8" stroke-dasharray="4 3"/>
+      <line x1="400" y1="30" x2="400" y2="210" stroke="#a8a49e" stroke-width="0.8" stroke-dasharray="4 3"/>
+      <rect x="150" y="30" width="250" height="180" fill="#f7f5f1"/>
+      <text x="95" y="26" font-size="9" fill="#4a4845" text-anchor="middle">p</text>
+      <text x="275" y="26" font-size="9" fill="#4a4845" text-anchor="middle">i（真性・空乏層）</text>
+      <text x="480" y="26" font-size="9" fill="#4a4845" text-anchor="middle">n</text>
+      <!-- E_C（逆バイアスで傾斜） -->
+      <path d="M 40 70 L 150 70 C 250 70 300 150 400 150 L 520 150" fill="none" stroke="#2c2a29" stroke-width="2"/>
+      <text x="524" y="153" font-size="9" fill="#4a4845" font-style="italic">E</text><text x="531" y="156" font-size="6.5" fill="#4a4845">C</text>
+      <!-- E_V -->
+      <path d="M 40 110 L 150 110 C 250 110 300 190 400 190 L 520 190" fill="none" stroke="#2c2a29" stroke-width="2"/>
+      <text x="524" y="193" font-size="9" fill="#4a4845" font-style="italic">E</text><text x="531" y="196" font-size="6.5" fill="#4a4845">V</text>
+      <!-- qV_R -->
+      <line x1="470" y1="150" x2="470" y2="70" stroke="#73706c" stroke-width="1" marker-start="url(#pd08e)" marker-end="url(#pd08e)"/>
+      <text x="476" y="112" font-size="8.5" fill="#4a4845" font-style="italic">qV<tspan dy="2" font-size="6.5">R</tspan></text>
+      <!-- 入射フォトン -->
+      <path d="M 230 58 q 5 -5 10 0 q 5 5 10 0 q 5 -5 10 0 q 5 5 10 0" fill="none" stroke="#c07a3a" stroke-width="1.6" marker-end="url(#pd08d)"/>
+      <text x="232" y="50" font-size="9" fill="#c07a3a" font-style="italic">hν</text>
+      <!-- 電子正孔対生成とドリフト -->
+      <circle cx="278" cy="120" r="3.6" fill="#2e7d6e"/>
+      <circle cx="278" cy="135" r="3.6" fill="#fcfbfa" stroke="#b06040" stroke-width="1.2"/>
+      <line x1="288" y1="122" x2="380" y2="146" stroke="#2e7d6e" stroke-width="1.6" marker-end="url(#pd08c)"/>
+      <line x1="268" y1="133" x2="176" y2="112" stroke="#b06040" stroke-width="1.6" marker-end="url(#pd08d)"/>
+      <text x="345" y="128" font-size="7.5" fill="#2e7d6e">電子 → n</text>
+      <text x="188" y="100" font-size="7.5" fill="#b06040" text-anchor="end">p ← 正孔</text>
+      <!-- 光電流 -->
+      <text x="275" y="228" font-size="8.5" fill="#96938f" text-anchor="middle">キャリアが内蔵電界で分離 → 光電流 I<tspan dy="2" font-size="6.5">ph</tspan></text>
+    </svg>
+    <figcaption>図6　逆バイアスした pin フォトダイオードのバンド図。E<sub>g</sub> 以上のフォトン hν が広い真性（i）層で吸収されて電子–正孔対を生成し、逆バイアスで傾いたバンド（内蔵電界＋qV<sub>R</sub>）に沿って電子は n 側、正孔は p 側へドリフトし、光電流 I<sub>ph</sub> となる。i 層を厚くして空乏層を広げると感度が上がる。</figcaption>
+  </figure>
+
   <h2 class="font-serif">7. 太陽電池（Solar Cells）</h2>
   <p>光起電力効果で光エネルギーを直接電力に変換する。pn 接合に \(E_g\) 以上のフォトンが入射し、生成した電子–正孔対がビルトインポテンシャルで分離されて起電力を生む。<strong>多接合型</strong>（異なる \(E_g\) のセルを積層）で広いスペクトルを利用し高効率化する。</p>
+
+  <figure>
+    <svg viewBox="0 0 620 260" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="太陽電池の照射時のI-V特性と多接合型の原理。照射でI-V曲線が下方にシフトし、第4象限の最大電力点で発電する。多接合は異なるバンドギャップのセルで広いスペクトルを利用する">
+      <defs>
+        <marker id="sc08e" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+          <path d="M 0 0 L 10 5 L 0 10 z" fill="#73706c"/>
+        </marker>
+        <marker id="sc08a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+          <path d="M 0 0 L 10 5 L 0 10 z" fill="#c07a3a"/>
+        </marker>
+      </defs>
+      <!-- ===== 左：I-V特性 ===== -->
+      <line x1="80" y1="215" x2="80" y2="35" stroke="#73706c" stroke-width="1.1" marker-end="url(#sc08e)"/>
+      <text x="74" y="40" font-size="9" fill="#4a4845" font-style="italic">I</text>
+      <line x1="45" y1="130" x2="300" y2="130" stroke="#73706c" stroke-width="1.1" marker-end="url(#sc08e)"/>
+      <text x="304" y="134" font-size="9" fill="#4a4845" font-style="italic">V</text>
+      <!-- 暗特性 -->
+      <path d="M 80 130 C 130 128 175 110 200 76 C 210 62 218 52 224 46" fill="none" stroke="#8a8680" stroke-width="1.5" stroke-dasharray="5 3"/>
+      <text x="228" y="52" font-size="8" fill="#8a8680">暗</text>
+      <!-- 照射特性 -->
+      <path d="M 80 200 C 130 196 172 182 210 130 C 232 100 244 74 250 58" fill="none" stroke="#2c2a29" stroke-width="2"/>
+      <text x="150" y="216" font-size="8" fill="#2c2a29">照射時</text>
+      <!-- 最大電力の長方形 -->
+      <rect x="80" y="130" width="150" height="48" fill="rgba(46,125,110,0.14)"/>
+      <circle cx="151" cy="176" r="2.8" fill="#2e7d6e"/>
+      <text x="146" y="196" font-size="7.5" fill="#2e7d6e" text-anchor="middle">最大電力点</text>
+      <!-- V_oc, I_sc -->
+      <text x="214" y="124" font-size="8" fill="#73706c" font-style="italic">V<tspan dy="2" font-size="6">oc</tspan></text>
+      <line x1="80" y1="130" x2="80" y2="200" stroke="#b06040" stroke-width="1.2"/>
+      <text x="74" y="170" font-size="8" fill="#b06040" font-style="italic" text-anchor="end">I<tspan dy="2" font-size="6">sc</tspan></text>
+
+      <!-- ===== 右：多接合 ===== -->
+      <line x1="360" y1="110" x2="600" y2="110" stroke="#73706c" stroke-width="1" marker-end="url(#sc08e)"/>
+      <text x="596" y="104" font-size="7.5" fill="#96938f" text-anchor="end">波長</text>
+      <path d="M 372 108 C 400 40 430 40 452 62 C 480 90 520 100 560 104 L 590 106" fill="none" stroke="#c8a24a" stroke-width="1.8"/>
+      <text x="380" y="32" font-size="8" fill="#4a4845" text-anchor="middle">太陽光</text>
+      <text x="376" y="122" font-size="7" fill="#96938f">短波長</text>
+      <text x="588" y="122" font-size="7" fill="#96938f" text-anchor="end">長波長</text>
+      <!-- セル積層 -->
+      <rect x="400" y="150" width="170" height="20" fill="#eddc7a" stroke="#c9b84e"/>
+      <rect x="400" y="176" width="170" height="20" fill="#e2a24c" stroke="#c4863a"/>
+      <rect x="400" y="202" width="170" height="20" fill="#c85a44" stroke="#a94636"/>
+      <text x="576" y="164" font-size="7.5" fill="#4a4845" text-anchor="start">E<tspan dy="2" font-size="6">g</tspan> 大</text>
+      <text x="576" y="190" font-size="7.5" fill="#4a4845" text-anchor="start">中</text>
+      <text x="576" y="216" font-size="7.5" fill="#4a4845" text-anchor="start">小</text>
+      <line x1="410" y1="112" x2="418" y2="148" stroke="#3f7a63" stroke-width="1.4" marker-end="url(#sc08a)"/>
+      <line x1="452" y1="112" x2="470" y2="174" stroke="#c07a3a" stroke-width="1.4" marker-end="url(#sc08a)"/>
+      <line x1="520" y1="112" x2="530" y2="200" stroke="#a94636" stroke-width="1.4" marker-end="url(#sc08a)"/>
+      <text x="485" y="244" font-size="8" fill="#96938f" text-anchor="middle">多接合型：Eg の異なるセルで広帯域を利用</text>
+    </svg>
+    <figcaption>図7　（左）太陽電池の I–V 特性。光照射で暗特性（ダイオード）が下方（−I<sub>sc</sub>）にシフトし、第 4 象限（V&gt;0, I&lt;0）で電力を取り出す。開放電圧 V<sub>oc</sub>・短絡電流 I<sub>sc</sub> と、最大電力点（緑）を囲む長方形の面積が出力電力。（右）<strong>多接合型</strong>は禁制帯幅の異なるセルを積層し、短波長は上（大 E<sub>g</sub>）、長波長は下（小 E<sub>g</sub>）のセルで吸収して広いスペクトルを高効率に利用する。</figcaption>
+  </figure>
 
   <h2 class="font-serif">8. イメージセンサ</h2>
   <ul>
@@ -149,11 +499,94 @@
     <li><strong>CCD（電荷結合素子）</strong>：ソース・ドレインのない MOS 構造の一種。各電極に電圧を与えてポテンシャルウェルを作り電荷を保持し、電圧制御でバケツリレー式に電荷を転送して外部に取り出す。</li>
   </ul>
 
+  <figure>
+    <svg viewBox="0 0 500 290" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="CCDの3相電荷転送。ゲート電極の電圧を順に切り替えてポテンシャルウェルを移動させ、蓄えた電荷をバケツリレー式に右へ転送する">
+      <defs>
+        <marker id="cc08e" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse">
+          <path d="M 0 0 L 10 5 L 0 10 z" fill="#73706c"/>
+        </marker>
+      </defs>
+      <!-- ゲート電極 -->
+      <g>
+        <rect x="72" y="26" width="60" height="11" fill="#d8d4cd" stroke="#b3ada1"/>
+        <rect x="140" y="26" width="60" height="11" fill="#d8d4cd" stroke="#b3ada1"/>
+        <rect x="208" y="26" width="60" height="11" fill="#d8d4cd" stroke="#b3ada1"/>
+        <rect x="276" y="26" width="60" height="11" fill="#d8d4cd" stroke="#b3ada1"/>
+        <rect x="344" y="26" width="60" height="11" fill="#d8d4cd" stroke="#b3ada1"/>
+        <text x="102" y="20" font-size="7.5" fill="#4a4845" text-anchor="middle" font-style="italic">G₁</text>
+        <text x="170" y="20" font-size="7.5" fill="#4a4845" text-anchor="middle" font-style="italic">G₂</text>
+        <text x="238" y="20" font-size="7.5" fill="#4a4845" text-anchor="middle" font-style="italic">G₃</text>
+        <text x="306" y="20" font-size="7.5" fill="#4a4845" text-anchor="middle" font-style="italic">G₁</text>
+        <text x="374" y="20" font-size="7.5" fill="#4a4845" text-anchor="middle" font-style="italic">G₂</text>
+      </g>
+      <g stroke="#e2ded7" stroke-width="0.8">
+        <line x1="140" y1="42" x2="140" y2="256"/>
+        <line x1="208" y1="42" x2="208" y2="256"/>
+        <line x1="276" y1="42" x2="276" y2="256"/>
+        <line x1="344" y1="42" x2="344" y2="256"/>
+      </g>
+
+      <!-- t1 -->
+      <path d="M 55 60 L 140 60 L 140 90 L 200 90 L 200 60 L 440 60" fill="none" stroke="#2c2a29" stroke-width="1.8"/>
+      <circle cx="152" cy="84" r="3.3" fill="#2e7d6e"/><circle cx="170" cy="84" r="3.3" fill="#2e7d6e"/><circle cx="188" cy="84" r="3.3" fill="#2e7d6e"/>
+      <text x="48" y="72" font-size="8.5" fill="#4a4845" text-anchor="end" font-style="italic">t₁</text>
+      <text x="452" y="72" font-size="7.5" fill="#96938f">G₂ を高電圧</text>
+
+      <!-- t2 -->
+      <path d="M 55 135 L 140 135 L 140 165 L 270 165 L 270 135 L 440 135" fill="none" stroke="#2c2a29" stroke-width="1.8"/>
+      <circle cx="152" cy="159" r="3.3" fill="#2e7d6e"/><circle cx="182" cy="159" r="3.3" fill="#2e7d6e"/><circle cx="212" cy="159" r="3.3" fill="#2e7d6e"/><circle cx="242" cy="159" r="3.3" fill="#2e7d6e"/>
+      <text x="48" y="147" font-size="8.5" fill="#4a4845" text-anchor="end" font-style="italic">t₂</text>
+      <text x="452" y="147" font-size="7.5" fill="#96938f">G₂,G₃ を高電圧</text>
+
+      <!-- t3 -->
+      <path d="M 55 210 L 210 210 L 210 240 L 270 240 L 270 210 L 440 210" fill="none" stroke="#2c2a29" stroke-width="1.8"/>
+      <circle cx="222" cy="234" r="3.3" fill="#2e7d6e"/><circle cx="240" cy="234" r="3.3" fill="#2e7d6e"/><circle cx="258" cy="234" r="3.3" fill="#2e7d6e"/>
+      <text x="48" y="222" font-size="8.5" fill="#4a4845" text-anchor="end" font-style="italic">t₃</text>
+      <text x="452" y="222" font-size="7.5" fill="#96938f">G₃ を高電圧</text>
+
+      <!-- 転送方向 -->
+      <line x1="170" y1="270" x2="240" y2="270" stroke="#73706c" stroke-width="1.4" marker-end="url(#cc08e)"/>
+      <text x="256" y="274" font-size="8.5" fill="#4a4845">電荷が 1 ゲート分右へ転送</text>
+    </svg>
+    <figcaption>図8　CCD の 3 相電荷転送。ゲート電極に電圧を与えると半導体表面に電子を蓄えるポテンシャルウェル（下向きの谷）ができる。t₁ で G₂ に電荷（●）を保持し、t₂ で G₂・G₃ 両方を高電圧にして電荷を広げ、t₃ で G₂ を下げると電荷は G₃ の下へ移る。これを繰り返して<strong>バケツリレー式</strong>に電荷を順次転送し、電荷–電圧変換して読み出す。</figcaption>
+  </figure>
+
   <h2 class="font-serif">9. 白色 LED と可視光通信</h2>
   <ul>
     <li><strong>白色 LED</strong>：LED は狭帯域発光なので本来の白色は出せない。<strong>青色 LED ＋ YAG:Ce 蛍光体</strong>（青で励起され黄色発光）で、補色関係の青＋黄を混ぜて疑似白色を得る。</li>
     <li><strong>可視光通信（Li-Fi）</strong>：LED を高速に点滅させて情報を空間伝送。電波規制がなく広帯域で、屋内ネットワーク・水中・トンネル・イベント会場などに応用。</li>
   </ul>
+
+  <figure>
+    <svg viewBox="0 0 480 220" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="白色LEDの発光スペクトル。青色LEDの鋭いピークとYAG:Ce蛍光体の広い黄色発光を混ぜて疑似白色を得る">
+      <defs>
+        <marker id="wl08e" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5.5" markerHeight="5.5" orient="auto-start-reverse">
+          <path d="M 0 0 L 10 5 L 0 10 z" fill="#73706c"/>
+        </marker>
+      </defs>
+      <line x1="50" y1="180" x2="50" y2="28" stroke="#73706c" stroke-width="1.1" marker-end="url(#wl08e)"/>
+      <text x="44" y="34" font-size="8" fill="#4a4845" text-anchor="end">発光強度</text>
+      <line x1="50" y1="180" x2="460" y2="180" stroke="#73706c" stroke-width="1.1" marker-end="url(#wl08e)"/>
+      <text x="460" y="196" font-size="8.5" fill="#4a4845" text-anchor="end">波長 (nm)</text>
+      <g font-size="8" fill="#73706c" text-anchor="middle">
+        <line x1="70" y1="180" x2="70" y2="184"/><text x="70" y="194">400</text>
+        <line x1="190" y1="180" x2="190" y2="184"/><text x="190" y="194">500</text>
+        <line x1="310" y1="180" x2="310" y2="184"/><text x="310" y="194">600</text>
+        <line x1="430" y1="180" x2="430" y2="184"/><text x="430" y="194">700</text>
+      </g>
+      <!-- 合成（疑似白色）包絡線 -->
+      <path d="M 108 180 C 122 90 138 52 130 52 C 150 52 165 120 185 118 C 220 114 245 96 262 92 C 300 96 340 150 380 178" fill="none" stroke="#cfcabf" stroke-width="3" opacity="0.7"/>
+      <!-- 青色LEDピーク -->
+      <path d="M 116 180 C 124 180 127 50 130 50 C 133 50 136 180 144 180" fill="none" stroke="#3a6ea5" stroke-width="2"/>
+      <text x="130" y="42" font-size="8.5" fill="#3a6ea5" text-anchor="middle">青色 LED</text>
+      <!-- 蛍光体（黄）ブロード -->
+      <path d="M 180 180 C 220 174 246 96 264 93 C 286 96 330 150 372 178" fill="none" stroke="#d8a83a" stroke-width="2"/>
+      <text x="300" y="82" font-size="8.5" fill="#c08a20" text-anchor="middle">YAG:Ce 蛍光体（黄）</text>
+      <text x="400" y="60" font-size="8.5" fill="#4a4845" text-anchor="middle">合成＝</text>
+      <text x="400" y="72" font-size="8.5" fill="#4a4845" text-anchor="middle">疑似白色</text>
+    </svg>
+    <figcaption>図9　白色 LED の発光スペクトル。LED は狭帯域発光なので単体では白色にならない。<strong>青色 LED</strong>（鋭いピーク）で <strong>YAG:Ce 蛍光体</strong>を励起すると広い<strong>黄色</strong>発光が得られ、補色関係の青＋黄を混ぜて疑似白色（灰色の合成包絡線）を得る。</figcaption>
+  </figure>
 
   <h2 class="font-serif">キーポイント</h2>
   <ul>

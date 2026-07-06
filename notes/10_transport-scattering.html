@@ -78,6 +78,50 @@
   <div class="note">
     <strong>例（銅のドリフト速度）</strong>：断面 1 mm² に 10 A（\(J=10^7\ \mathrm{A/m^2}\)）、\(n\sim10^{29}\ \mathrm{m^{-3}}\) で \(v=J/ne\sim0.6\ \mathrm{mm/s}\)。一方フェルミ速度 \(v_F\sim1.6\times10^6\ \mathrm{m/s}\)。ドリフト速度はフェルミ速度に比べ桁違いに小さい。\(\tau\sim3.6\times10^{-14}\ \mathrm s\)。
   </div>
+  <figure>
+    <svg viewBox="0 0 560 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="電場による電子の速度分布（フェルミ球）のシフトの模式図">
+      <defs>
+        <marker id="ah10a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+          <path d="M 0 0 L 10 5 L 0 10 z" fill="#73706c"/>
+        </marker>
+        <marker id="ah10b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+          <path d="M 0 0 L 10 5 L 0 10 z" fill="#2e7d6e"/>
+        </marker>
+        <marker id="ah10c" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+          <path d="M 0 0 L 10 5 L 0 10 z" fill="#b06040"/>
+        </marker>
+      </defs>
+      <!-- 速度空間の軸 -->
+      <line x1="60" y1="155" x2="475" y2="155" stroke="#73706c" stroke-width="1.2" marker-end="url(#ah10a)"/>
+      <line x1="255" y1="285" x2="255" y2="38" stroke="#73706c" stroke-width="1.2" marker-end="url(#ah10a)"/>
+      <text x="482" y="159" font-size="11" fill="#73706c" font-style="italic">v<tspan dy="3" font-size="8">x</tspan></text>
+      <text x="234" y="34" font-size="11" fill="#73706c" font-style="italic">v<tspan dy="3" font-size="8">y</tspan></text>
+      <!-- E=0 の分布（実線球） -->
+      <circle cx="255" cy="155" r="90" fill="rgba(46,125,110,0.12)" stroke="#2c2a29" stroke-width="2"/>
+      <!-- E≠0 の分布（破線球、v_d だけシフト） -->
+      <circle cx="281" cy="155" r="90" fill="none" stroke="#b06040" stroke-width="2" stroke-dasharray="6 4"/>
+      <circle cx="255" cy="155" r="2.5" fill="#2c2a29"/>
+      <circle cx="281" cy="155" r="2.5" fill="#b06040"/>
+      <!-- 熱運動の速さ v_th（球の半径） -->
+      <line x1="255" y1="155" x2="191" y2="91" stroke="#73706c" stroke-width="1.2" marker-end="url(#ah10a)"/>
+      <text x="158" y="86" font-size="10.5" fill="#4a4845" font-style="italic">v<tspan dy="3" font-size="8">th</tspan></text>
+      <!-- ドリフト速度 v_d（中心のずれ） -->
+      <line x1="255" y1="162" x2="255" y2="176" stroke="#a8a49e" stroke-width="1"/>
+      <line x1="281" y1="162" x2="281" y2="176" stroke="#a8a49e" stroke-width="1"/>
+      <line x1="255" y1="169" x2="281" y2="169" stroke="#2e7d6e" stroke-width="1.8" marker-end="url(#ah10b)"/>
+      <text x="258" y="192" font-size="10.5" fill="#2e7d6e" font-style="italic">v<tspan dy="3" font-size="8">d</tspan></text>
+      <!-- 電場 -->
+      <line x1="425" y1="52" x2="345" y2="52" stroke="#b06040" stroke-width="2" marker-end="url(#ah10c)"/>
+      <text x="433" y="56" font-size="11.5" fill="#b06040" font-style="italic">E</text>
+      <!-- ラベル -->
+      <line x1="152" y1="246" x2="194" y2="221" stroke="#a8a49e" stroke-width="1"/>
+      <text x="70" y="252" font-size="10" fill="#4a4845"><tspan font-style="italic">E</tspan> = 0（平衡）</text>
+      <line x1="349" y1="240" x2="341" y2="222" stroke="#a8a49e" stroke-width="1"/>
+      <text x="354" y="250" font-size="10" fill="#b06040"><tspan font-style="italic">E</tspan> ≠ 0（定常状態）</text>
+    </svg>
+    <figcaption>図1　電場による電子の速度分布（フェルミ球）のシフトの模式図。電場がないとき分布は原点を中心とする球（実線）で、正味の速度はゼロ。電場 E を加えると分布全体がドリフト速度 v<sub>d</sub> = eτE/m* だけ E と逆向きにずれて定常化する（破線）。v<sub>d</sub> は熱運動・フェルミ速度 v<sub>th</sub> に比べ桁違いに小さい（図では誇張してある）。</figcaption>
+  </figure>
+
   <p>ドルーデ理論では \(\tau\) はパラメータ。以下、微視的過程から \(\tau\) を決める。</p>
 
   <h2 class="font-serif">2. 電子散乱と散乱確率</h2>
@@ -134,6 +178,48 @@
     <li>温度上昇でキャリアが速くなるため散乱されにくくなり、移動度は \(T^{3/2}\) で増加。</li>
   </ul>
 
+  <figure>
+    <svg viewBox="0 0 640 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="イオン化不純物散乱：遮蔽電子雲による電子の散乱と遮蔽クーロンポテンシャル">
+      <defs>
+        <marker id="ah10d" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+          <path d="M 0 0 L 10 5 L 0 10 z" fill="#73706c"/>
+        </marker>
+        <marker id="ah10e" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+          <path d="M 0 0 L 10 5 L 0 10 z" fill="#2c2a29"/>
+        </marker>
+      </defs>
+      <!-- 左パネル：遮蔽されたイオンによる散乱 -->
+      <circle cx="150" cy="165" r="56" fill="rgba(46,125,110,0.10)"/>
+      <circle cx="150" cy="165" r="38" fill="rgba(46,125,110,0.14)"/>
+      <circle cx="150" cy="165" r="22" fill="rgba(46,125,110,0.20)"/>
+      <circle cx="150" cy="165" r="7" fill="#fcfbfa" stroke="#b06040" stroke-width="1.6"/>
+      <line x1="145.5" y1="165" x2="154.5" y2="165" stroke="#b06040" stroke-width="1.6"/>
+      <line x1="150" y1="160.5" x2="150" y2="169.5" stroke="#b06040" stroke-width="1.6"/>
+      <text x="163" y="152" font-size="10.5" fill="#b06040">D<tspan dy="-4" font-size="8">+</tspan></text>
+      <text x="150" y="94" font-size="9.5" fill="#2e7d6e" text-anchor="middle">遮蔽電子雲</text>
+      <!-- 電子の軌道と散乱角 -->
+      <path d="M 38 212 C 110 212, 150 210, 185 200 C 218 190, 248 176, 272 160" fill="none" stroke="#2c2a29" stroke-width="2" marker-end="url(#ah10e)"/>
+      <line x1="200" y1="212" x2="290" y2="212" stroke="#a8a49e" stroke-width="1.1" stroke-dasharray="5 4"/>
+      <path d="M 254 212 A 54 54 0 0 0 246 179" fill="none" stroke="#73706c" stroke-width="1"/>
+      <text x="264" y="201" font-size="10" fill="#73706c" font-style="italic">θ</text>
+      <text x="40" y="234" font-size="10.5" fill="#4a4845" font-style="italic">e<tspan dy="-4" font-size="8" font-style="normal">−</tspan></text>
+      <text x="150" y="284" font-size="10.5" fill="#4a4845" text-anchor="middle">遮蔽されたイオンによる弾性散乱</text>
+      <!-- 右パネル：ポテンシャルの比較 -->
+      <line x1="370" y1="255" x2="612" y2="255" stroke="#73706c" stroke-width="1.2" marker-end="url(#ah10d)"/>
+      <line x1="370" y1="255" x2="370" y2="55" stroke="#73706c" stroke-width="1.2" marker-end="url(#ah10d)"/>
+      <text x="600" y="274" font-size="11" fill="#73706c" font-style="italic">r</text>
+      <text x="338" y="46" font-size="10.5" fill="#73706c">|<tspan font-style="italic">V</tspan>(<tspan font-style="italic">r</tspan>)|</text>
+      <path d="M 383 65 C 386 95, 389 118, 392 135 C 395 152, 397 164, 400 175 C 405 188, 409 196, 415 202 C 420 207, 424 211, 430 215 C 440 221, 449 225, 460 228 C 470 231, 479 233, 490 235 C 503 237, 516 239, 530 241 C 543 242, 556 243, 570 244 C 582 245, 594 245, 605 246" fill="none" stroke="#b06040" stroke-width="1.8" stroke-dasharray="6 4"/>
+      <path d="M 381 65 C 383 100, 386 135, 390 161 C 394 181, 396 190, 400 200 C 406 214, 410 219, 415 225 C 421 230, 425 233, 430 236 C 442 242, 450 244, 460 246 C 472 248, 480 250, 490 251 C 503 252, 516 253, 530 253 C 543 254, 556 254, 570 254 C 582 254, 594 254, 605 254" fill="none" stroke="#2e7d6e" stroke-width="2.2"/>
+      <line x1="450" y1="255" x2="450" y2="118" stroke="#a8a49e" stroke-width="1" stroke-dasharray="4 4"/>
+      <text x="450" y="108" font-size="9.5" fill="#73706c" text-anchor="middle">遮蔽長 1/<tspan font-style="italic">q</tspan><tspan dy="3" font-size="7.5">D</tspan></text>
+      <text x="398" y="150" font-size="10" fill="#2e7d6e">遮蔽あり</text>
+      <text x="498" y="222" font-size="10" fill="#b06040">遮蔽なし ∝ 1/<tspan font-style="italic">r</tspan></text>
+      <text x="491" y="284" font-size="10.5" fill="#4a4845" text-anchor="middle">遮蔽クーロンポテンシャル</text>
+    </svg>
+    <figcaption>図2　イオン化不純物散乱。左：イオン化ドナー D<sup>+</sup> の点電荷は周囲の自由電子（遮蔽電子雲）に遮蔽され、電子は散乱角 θ の弾性散乱を受ける。右：遮蔽クーロン（湯川型）ポテンシャル ∝ e<sup>−q<sub>D</sub>r</sup>/r（実線）は裸のクーロンポテンシャル ∝ 1/r（破線）より速く減衰し、実効的な到達距離は遮蔽長 1/q<sub>D</sub> 程度に縮む。</figcaption>
+  </figure>
+
   <h2 class="font-serif">6. 音響フォノン散乱</h2>
   <p>音響フォノンは隣接原子が同方向に変位する波で、結晶に緩やかな歪み（局所的な膨張・収縮）を作る。これがエネルギーバンドを変化させ（<strong>変形ポテンシャル</strong> \(F_d\)）、電子の位置エネルギーを変えて散乱を起こす。摂動は</p>
   \[H' = F_d\,\nabla\cdot\mathbf u(\mathbf r,t),\]
@@ -143,8 +229,83 @@
   \[\boxed{\,\mu_{\text{ac}} \propto T^{-3/2}\,}\]
   <p>内訳：\(T^{-1}\) はフォノン数の温度依存、\(T^{-1/2}\) は散乱レートが \(\sqrt{E}\)（状態密度）に比例することによる。</p>
 
+  <figure>
+    <svg viewBox="0 0 640 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="音響フォノンによる格子の疎密とバンド端の空間変調の模式図">
+      <defs>
+        <marker id="ah10f" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+          <path d="M 0 0 L 10 5 L 0 10 z" fill="#2e7d6e"/>
+        </marker>
+        <marker id="ah10g" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+          <path d="M 0 0 L 10 5 L 0 10 z" fill="#73706c"/>
+        </marker>
+      </defs>
+      <!-- 格子原子の列（疎密波） -->
+      <text x="60" y="34" font-size="10" fill="#4a4845">格子原子の変位（音響フォノンによる疎密波）</text>
+      <text x="190" y="56" font-size="9.5" fill="#96938f" text-anchor="middle">密</text>
+      <text x="320" y="56" font-size="9.5" fill="#96938f" text-anchor="middle">疎</text>
+      <text x="450" y="56" font-size="9.5" fill="#96938f" text-anchor="middle">密</text>
+      <g fill="#73706c">
+        <circle cx="60" cy="76" r="2.8"/><circle cx="74.9" cy="76" r="2.8"/><circle cx="89.5" cy="76" r="2.8"/><circle cx="103.9" cy="76" r="2.8"/><circle cx="117.7" cy="76" r="2.8"/><circle cx="131" cy="76" r="2.8"/><circle cx="143.7" cy="76" r="2.8"/><circle cx="155.9" cy="76" r="2.8"/><circle cx="167.5" cy="76" r="2.8"/><circle cx="178.9" cy="76" r="2.8"/><circle cx="190" cy="76" r="2.8"/><circle cx="201.1" cy="76" r="2.8"/><circle cx="212.5" cy="76" r="2.8"/><circle cx="224.1" cy="76" r="2.8"/><circle cx="236.3" cy="76" r="2.8"/><circle cx="249" cy="76" r="2.8"/><circle cx="262.3" cy="76" r="2.8"/><circle cx="276.1" cy="76" r="2.8"/><circle cx="290.5" cy="76" r="2.8"/><circle cx="305.1" cy="76" r="2.8"/><circle cx="320" cy="76" r="2.8"/><circle cx="334.9" cy="76" r="2.8"/><circle cx="349.5" cy="76" r="2.8"/><circle cx="363.9" cy="76" r="2.8"/><circle cx="377.7" cy="76" r="2.8"/><circle cx="391" cy="76" r="2.8"/><circle cx="403.7" cy="76" r="2.8"/><circle cx="415.9" cy="76" r="2.8"/><circle cx="427.5" cy="76" r="2.8"/><circle cx="438.9" cy="76" r="2.8"/><circle cx="450" cy="76" r="2.8"/><circle cx="461.1" cy="76" r="2.8"/><circle cx="472.5" cy="76" r="2.8"/><circle cx="484.1" cy="76" r="2.8"/><circle cx="496.3" cy="76" r="2.8"/><circle cx="509" cy="76" r="2.8"/><circle cx="522.3" cy="76" r="2.8"/><circle cx="536.1" cy="76" r="2.8"/><circle cx="550.5" cy="76" r="2.8"/><circle cx="565.1" cy="76" r="2.8"/><circle cx="580" cy="76" r="2.8"/>
+      </g>
+      <!-- 疎密とバンド変調の対応（補助線） -->
+      <line x1="190" y1="84" x2="190" y2="172" stroke="#d8d4ce" stroke-width="1" stroke-dasharray="4 4"/>
+      <line x1="320" y1="84" x2="320" y2="144" stroke="#d8d4ce" stroke-width="1" stroke-dasharray="4 4"/>
+      <line x1="450" y1="84" x2="450" y2="172" stroke="#d8d4ce" stroke-width="1" stroke-dasharray="4 4"/>
+      <!-- 軸 -->
+      <line x1="48" y1="290" x2="596" y2="290" stroke="#73706c" stroke-width="1.2" marker-end="url(#ah10g)"/>
+      <line x1="48" y1="290" x2="48" y2="120" stroke="#73706c" stroke-width="1.2" marker-end="url(#ah10g)"/>
+      <text x="40" y="112" font-size="11" fill="#73706c" font-style="italic">E</text>
+      <text x="546" y="308" font-size="10" fill="#73706c">位置 <tspan font-style="italic">x</tspan></text>
+      <!-- バンド端の変調 -->
+      <path d="M 60 151 C 103 151, 147 179, 190 179 C 233 179, 277 151, 320 151 C 363 151, 407 179, 450 179 C 493 179, 537 151, 580 151" fill="none" stroke="#2c2a29" stroke-width="2"/>
+      <path d="M 60 241 C 103 241, 147 269, 190 269 C 233 269, 277 241, 320 241 C 363 241, 407 269, 450 269 C 493 269, 537 241, 580 241" fill="none" stroke="#2c2a29" stroke-width="2"/>
+      <text x="586" y="155" font-size="10.5" fill="#4a4845" font-style="italic">E<tspan dy="3" font-size="8">C</tspan></text>
+      <text x="586" y="245" font-size="10.5" fill="#4a4845" font-style="italic">E<tspan dy="3" font-size="8">V</tspan></text>
+      <text x="60" y="136" font-size="9.5" fill="#96938f">伝導帯</text>
+      <text x="60" y="284" font-size="9.5" fill="#96938f">価電子帯</text>
+      <line x1="125" y1="170" x2="125" y2="250" stroke="#2e7d6e" stroke-width="1.2" marker-start="url(#ah10f)" marker-end="url(#ah10f)"/>
+      <text x="101" y="214" font-size="10.5" fill="#2e7d6e" font-style="italic">E<tspan dy="3" font-size="8">g</tspan></text>
+      <!-- 伝導帯内の電子 -->
+      <circle cx="270" cy="148" r="4" fill="#2e7d6e"/>
+      <line x1="278" y1="148" x2="312" y2="148" stroke="#2e7d6e" stroke-width="1.4" marker-end="url(#ah10f)"/>
+      <text x="248" y="140" font-size="10" fill="#2e7d6e" font-style="italic">e<tspan dy="-4" font-size="7.5" font-style="normal">−</tspan></text>
+    </svg>
+    <figcaption>図3　音響フォノン散乱（変形ポテンシャル）の模式図。音響フォノンは格子に緩やかな疎密（膨張・収縮）を作り、それに応じてバンド端 E<sub>C</sub>, E<sub>V</sub> が空間的に上下に変調される。伝導帯の電子はこの起伏を位置エネルギーの変化として感じて散乱される（H′ = F<sub>d</sub>∇·u）。</figcaption>
+  </figure>
+
   <h2 class="font-serif">7. 移動度の温度依存性</h2>
   <p>低温では<strong>イオン化不純物散乱</strong>（\(\mu\propto T^{3/2}\)、右上がり）、高温では<strong>音響フォノン散乱</strong>（\(\mu\propto T^{-3/2}\)、右下がり）が支配し、移動度は中間温度でピークを持つ。</p>
+
+  <figure>
+    <svg viewBox="0 0 560 310" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="散乱機構ごとの移動度の温度依存性とマティーセン則による合成の模式図">
+      <defs>
+        <marker id="ah10h" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+          <path d="M 0 0 L 10 5 L 0 10 z" fill="#73706c"/>
+        </marker>
+        <marker id="ah10i" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+          <path d="M 0 0 L 10 5 L 0 10 z" fill="#a8a49e"/>
+        </marker>
+      </defs>
+      <!-- 両対数の軸 -->
+      <line x1="70" y1="270" x2="522" y2="270" stroke="#73706c" stroke-width="1.4" marker-end="url(#ah10h)"/>
+      <line x1="70" y1="270" x2="70" y2="42" stroke="#73706c" stroke-width="1.4" marker-end="url(#ah10h)"/>
+      <text x="496" y="292" font-size="11" fill="#73706c">log <tspan font-style="italic">T</tspan></text>
+      <text x="26" y="54" font-size="11" fill="#73706c">log <tspan font-style="italic">μ</tspan></text>
+      <text x="88" y="292" font-size="9.5" fill="#96938f">低温側</text>
+      <text x="418" y="292" font-size="9.5" fill="#96938f">高温側</text>
+      <!-- 各散乱機構の漸近線 -->
+      <line x1="95" y1="212" x2="380" y2="55" stroke="#b06040" stroke-width="1.6" stroke-dasharray="6 4"/>
+      <line x1="180" y1="55" x2="480" y2="220" stroke="#2e7d6e" stroke-width="1.6" stroke-dasharray="6 4"/>
+      <text x="188" y="48" font-size="10" fill="#2e7d6e">音響フォノン散乱 <tspan font-style="italic">μ</tspan> ∝ <tspan font-style="italic">T</tspan><tspan dy="-4" font-size="8">−3/2</tspan></text>
+      <text x="390" y="72" font-size="10" fill="#b06040">イオン化不純物散乱 <tspan font-style="italic">μ</tspan> ∝ <tspan font-style="italic">T</tspan><tspan dy="-4" font-size="8">3/2</tspan></text>
+      <!-- 合成された移動度 -->
+      <path d="M 95 212 C 123 197, 152 182, 180 168 C 208 154, 238 144, 265 141 C 272 140, 288 140, 295 141 C 322 144, 352 154, 380 168 C 408 182, 448 200, 480 220" fill="none" stroke="#2c2a29" stroke-width="2.4"/>
+      <line x1="280" y1="181" x2="280" y2="148" stroke="#a8a49e" stroke-width="1" marker-end="url(#ah10i)"/>
+      <text x="280" y="196" font-size="10.5" fill="#2c2a29" text-anchor="middle" font-weight="600">合成移動度（マティーセンの規則）</text>
+      <text x="280" y="214" font-size="10" fill="#4a4845" text-anchor="middle">1/<tspan font-style="italic">μ</tspan> = 1/<tspan font-style="italic">μ</tspan><tspan dy="3" font-size="7.5">ion</tspan><tspan dy="-3"> + 1/</tspan><tspan font-style="italic">μ</tspan><tspan dy="3" font-size="7.5">ph</tspan></text>
+    </svg>
+    <figcaption>図4　移動度の温度依存性の模式図（両対数）。低温側ではイオン化不純物散乱（μ ∝ T<sup>3/2</sup>、破線）、高温側では音響フォノン散乱（μ ∝ T<sup>−3/2</sup>、破線）が支配し、マティーセンの規則 1/μ = 1/μ<sub>ion</sub> + 1/μ<sub>ph</sub> で合成した移動度（実線）は中間温度でピークを持つ。</figcaption>
+  </figure>
   <table>
     <thead>
       <tr><th>散乱機構</th><th>移動度の温度依存</th></tr>
